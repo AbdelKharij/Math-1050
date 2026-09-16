@@ -1,0 +1,210 @@
+\documentclass[12pt]{ximera}
+\title{Homework 5: Banzhaf Power in the Boone City Council}
+\begin{document}
+\begin{abstract}
+A real weighted-voting system analyzed with coalition ``types'': the Boone city
+council, where the mayor holds zero votes but a veto that a two-thirds majority can
+override. The Banzhaf power distribution turns out to be a surprise.
+\end{abstract}
+\maketitle
+
+\section*{Banzhaf Power with Coalition Types}
+
+The Boone city council consists of the mayor ($M$) and seven council members
+($C_1,\ldots,C_7$). Since the council members have indistinguishable roles, we adopt
+the shorthand ``$C$'' to stand for any one council member. Each council member has one
+vote.
+
+Per the state of Iowa's city council governing documents, the mayor has \emph{zero}
+votes. Instead, the mayor has a veto, which can be overruled by a two-thirds majority
+among the seven council members. For simplicity, we include the mayor in a coalition
+whenever he does \emph{not} intend to veto, and omit him whenever he does.
+
+A simple majority among the seven council members is needed to pass a motion, and a
+two-thirds majority of council members can overrule a veto.
+
+\begin{problem}
+\begin{prompt}
+\textbf{(a)} How many council members does a coalition need to pass a motion
+\emph{with} mayoral support?
+
+$\answer{4}$
+
+\begin{solution}
+A simple majority of $7$ council members means more than $3.5$, so at least $4$.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} How many council members does a coalition need to pass a motion
+\emph{without} mayoral support?
+
+$\answer{5}$
+
+\begin{hint}
+Without mayoral support the motion is vetoed, so the council must override. Two-thirds
+of $7$ is not a whole number --- round up.
+\end{hint}
+
+\begin{solution}
+Overriding the veto takes a two-thirds majority of the $7$ council members, and
+\[ \tfrac23 \cdot 7 = 4.67, \]
+so at least $5$ council members are required.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Below is every coalition type. Identify which are winning, and how many
+players are critical in each.
+
+For coalitions \emph{with} mayoral support:
+
+$\set{M, C, C, C, C}$ (4 council members, $35$ distinct coalitions) --- is it winning?
+\begin{multipleChoice}
+\choice[correct]{Yes}
+\choice{No}
+\end{multipleChoice}
+Number of critical players in each such coalition: $\answer{5}$
+
+\smallskip
+$\set{M, C, C, C, C, C}$ (5 council members, $21$ coalitions) --- number of critical
+players: $\answer{0}$
+
+\smallskip
+For coalitions \emph{without} mayoral support:
+
+$\set{C, C, C, C, C}$ (5 council members, $21$ coalitions) --- number of critical
+players: $\answer{5}$
+
+\smallskip
+$\set{C,C,C,C,C,C}$ (6 council members, $7$ coalitions) --- number of critical
+players: $\answer{0}$
+
+\begin{hint}
+A player is critical when removing them turns a winning coalition into a losing one.
+Careful with $\set{M,C,C,C,C,C}$: if the mayor walks away, the five remaining council
+members can still override his veto.
+\end{hint}
+
+\begin{solution}
+The winning types are: with the mayor, $4$ or more council members; without the mayor,
+$5$ or more.
+
+\textbf{$\set{M,C,C,C,C}$ --- winning, $5$ critical players.} Remove $M$ and the four
+remaining council members fall short of the $5$ needed to override, so $M$ is
+critical. Remove any one $C$ and only $3$ council members remain with mayoral support,
+short of $4$ --- so all four council members are critical too. That is $1+4 = 5$
+critical players.
+
+\textbf{$\set{M,C,C,C,C,C}$ --- winning, but nobody is critical.} Remove $M$ and the
+$5$ council members override the veto and still win. Remove one $C$ and you are left
+with $\set{M,C,C,C,C}$, which also still wins. The same holds for every larger
+coalition with the mayor.
+
+\textbf{$\set{C,C,C,C,C}$ --- winning, all $5$ critical.} Removing any member leaves
+$4$, which cannot override the veto.
+
+\textbf{$\set{C,C,C,C,C,C}$ --- winning, nobody critical.} Removing one still leaves
+$5$, enough to override.
+
+Every other type is either losing (too few council members) or winning with no
+critical players.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(d)} What is the total critical count in this system?
+
+$\answer{280}$
+
+\begin{hint}
+Only two coalition types contribute. Multiply the number of critical players per
+coalition by how many distinct coalitions there are of that type.
+\end{hint}
+
+\begin{solution}
+Only two types contribute anything:
+\[
+\underbrace{35 \times 5}_{\set{M,C,C,C,C}} + \underbrace{21 \times 5}_{\set{C,C,C,C,C}}
+= 175 + 105 = 280.
+\]
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(e)} Calculate the mayor's critical count.
+
+$\answer{35}$
+
+\begin{solution}
+The mayor is critical only in the type $\set{M,C,C,C,C}$, and there are
+$C(7,4)=35$ such coalitions. So $M$'s critical count is $35$.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(f)} Calculate the critical count of the council members as a group, and then
+for each individual council member.
+
+As a group: $\answer{245}$ \qquad Each individual council member: $\answer{35}$
+
+\begin{solution}
+The group total is everything left over: $280 - 35 = 245$.
+
+Directly: council members are critical $35\times 4 = 140$ times in the
+$\set{M,C,C,C,C}$ type and $21\times 5 = 105$ times in the $\set{C,C,C,C,C}$ type, and
+$140+105 = 245$. \checkmark
+
+By symmetry the seven members share this equally: $245/7 = 35$ each.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(g)} Give the Banzhaf Power Distribution of this system across all eight
+players, as percentages.
+
+Mayor: $\answer[tolerance=0.05]{12.5}\%$ \qquad
+Each council member: $\answer[tolerance=0.05]{12.5}\%$
+
+\begin{solution}
+\[
+\text{Mayor}: \frac{35}{280}=\frac18=12.5\%, \qquad
+\text{Each council member}: \frac{35}{280}=12.5\%.
+\]
+All eight players have \emph{exactly the same} Banzhaf power, and the eight shares
+total $100\%$. \checkmark
+
+This is the surprise. The mayor has zero votes and cannot vote on anything --- yet his
+veto gives him precisely as much power as a full voting member of the council. Raw
+vote counts can be a very poor guide to actual influence.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(h)} What is one way to write this eight-player system using bracket notation?
+
+$[\answer{5} : 1,1,1,1,1,1,1,1]$
+
+\begin{hint}
+Part (g) says all eight players have equal power, which suggests giving them all equal
+weight. How many of the eight must agree for a motion to pass?
+\end{hint}
+
+\begin{solution}
+Give every player, including the mayor, one vote, and set the quota at $5$:
+\[ [5:1,1,1,1,1,1,1,1]. \]
+
+Check that this reproduces the original rules exactly:
+\begin{itemize}
+\item Mayor plus $4$ council members $= 5$ players, which wins --- matching part (a).
+\item Mayor plus $3$ council members $= 4$, which loses. \checkmark
+\item $5$ council members without the mayor $= 5$, which wins --- matching part (b).
+\item $4$ council members without the mayor $= 4$, which loses. \checkmark
+\end{itemize}
+The winning coalitions are identical, so the systems are equivalent --- and in this
+form the equal power distribution from part (g) is obvious by symmetry.
+\end{solution}
+\end{prompt}
+\end{problem}
+
+\end{document}

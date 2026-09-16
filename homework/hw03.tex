@@ -1,0 +1,289 @@
+\documentclass[12pt]{ximera}
+\title{Homework 3: Pairwise Comparisons and Fairness Criteria}
+\begin{document}
+\begin{abstract}
+Sections 1.5--1.6: the Method of Pairwise Comparisons, Condorcet candidates, and an
+election where correcting a clerical error in the winner's favor causes the winner to
+lose --- a violation of the monotonicity criterion.
+\end{abstract}
+\maketitle
+
+\section*{Sections 1.5--1.6: Pairwise Comparisons and Arrow's Fairness Criteria}
+
+\begin{problem}
+Table 1 shows the preference schedule for Best Sandwich Shop of Central Story County.
+The candidates are A, B, C, and D.
+
+\begin{center}
+\begin{tabular}{c|ccccc}
+Preference & 16 & 12 & 8 & 4 & 2 \\\hline
+1st & C & A & D & B & A \\
+2nd & B & B & A & D & D \\
+3rd & D & C & C & A & B \\
+4th & A & D & B & C & C
+\end{tabular}
+
+\smallskip
+Table 1. Preference schedule for Best Sandwich Shop.
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} How many pairwise comparisons must be made for this election?
+
+$\answer{6}$
+
+\begin{hint}
+Every unordered pair of candidates is compared exactly once.
+\end{hint}
+
+\begin{solution}
+With $4$ candidates, the number of pairs is
+\[ C(4,2)=\frac{4\cdot 3}{2}=6. \]
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Write out the pairwise comparisons and total the points for each
+candidate. In each matchup, enter the number of voters preferring the first-named
+candidate.
+
+A vs.\ B: A gets $\answer{22}$, B gets $\answer{20}$ \\
+A vs.\ C: A gets $\answer{26}$, C gets $\answer{16}$ \\
+A vs.\ D: A gets $\answer{14}$, D gets $\answer{28}$ \\
+B vs.\ C: B gets $\answer{18}$, C gets $\answer{24}$ \\
+B vs.\ D: B gets $\answer{32}$, D gets $\answer{10}$ \\
+C vs.\ D: C gets $\answer{28}$, D gets $\answer{14}$
+
+\smallskip
+Total points --- A: $\answer{2}$ \quad B: $\answer{1}$ \quad C: $\answer{2}$ \quad D: $\answer{1}$
+
+\begin{hint}
+For each matchup, go column by column and ask which of the two candidates appears
+higher on that column's ballot; award that column's voters to them. The winner of each
+matchup gets $1$ point.
+\end{hint}
+
+\begin{solution}
+For each pair, count the voters who rank the first candidate above the second. There
+are $42$ voters, so the two numbers in each matchup add to $42$.
+\[
+\begin{array}{lll}
+\text{A vs.\ B} & 22\text{--}20 & \text{A wins}\\
+\text{A vs.\ C} & 26\text{--}16 & \text{A wins}\\
+\text{A vs.\ D} & 14\text{--}28 & \text{D wins}\\
+\text{B vs.\ C} & 18\text{--}24 & \text{C wins}\\
+\text{B vs.\ D} & 32\text{--}10 & \text{B wins}\\
+\text{C vs.\ D} & 28\text{--}14 & \text{C wins}
+\end{array}
+\]
+Awarding $1$ point per matchup win: A $= 2$, C $= 2$, B $= 1$, D $= 1$. The points
+total $6$, one per comparison. \checkmark
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Give the complete ranking of this election using the pairwise comparisons
+method. In the case of a tie in points between two candidates, refer to their
+head-to-head comparison from part (b) to break the tie.
+
+1st: $\answer{A}$ \quad 2nd: $\answer{C}$ \quad 3rd: $\answer{B}$ \quad 4th: $\answer{D}$
+
+\begin{solution}
+The point totals leave two ties: A and C at $2$ points, and B and D at $1$ point.
+
+Break each with the head-to-head result:
+\begin{itemize}
+\item A vs.\ C was $26$--$16$ for A, so A ranks above C.
+\item B vs.\ D was $32$--$10$ for B, so B ranks above D.
+\end{itemize}
+The complete ranking is therefore A, C, B, D.
+
+Note that D beat the eventual winner A head-to-head ($28$--$14$), yet finishes last.
+\end{solution}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Make up an example election where there exists a \emph{Condorcet candidate} who does
+not win the election. Write out the preference schedule, identify which candidate is
+the Condorcet candidate, state which vote tabulation method you are using, and
+identify the winner under that method. What does this imply about the tabulation
+method you chose?
+
+\begin{freeResponse}
+\end{freeResponse}
+
+\begin{hint}
+A Condorcet candidate is one who would beat every other candidate in a head-to-head
+matchup. Try to build a schedule where one candidate is almost everyone's second
+choice --- strong head-to-head, but few first-place votes.
+\end{hint}
+
+\begin{solution}
+Many examples work. Here is a small one with three candidates and $9$ voters:
+
+\begin{center}
+\begin{tabular}{c|ccc}
+Preference & 4 & 3 & 2 \\\hline
+1st & A & C & B \\
+2nd & B & B & C \\
+3rd & C & A & A
+\end{tabular}
+\end{center}
+
+\textbf{B is the Condorcet candidate.} Head-to-head:
+\begin{itemize}
+\item B vs.\ A: the $3$ and $2$ columns prefer B, so B wins $5$--$4$.
+\item B vs.\ C: the $4$ and $2$ columns prefer B, so B wins $6$--$3$.
+\end{itemize}
+B beats everyone one-on-one.
+
+\textbf{Under the Plurality method}, however, the first-place counts are A $4$,
+C $3$, B $2$ --- so \textbf{A wins} and B finishes last, despite being preferred by a
+majority over each rival individually.
+
+\textbf{What this implies:} Plurality violates the \emph{Condorcet criterion}, which
+says that if a Condorcet candidate exists, that candidate should win. The reason is
+structural: B is almost everyone's second choice, and Plurality does not look past
+first place.
+
+This is not a defect unique to Plurality. Arrow's Impossibility Theorem says no ranked
+voting method with three or more candidates can satisfy all of the fairness criteria
+at once, so every method fails some criterion.
+\end{solution}
+\end{problem}
+
+\begin{problem}
+Table 2 gives a preference schedule for election to the Ketchup Advisory Board.
+
+\begin{center}
+\begin{tabular}{c|cccccc}
+Preference & 15 & 11 & 8 & 5 & 4 & 2 \\\hline
+1st & A & C & B & D & B & D \\
+2nd & B & B & A & C & D & B \\
+3rd & C & A & D & A & C & A \\
+4th & D & D & C & B & A & C
+\end{tabular}
+
+\smallskip
+Table 2. Preference schedule for the Ketchup Advisory Board.
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} Using Table 2, apply Plurality-with-Elimination to find the complete
+ranking of the candidates.
+
+\textbf{Round 1:} A: $\answer{15}$ \quad B: $\answer{12}$ \quad C: $\answer{11}$ \quad
+D: $\answer{7}$ \qquad Eliminated: $\answer{D}$
+
+\smallskip
+\textbf{Round 2:} A: $\answer{15}$ \quad B: $\answer{14}$ \quad C: $\answer{16}$
+\qquad Eliminated: $\answer{B}$
+
+\smallskip
+\textbf{Round 3:} A: $\answer{25}$ \quad C: $\answer{20}$
+
+\smallskip
+Winner: $\answer{A}$
+
+\begin{solution}
+There are $45$ voters.
+
+\textbf{Round 1.} First-place votes: A $15$, B $8+4 = 12$, C $11$, D $5+2 = 7$.
+D is eliminated.
+
+\textbf{Round 2.} D's $7$ votes transfer: the $5$-voter column had C second, so those
+go to C; the $2$-voter column had B second, so those go to B. Now
+\[ \text{A } 15, \qquad \text{B } 12+2 = 14, \qquad \text{C } 11+5 = 16. \]
+B is eliminated.
+
+\textbf{Round 3.} B's $14$ votes transfer to the highest surviving candidate on each
+of those ballots: the $8$-voter column has A next, the $4$-voter column has C next,
+and the $2$-voter column (originally D, then B) has A next. So
+\[ \text{A } = 15+8+2 = 25, \qquad \text{C } = 16+4 = 20. \]
+\textbf{A wins}, and the complete ranking is A, C, B, D.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Suppose a clerical error was made in Table 2, and five of the voters
+actually preferred A above C. The corrected preference schedule is shown in Table 3
+--- the only change is in the $5$-voter column, where A has moved up from 3rd to 2nd.
+
+\begin{center}
+\begin{tabular}{c|cccccc}
+Preference & 15 & 11 & 8 & \textbf{5} & 4 & 2 \\\hline
+1st & A & C & B & D & B & D \\
+2nd & B & B & A & \textbf{A} & D & B \\
+3rd & C & A & D & \textbf{C} & C & A \\
+4th & D & D & C & B & A & C
+\end{tabular}
+
+\smallskip
+Table 3. \emph{Corrected} preference schedule.
+\end{center}
+
+Apply Plurality-with-Elimination again to find the corrected ranking.
+
+\textbf{Round 1:} A: $\answer{15}$ \quad B: $\answer{12}$ \quad C: $\answer{11}$ \quad
+D: $\answer{7}$ \qquad Eliminated: $\answer{D}$
+
+\smallskip
+\textbf{Round 2:} A: $\answer{20}$ \quad B: $\answer{14}$ \quad C: $\answer{11}$
+\qquad Eliminated: $\answer{C}$
+
+\smallskip
+\textbf{Round 3:} A: $\answer{20}$ \quad B: $\answer{25}$
+
+\smallskip
+Winner: $\answer{B}$
+
+\begin{hint}
+Round 1 is unchanged. The difference appears in round 2: when D is eliminated, where
+do those $5$ votes go now?
+\end{hint}
+
+\begin{solution}
+\textbf{Round 1} is identical: A $15$, B $12$, C $11$, D $7$. D is eliminated.
+
+\textbf{Round 2} is where the correction matters. The $5$-voter column now reads
+D, A, C, B, so when D is eliminated those $5$ votes go to \textbf{A} instead of C:
+\[ \text{A } = 15+5 = 20, \qquad \text{B } = 12+2 = 14, \qquad \text{C } = 11. \]
+Now \emph{C} has the fewest votes and is eliminated instead of B.
+
+\textbf{Round 3.} C's $11$ votes (the column C, B, A, D) go to B:
+\[ \text{A } = 20, \qquad \text{B } = 14+11 = 25. \]
+\textbf{B wins}, and the corrected ranking is B, A, C, D.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Which fairness criterion is violated by this election?
+
+\begin{multipleChoice}
+\choice{The majority criterion}
+\choice{The Condorcet criterion}
+\choice[correct]{The monotonicity criterion}
+\choice{Independence of irrelevant alternatives}
+\end{multipleChoice}
+
+\begin{solution}
+The \textbf{monotonicity criterion}, which says that if a candidate wins an election
+and then some voters change their ballots to rank that candidate \emph{higher} (with
+no other changes), that candidate should still win.
+
+Here A won under Table 2. The only change in Table 3 is that five voters moved A
+\emph{up}, from 3rd place to 2nd. Nothing else changed --- and A lost.
+
+The mechanism is worth understanding: gaining those five votes in round 2 pushed A's
+total from $15$ to $20$, which knocked C out of the race instead of B. But C was the
+candidate A could beat in a final round; B was not. A's extra support changed
+\emph{who A had to face}, and that was enough to cost A the election.
+
+This is a known weakness of Plurality-with-Elimination (also called instant-runoff
+voting).
+\end{solution}
+\end{prompt}
+\end{problem}
+
+\end{document}

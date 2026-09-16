@@ -1,0 +1,428 @@
+\documentclass[12pt]{ximera}
+\title{Practice Final Exam}
+\begin{document}
+\begin{abstract}
+Practice for the cumulative final: which apportionment methods suffer which paradoxes
+and quota violations, saddle points, a full four-method apportionment of teaching
+aides, and expected value as a decision tool.
+\end{abstract}
+\maketitle
+
+\section*{Practice Final Exam}
+
+\begin{problem}
+Assess whether each of the following claims is true or false.
+
+\begin{prompt}
+\textbf{(a)} Claim: it is possible for Hamilton's method of apportionment to apportion
+more representation to a state than its upper quota.
+
+\begin{multipleChoice}
+\choice{True}
+\choice[correct]{False}
+\end{multipleChoice}
+
+\begin{solution}
+False. Hamilton's method always satisfies the quota rule. Every state first receives its
+lower quota, and the surplus seats hand out at most one extra seat apiece --- so each
+state ends with either $\lfloor q\rfloor$ or $\lceil q\rceil$, never more.
+
+Staying within quota is Hamilton's great virtue. Its weakness is the paradoxes, which
+the divisor methods avoid.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Claim: the quotas of states with the largest populations change the fastest
+when the standard divisor is modified.
+
+\begin{multipleChoice}
+\choice[correct]{True}
+\choice{False}
+\end{multipleChoice}
+
+\begin{solution}
+True. A state's quota is $q = \frac{p}{d}$, so shrinking the divisor by a given
+percentage raises every quota by that same percentage --- and a percentage of a large
+quota is a larger absolute change.
+
+For example, dropping the divisor from $26.13$ to $25.5$ raises a state of population
+$1445$ from $55.30$ to $56.67$, a jump of $1.37$; the same change moves a state of
+population $248$ only from $9.49$ to $9.73$, a jump of $0.24$.
+
+This is why the divisor methods are biased: tuning the divisor moves the big states'
+quotas past rounding boundaries much sooner than the small states'.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Claim: every game that can be represented with a $2\times 2$ payoff matrix
+has a saddle point, where neither player has reason to deviate from that strategy.
+
+\begin{multipleChoice}
+\choice{True}
+\choice[correct]{False}
+\end{multipleChoice}
+
+\begin{solution}
+False. The matrix
+\[
+\begin{array}{c|c|c|}
+\phantom{|} & c & d \\\hline
+a & 4 & -3 \\\hline
+b & -1 & 1 \\\hline
+\end{array}
+\]
+has maximin $-1$ and minimax $1$, which differ --- so there is no saddle point. The coin
+game in Problem 4 is another example. Such games have no stable pure strategy, and both
+players do better by mixing.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(d)} Claim: a zero-sum game is a game where one of the players has a winning
+strategy, a way to guarantee themself victory regardless of the other player's moves.
+
+\begin{multipleChoice}
+\choice{True}
+\choice[correct]{False}
+\end{multipleChoice}
+
+\begin{solution}
+False --- this confuses two different ideas.
+
+\emph{Zero-sum} means only that the two players' payoffs always add to zero: whatever
+one wins, the other loses. That is a statement about the payoff structure, not about
+anybody's ability to force a win.
+
+Plenty of zero-sum games give neither player a guaranteed win --- Rock/Paper/Scissors is
+zero-sum and completely symmetric. The property being described in the claim belongs to
+games like the Subtraction Game, where one player really can force a win.
+\end{solution}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+The following payoff matrices each represent Alice's perspective for a zero-sum game.
+For each one, identify the saddle point.
+
+\begin{prompt}
+\textbf{(a)}
+\[
+\begin{array}{c|c|c|}
+\phantom{|} & c & d \\\hline
+a & -3 & 1 \\\hline
+b & 0 & 2 \\\hline
+\end{array}
+\]
+The saddle point value is $\answer{0}$.
+
+\begin{solution}
+Row minima $-3$ and $0$ give a maximin of $0$; column maxima $0$ and $2$ give a minimax
+of $0$. They agree, so the saddle point is $0$ at cell $(b,c)$.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)}
+\[
+\begin{array}{c|c|c|}
+\phantom{|} & d & e \\\hline
+a & 0 & -1 \\\hline
+b & 1 & 2 \\\hline
+c & -2 & 0 \\\hline
+\end{array}
+\]
+The saddle point value is $\answer{1}$.
+
+\begin{solution}
+Row minima are $-1$, $1$, $-2$, so the maximin is $1$. Column maxima are $1$ and $2$, so
+the minimax is $1$. The saddle point is $1$ at cell $(b,d)$.
+
+Note that row $b$ dominates both other rows for Alice, so she plays $b$; Bob then picks
+$d$ to hold her to $1$ rather than $2$.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)}
+\[
+\begin{array}{c|c|c|c|}
+\phantom{|} & d & e & f \\\hline
+a & -1 & 5 & 0 \\\hline
+b & -2 & 0 & -3 \\\hline
+c & 2 & 3 & 1 \\\hline
+\end{array}
+\]
+The saddle point value is $\answer{1}$.
+
+\begin{solution}
+Row minima are $-1$, $-3$, and $1$, so the maximin is $1$. Column maxima are $2$, $5$,
+and $1$, so the minimax is $1$. The saddle point is $1$ at cell $(c,f)$.
+
+Here row $c$ dominates rows $a$ and $b$ for Alice, and column $f$ dominates $d$ and $e$
+for Bob, so both players' choices are forced.
+\end{solution}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Identify all applicable answers.
+
+\begin{prompt}
+\textbf{(a)} Which of the following can occur when using Hamilton's method of
+apportionment?
+
+\begin{selectAll}
+\choice{Upper quota violation}
+\choice[correct]{New States paradox}
+\choice{Lower quota violation}
+\choice[correct]{Population paradox}
+\end{selectAll}
+
+\begin{solution}
+The \textbf{New States paradox} and the \textbf{Population paradox} --- and the Alabama
+paradox as well.
+
+Hamilton's method never violates the quota rule, as Problem 1(a) established, so neither
+quota violation is possible. What it does suffer is every one of the paradoxes, because
+the surplus seats are handed out by comparing fractional parts, and those comparisons can
+reshuffle when the house size, a population, or the set of states changes.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Which of the following can occur when using Adams' method of
+apportionment?
+
+\begin{selectAll}
+\choice{Alabama paradox}
+\choice{Upper quota violation}
+\choice{New States paradox}
+\choice[correct]{Lower quota violation}
+\end{selectAll}
+
+\begin{hint}
+Adams' method rounds every modified quota \emph{up}. Which direction does that bias
+push, and which states lose out?
+\end{hint}
+
+\begin{solution}
+Only the \textbf{lower quota violation}.
+
+Adams' method is a divisor method, and divisor methods are immune to all three
+paradoxes --- there is no fractional-parts comparison to reshuffle.
+
+It can, however, break the quota rule, and always in the same direction. Adams rounds
+up, which requires a divisor \emph{larger} than the standard one to avoid overshooting.
+That shrinks every quota, and the large states --- whose quotas move fastest, by Problem
+1(b) --- can be pushed below their lower quota. Homework 9 has an example: district A had
+a standard quota of $86.915$ and Adams' method gave it only $85$.
+
+It cannot exceed an upper quota: with a modified divisor $d \ge SD$ we get
+$\frac{p}{d} \le q$, so $\lceil p/d\rceil \le \lceil q\rceil$. (Jefferson's method has
+exactly the opposite bias --- it can break the upper quota but not the lower.)
+\end{solution}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+A school district needs to apportion $100$ teaching aides across four schools:
+
+\begin{center}
+\begin{tabular}{|r|c|c|c|c|c|}\hline
+\textbf{School} & A & B & C & D & \textbf{Total}\\\hline
+\textbf{Population} & 1{,}445 & 548 & 372 & 248 & 2{,}613 \\\hline
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} Compute the standard divisor and standard quotas, then complete the
+apportionment with Hamilton's method.
+
+Standard divisor: $\answer[tolerance=0.005]{26.13}$
+
+\smallskip
+$q_A = \answer[tolerance=0.0005]{55.3}$ \quad $q_B = \answer[tolerance=0.0005]{20.972}$
+\quad $q_C = \answer[tolerance=0.0005]{14.237}$ \quad $q_D = \answer[tolerance=0.0005]{9.491}$
+
+\smallskip
+Hamilton's apportionment --- $A: \answer{55}$ \quad $B: \answer{21}$ \quad
+$C: \answer{14}$ \quad $D: \answer{10}$
+
+\begin{solution}
+\[ SD = \frac{2613}{100} = 26.13, \]
+giving quotas $55.300$, $20.972$, $14.237$, and $9.491$, which total $100$. \checkmark
+
+The lower quotas are $55, 20, 14, 9 = 98$, leaving $2$ surplus seats. The fractional
+parts are
+\[ A: .300, \qquad B: .972, \qquad C: .237, \qquad D: .491, \]
+so B and D --- the two largest --- each gain a seat:
+\[ A = 55, \quad B = 21, \quad C = 14, \quad D = 10. \]
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Round the standard quotas as if you were doing just the first step of each
+method. Give the resulting totals.
+
+Jefferson (round down): $A: \answer{55}$, $B: \answer{20}$, $C: \answer{14}$,
+$D: \answer{9}$, total $\answer{98}$
+
+\smallskip
+Adams (round up): $A: \answer{56}$, $B: \answer{21}$, $C: \answer{15}$, $D: \answer{10}$,
+total $\answer{102}$
+
+\smallskip
+Webster (conventional): $A: \answer{55}$, $B: \answer{21}$, $C: \answer{14}$,
+$D: \answer{9}$, total $\answer{99}$
+
+\smallskip
+Huntington-Hill cutoffs: $A: \answer[tolerance=0.005]{55.498}$,
+$B: \answer[tolerance=0.005]{20.494}$, $C: \answer[tolerance=0.005]{14.491}$,
+$D: \answer[tolerance=0.005]{9.487}$, giving a total of $\answer{100}$
+
+\begin{solution}
+\[
+\begin{array}{lccccl}
+ & A & B & C & D & \text{total}\\
+\text{quota} & 55.300 & 20.972 & 14.237 & 9.491 & 100\\
+\text{Jefferson (down)} & 55 & 20 & 14 & 9 & 98\\
+\text{Adams (up)} & 56 & 21 & 15 & 10 & 102\\
+\text{Webster (round)} & 55 & 21 & 14 & 9 & 99
+\end{array}
+\]
+Jefferson is $2$ short (needs a smaller divisor), Adams is $2$ over (needs a larger
+one), and Webster is $1$ short.
+
+For Huntington-Hill, the geometric means are
+\[
+\sqrt{55\cdot 56}=55.498, \quad \sqrt{20\cdot 21}=20.494, \quad
+\sqrt{14\cdot 15}=14.491, \quad \sqrt{9\cdot 10}=9.487.
+\]
+Comparing: $55.300 < 55.498$ rounds down to $55$; $20.972 > 20.494$ rounds up to $21$;
+$14.237 < 14.491$ rounds down to $14$; $9.491 > 9.487$ rounds up to $10$. That totals
+exactly $100$, so Huntington-Hill needs no modified divisor at all --- and lands on the
+same answer as Hamilton's method. (School D is a very close call: $9.491$ against a
+cutoff of $9.487$.)
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Complete the apportionment using each method, choosing the appropriate
+modified divisor from $25.5$, $26.1$, and $26.7$.
+
+\textbf{Jefferson's method} --- modified divisor $\answer[tolerance=0.05]{25.5}$, giving
+$A: \answer{56}$, $B: \answer{21}$, $C: \answer{14}$, $D: \answer{9}$
+
+\smallskip
+\textbf{Adams' method} --- modified divisor $\answer[tolerance=0.05]{26.7}$, giving
+$A: \answer{55}$, $B: \answer{21}$, $C: \answer{14}$, $D: \answer{10}$
+
+\smallskip
+\textbf{Webster's method} --- modified divisor $\answer[tolerance=0.05]{26.1}$, giving
+$A: \answer{55}$, $B: \answer{21}$, $C: \answer{14}$, $D: \answer{10}$
+
+\begin{hint}
+Part (b) tells you which direction each divisor must move. Jefferson needs more seats,
+so a smaller divisor; Adams needs fewer, so a larger one.
+\end{hint}
+
+\begin{solution}
+\textbf{Jefferson}, $d = 25.5$: modified quotas $56.667$, $21.490$, $14.588$, $9.725$;
+rounding down gives $56, 21, 14, 9 = 100$. \checkmark
+
+\textbf{Adams}, $d = 26.7$: modified quotas $54.120$, $20.524$, $13.933$, $9.288$;
+rounding up gives $55, 21, 14, 10 = 100$. \checkmark
+
+\textbf{Webster}, $d = 26.1$: modified quotas $55.364$, $20.996$, $14.253$, $9.502$;
+conventional rounding gives $55, 21, 14, 10 = 100$. \checkmark
+
+Comparing all five methods:
+\[
+\begin{array}{lcccc}
+ & A & B & C & D\\
+\text{Hamilton} & 55 & 21 & 14 & 10\\
+\text{Jefferson} & 56 & 21 & 14 & 9\\
+\text{Adams} & 55 & 21 & 14 & 10\\
+\text{Webster} & 55 & 21 & 14 & 10\\
+\text{Huntington-Hill} & 55 & 21 & 14 & 10
+\end{array}
+\]
+Jefferson is the odd one out, moving a seat from the smallest school D to the largest
+school A --- exactly the large-state bias you would expect from rounding everything down.
+Every method here stays within quota.
+\end{solution}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Use your knowledge of game theory and expected value to answer the following.
+
+\begin{prompt}
+\textbf{(a)} Complete the payoff matrix from Alice's perspective for a two-player
+zero-sum game where Alice and Bob each have a quarter and a fifty-cent piece, and on the
+count of three they each show one.
+\begin{itemize}
+\item If they show the same coin, Alice wins points equal to the sum of the coins.
+\item If they show opposite coins, Bob wins points equal to the sum of the coins.
+\end{itemize}
+
+Give each entry in cents.
+\[
+\begin{array}{c|c|c|}
+\phantom{|} & \text{Bob: }50\text{\textcent} & \text{Bob: }25\text{\textcent} \\\hline
+\text{Alice: }50\text{\textcent} & \answer{100} & \answer{-75} \\\hline
+\text{Alice: }25\text{\textcent} & \answer{-75} & \answer{50} \\\hline
+\end{array}
+\]
+
+\begin{solution}
+\begin{itemize}
+\item Both $50$\textcent: same, Alice wins $100$\textcent\ $\to +100$.
+\item Alice $50$\textcent, Bob $25$\textcent: opposite, Bob wins $75$\textcent\ $\to -75$.
+\item Alice $25$\textcent, Bob $50$\textcent: opposite $\to -75$.
+\item Both $25$\textcent: same, Alice wins $50$\textcent\ $\to +50$.
+\end{itemize}
+This game has no saddle point --- the maximin is $-75$ and the minimax is $50$ --- which
+is the counterexample for Problem 1(c).
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Alice is deciding whether to go to a basketball game that her friend Jalen
+might be playing in. There is a $30\%$ chance he doesn't get to play, a $30\%$ chance he
+plays but they lose, and a $40\%$ chance he plays and they win.
+
+\[
+\begin{array}{c|c|c|c|}
+\phantom{|} & \text{doesn't play} & \text{plays}+\text{lose} & \text{plays}+\text{win} \\\hline
+\text{go to the game} & -10 & 2 & 7 \\\hline
+\text{stay home} & 10 & -5 & -3 \\\hline
+\end{array}
+\]
+
+Expected value of going: $\answer[tolerance=0.005]{0.4}$ \qquad
+Expected value of staying home: $\answer[tolerance=0.005]{0.3}$
+
+\smallskip
+Which should she choose?
+\begin{multipleChoice}
+\choice[correct]{Go to the game}
+\choice{Stay home}
+\end{multipleChoice}
+
+\begin{solution}
+\begin{align*}
+E(\text{go}) &= 0.30(-10) + 0.30(2) + 0.40(7) = -3.0 + 0.6 + 2.8 = 0.4,\\
+E(\text{stay home}) &= 0.30(10) + 0.30(-5) + 0.40(-3) = 3.0 - 1.5 - 1.2 = 0.3.
+\end{align*}
+Since $0.4 > 0.3$, Alice should go to the game --- though by the narrowest of margins.
+A small revision to any of her ratings would flip the recommendation, which is worth
+remembering: expected value always produces a definite answer, but not always a robust
+one.
+\end{solution}
+\end{prompt}
+\end{problem}
+
+\end{document}

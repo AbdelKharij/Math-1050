@@ -1,0 +1,238 @@
+\documentclass[12pt]{ximera}
+\title{Homework 6: Shapley-Shubik Power, Subsets, and Permutations}
+\begin{document}
+\begin{abstract}
+Sections 2.3--2.4: pivotal players in sequential coalitions and the Shapley-Shubik
+power distribution, counting coalitions and sequential coalitions, and using coalition
+\emph{types} to handle a system too large to enumerate by hand.
+\end{abstract}
+\maketitle
+
+\section*{Sections 2.3--2.4: Shapley-Shubik Power}
+
+In a \emph{sequential} coalition, players join one at a time. The \emph{pivotal}
+player is the one whose arrival first brings the running total up to the quota.
+
+\begin{problem}
+Consider the weighted voting system $[55:40,30,20,10]$ with players $A$, $B$, $C$, and
+$D$. There are $4! = 24$ sequential coalitions.
+
+\begin{prompt}
+\textbf{(a)} How many of the $24$ sequential coalitions have each player as the
+pivotal player?
+
+$A$: $\answer{10}$ \qquad $B$: $\answer{6}$ \qquad $C$: $\answer{6}$ \qquad $D$: $\answer{2}$
+
+\begin{hint}
+Take one sequential coalition at a time and keep a running total, stopping at the
+first player who brings it to $55$ or more. For example, in
+$\langle D, B, A, C\rangle$ the running totals are $10$, $40$, $80$ --- so $A$ is
+pivotal.
+\end{hint}
+
+\begin{solution}
+Working through all $24$ orderings and marking where the running total first reaches
+$55$:
+\begin{itemize}
+\item $A$ is pivotal in $10$ of them,
+\item $B$ in $6$,
+\item $C$ in $6$,
+\item $D$ in $2$.
+\end{itemize}
+These total $24$, exactly one pivotal player per sequential coalition. \checkmark
+
+$D$ is pivotal only in the two orderings $\langle B,C,D,A\rangle$ and
+$\langle C,B,D,A\rangle$ --- the cases where $B$ and $C$ arrive first (reaching $50$,
+just short) and $D$'s $10$ votes push the total to $60$.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Determine the Shapley-Shubik power distribution for this weighted voting
+system, as percentages rounded to one decimal place.
+
+$A$: $\answer[tolerance=0.05]{41.7}\%$ \qquad
+$B$: $\answer[tolerance=0.05]{25}\%$ \qquad
+$C$: $\answer[tolerance=0.05]{25}\%$ \qquad
+$D$: $\answer[tolerance=0.05]{8.3}\%$
+
+\begin{solution}
+Divide each pivotal count by the total of $24$:
+\[
+A: \frac{10}{24}\approx 41.7\%, \quad
+B: \frac{6}{24}=25\%, \quad
+C: \frac{6}{24}=25\%, \quad
+D: \frac{2}{24}\approx 8.3\%.
+\]
+
+Note that $B$ and $C$ have equal power ($25\%$ each) despite $B$ having $30$ votes and
+$C$ only $20$. And $D$, with $10$ votes --- a quarter of $A$'s $40$ --- holds only
+$8.3\%$ of the power against $A$'s $41.7\%$, a fifth as much. Power is not
+proportional to weight.
+\end{solution}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Consider a weighted voting system with $12$ players ($P_1,\ldots,P_{12}$).
+
+\begin{prompt}
+\textbf{(a)} What is the \emph{total} number of possible coalitions (subsets of
+players) in this system?
+
+$\answer{4096}$
+
+\begin{solution}
+Each of the $12$ players is independently either in or out, so there are
+\[ 2^{12} = 4096 \]
+subsets, counting the empty one.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} What is the number of possible \emph{nonempty} coalitions?
+
+$\answer{4095}$
+
+\begin{solution}
+Discard the empty coalition: $2^{12}-1 = 4095$.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} How many coalitions include $P_1$ and $P_2$ but not $P_3$?
+
+$\answer{512}$
+
+\begin{hint}
+Three of the twelve players have their membership already decided. How many players
+are still free to be in or out?
+\end{hint}
+
+\begin{solution}
+The membership of $P_1$, $P_2$, and $P_3$ is fixed, leaving the other $9$ players free:
+\[ 2^9 = 512. \]
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(d)} What is the total number of \emph{sequential} coalitions in this system?
+
+$\answer{479001600}$
+
+\begin{solution}
+A sequential coalition is an ordering of all $12$ players, so there are
+\[ 12! = 479{,}001{,}600 \]
+of them. This is why coalition \emph{types} matter --- enumerating half a billion
+orderings by hand is not an option.
+\end{solution}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+True story: when I was young, my household regularly voted on things like where to eat
+using a weighted voting system where each child had one vote, each adult had two
+votes, and a simple majority was sufficient to make a decision.
+
+For a household with two adults and three children, this system has $5!$ sequential
+coalitions, but we can use the shorthand \textbf{A} for `adult' and \textbf{C} for
+`child', since players within those roles are indistinguishable.
+
+\begin{prompt}
+\textbf{(a)} How many sequential coalition \emph{types} are there --- that is, how many
+ways are there to arrange two \textbf{A}'s and three \textbf{C}'s in a sequence?
+
+$\answer{10}$
+
+\begin{solution}
+Choose which $2$ of the $5$ positions hold the \textbf{A}'s:
+\[ C(5,2) = 10 \]
+arrangements.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} How many distinct sequential coalitions are there of each type, and how
+many are there altogether?
+
+Each type represents $\answer{12}$ distinct sequential coalitions, for a total of
+$\answer{120}$.
+
+\begin{hint}
+Within a type, the two adults could be in either order, and the three children in any
+order.
+\end{hint}
+
+\begin{solution}
+Within a given type, the two adults can be arranged in $2!=2$ ways and the three
+children in $3!=6$ ways, so each type covers
+\[ 2!\cdot 3! = 12 \]
+distinct sequential coalitions. Altogether $10 \times 12 = 120 = 5!$. \checkmark
+
+The total weight is $2+2+1+1+1 = 7$, so a simple majority means a quota of $q = 4$.
+Marking the pivotal role in each type:
+\[
+\begin{array}{ll}
+\langle A,A,C,C,C\rangle \to \textbf{A} &
+\langle C,A,C,A,C\rangle \to \textbf{C}\\
+\langle A,C,A,C,C\rangle \to \textbf{A} &
+\langle C,A,C,C,A\rangle \to \textbf{C}\\
+\langle A,C,C,A,C\rangle \to \textbf{C} &
+\langle C,C,A,A,C\rangle \to \textbf{A}\\
+\langle A,C,C,C,A\rangle \to \textbf{C} &
+\langle C,C,A,C,A\rangle \to \textbf{A}\\
+\langle C,A,A,C,C\rangle \to \textbf{A} &
+\langle C,C,C,A,A\rangle \to \textbf{A}
+\end{array}
+\]
+So an adult is pivotal in $6$ of the $10$ types, and a child in $4$.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} What is the pivotal count for an individual adult in this system?
+
+$\answer{36}$
+
+\begin{solution}
+Adults are pivotal in $6$ types, each covering $12$ distinct sequential coalitions,
+so the two adults are pivotal $6\times 12 = 72$ times between them. Split evenly:
+\[ 72 / 2 = 36 \]
+per adult.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(d)} What is the pivotal count for an individual child?
+
+$\answer{16}$
+
+\begin{solution}
+Children are pivotal in $4$ types, so $4\times 12 = 48$ sequential coalitions have a
+child pivotal. Split among the three children:
+\[ 48/3 = 16 \]
+each. As a check, $2(36) + 3(16) = 72 + 48 = 120$. \checkmark
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(e)} Determine the Shapley-Shubik power distribution for this five-player
+system, as percentages rounded to two decimal places.
+
+Each adult: $\answer[tolerance=0.005]{30}\%$ \qquad
+Each child: $\answer[tolerance=0.005]{13.33}\%$
+
+\begin{solution}
+\[
+\text{Adult}: \frac{36}{120}=30\%, \qquad \text{Child}: \frac{16}{120}\approx 13.33\%.
+\]
+Check: $2(30\%) + 3(13.33\%) = 60\% + 40\% = 100\%$. \checkmark
+
+An adult has twice a child's votes but well over twice a child's power: $30\%$ versus
+$13.33\%$, a ratio of $2.25$ to $1$. The two parents together hold $60\%$ of the
+power with only $4$ of the $7$ votes.
+\end{solution}
+\end{prompt}
+\end{problem}
+
+\end{document}

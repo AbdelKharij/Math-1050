@@ -1,0 +1,233 @@
+\documentclass[12pt]{ximera}
+\title{Homework 1: Preference Schedules, Plurality, and Borda Count}
+\begin{document}
+\begin{abstract}
+Sections 1.1--1.3: converting a preference schedule between formats, and tabulating an
+election by the Plurality method and by the Borda Count method --- which, as the second
+problem shows, need not agree.
+\end{abstract}
+\maketitle
+
+\section*{Sections 1.1--1.3: Ballots, Plurality, and Borda Count}
+
+\begin{problem}
+To determine the winner of this year's Hogwarts House Cup, Headmaster Umbridge has
+decided to use a preference ballot with her $20$ kittens as voters. Each ballot listed
+the candidates Gryffindor, Hufflepuff, Ravenclaw, and Slytherin, and preference was
+taken by the order each kitten stepped on the candidate names. These
+``printed-names format'' ballots were then organized into the preference schedule
+shown in Table 1.
+
+\begin{center}
+\begin{tabular}{c|ccccc}
+ & 6 & 5 & 5 & 3 & 1 \\\hline
+Gryffindor & 3rd & 2nd & 3rd & 2nd & 3rd \\
+Hufflepuff & 2nd & 1st & 4th & 1st & 1st \\
+Ravenclaw  & 1st & 4th & 1st & 3rd & 4th \\
+Slytherin  & 4th & 3rd & 2nd & 4th & 2nd
+\end{tabular}
+
+\smallskip
+Table 1. Preference schedule, printed-names format.
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} Rewrite the preference schedule in ``standard format'' --- that is, with
+1st, 2nd, 3rd, and 4th listed at the left and candidates written in for each ballot
+column. Use G, H, R, and S for the candidates.
+
+\begin{center}
+\begin{tabular}{c|ccccc}
+Preference & 6 & 5 & 5 & 3 & 1 \\\hline
+1st & $\answer{R}$ & $\answer{H}$ & $\answer{R}$ & $\answer{H}$ & $\answer{H}$ \\
+2nd & $\answer{H}$ & $\answer{G}$ & $\answer{S}$ & $\answer{G}$ & $\answer{S}$ \\
+3rd & $\answer{G}$ & $\answer{S}$ & $\answer{G}$ & $\answer{R}$ & $\answer{G}$ \\
+4th & $\answer{S}$ & $\answer{R}$ & $\answer{H}$ & $\answer{S}$ & $\answer{R}$
+\end{tabular}
+\end{center}
+
+\begin{hint}
+Work one column at a time. In the first column, which house was marked 1st? Which was
+marked 2nd? Read down the original table looking for the rank you want.
+\end{hint}
+
+\begin{solution}
+Each column of the original table lists, for each house, the rank that group of voters
+gave it. To convert, read each column and place each house in the row matching its
+rank.
+
+For the first column ($6$ voters): Ravenclaw was 1st, Hufflepuff 2nd, Gryffindor 3rd,
+Slytherin 4th --- so that column reads R, H, G, S. Repeating for the rest:
+\begin{center}
+\begin{tabular}{c|ccccc}
+Preference & 6 & 5 & 5 & 3 & 1 \\\hline
+1st & R & H & R & H & H \\
+2nd & H & G & S & G & S \\
+3rd & G & S & G & R & G \\
+4th & S & R & H & S & R
+\end{tabular}
+\end{center}
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Using the Plurality method, who wins this year's Hogwarts House Cup?
+
+\begin{multipleChoice}
+\choice{Gryffindor}
+\choice{Hufflepuff}
+\choice[correct]{Ravenclaw}
+\choice{Slytherin}
+\end{multipleChoice}
+
+How many first-place votes did the winner receive? $\answer{11}$
+
+\begin{solution}
+Plurality counts only first-place votes:
+\[
+\text{R}: 6+5 = 11, \qquad \text{H}: 5+3+1 = 9, \qquad \text{G}: 0, \qquad \text{S}: 0.
+\]
+Ravenclaw wins with $11$ of the $20$ first-place votes.
+
+Note that Gryffindor and Slytherin receive \emph{no} first-place votes at all, even
+though Gryffindor is ranked 2nd or 3rd on every single ballot. Plurality is blind to
+everything below the top line.
+\end{solution}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Table 2 gives the preference schedule for an election for Best Pickled Herring of
+Trollfjord and surrounding glaciers.
+
+\begin{center}
+\begin{tabular}{c|ccccc}
+Preference & 27 & 16 & 15 & 13 & 6 \\\hline
+1st & A & D & B & B & E \\
+2nd & B & E & D & D & C \\
+3rd & C & C & C & E & D \\
+4th & D & A & E & A & A \\
+5th & E & B & A & C & B
+\end{tabular}
+
+\smallskip
+Table 2. Preference schedule for Best Pickled Herring.
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} What was the total number of voters?
+
+$\answer{77}$
+
+\begin{solution}
+$27+16+15+13+6 = 77$ voters.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Using the Plurality method, which pickled herring wins the election?
+
+\begin{multipleChoice}
+\choice{A}
+\choice[correct]{B}
+\choice{C}
+\choice{D}
+\choice{E}
+\end{multipleChoice}
+
+\begin{solution}
+First-place votes: A gets $27$, B gets $15+13=28$, D gets $16$, E gets $6$, and C gets
+$0$. B wins with $28$.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Give the complete ranking of these pickled herrings by Plurality, along
+with each one's first-place vote count.
+
+1st place: $\answer{B}$ with $\answer{28}$ votes \qquad
+2nd: $\answer{A}$ with $\answer{27}$ \qquad
+3rd: $\answer{D}$ with $\answer{16}$
+
+\smallskip
+4th: $\answer{E}$ with $\answer{6}$ \qquad
+5th: $\answer{C}$ with $\answer{0}$
+
+\begin{solution}
+Sorting the first-place counts:
+\[ \text{B }28 > \text{A }27 > \text{D }16 > \text{E }6 > \text{C }0. \]
+The counts add to $77$, as they must. \checkmark
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(d)} Using the Borda Count method, which pickled herring wins the election?
+
+With $5$ candidates, a 1st-place vote is worth $5$ points, 2nd is worth $4$, and so on
+down to $1$ point for 5th.
+
+\begin{multipleChoice}
+\choice{A}
+\choice[correct]{B}
+\choice{C}
+\choice{D}
+\choice{E}
+\end{multipleChoice}
+
+The winner's Borda score is $\answer{270}$.
+
+\begin{hint}
+For each candidate, go column by column: multiply the number of voters in the column
+by the point value of that candidate's position in it, then add across all five
+columns.
+\end{hint}
+
+\begin{solution}
+Taking B as the example, column by column:
+\[
+\begin{array}{lll}
+\text{27 voters: B is 2nd} & 4\text{ pts} & 27\cdot 4 = 108\\
+\text{16 voters: B is 5th} & 1\text{ pt}  & 16\cdot 1 = 16\\
+\text{15 voters: B is 1st} & 5\text{ pts} & 15\cdot 5 = 75\\
+\text{13 voters: B is 1st} & 5\text{ pts} & 13\cdot 5 = 65\\
+\text{6 voters: B is 5th}  & 1\text{ pt}  & 6\cdot 1 = 6
+\end{array}
+\]
+which totals $108+16+75+65+6 = 270$.
+
+Carrying out the same computation for every candidate gives
+\[
+\text{B } 270, \quad \text{D } 264, \quad \text{A } 220, \quad \text{C } 211, \quad \text{E } 190.
+\]
+B wins the Borda count too. As a check, the scores total $1155 = 77\cdot 15$, since
+each ballot distributes $5+4+3+2+1=15$ points.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(e)} Give the complete ranking of these pickled herrings by Borda count, with
+each score.
+
+1st: $\answer{B}$ with $\answer{270}$ \qquad
+2nd: $\answer{D}$ with $\answer{264}$ \qquad
+3rd: $\answer{A}$ with $\answer{220}$
+
+\smallskip
+4th: $\answer{C}$ with $\answer{211}$ \qquad
+5th: $\answer{E}$ with $\answer{190}$
+
+\begin{solution}
+The Borda ranking is
+\[ \text{B } 270 > \text{D } 264 > \text{A } 220 > \text{C } 211 > \text{E } 190. \]
+
+Compare this with the Plurality ranking from part (c): B, A, D, E, C. The two methods
+agree on the winner but disagree everywhere else. Most strikingly, C finished
+\emph{last} under Plurality with zero first-place votes, but comes in 4th under Borda
+--- and ahead of E --- because C is ranked 2nd or 3rd on most ballots. A, meanwhile,
+drops from 2nd to 3rd: A has many first-place votes but is ranked dead last or nearly
+last by everyone else.
+\end{solution}
+\end{prompt}
+\end{problem}
+
+\end{document}

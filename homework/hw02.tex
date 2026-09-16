@@ -1,0 +1,214 @@
+\documentclass[12pt]{ximera}
+\title{Homework 2: Modified Borda and Plurality-with-Elimination}
+\begin{document}
+\begin{abstract}
+Sections 1.3--1.4: a modified Borda count with custom point values, Plurality-with-Elimination
+round by round, and what happens to the same election when ballots are truncated to
+the voters' top three choices.
+\end{abstract}
+\maketitle
+
+\section*{Sections 1.3--1.4: Modified Borda and Plurality-with-Elimination}
+
+\begin{problem}
+Table 1 shows the preference schedule for Best Album Covers at the Lakefront Music
+Fest. The candidates are Al, Bruce, Cheryl, and Doreen (A, B, C, D).
+
+\begin{center}
+\begin{tabular}{c|cccccc}
+Preference & 12 & 11 & 8 & 5 & 4 & 2 \\\hline
+1st & A & C & D & B & B & A \\
+2nd & B & B & A & C & D & D \\
+3rd & C & D & C & D & A & C \\
+4th & D & A & B & A & C & B
+\end{tabular}
+
+\smallskip
+Table 1. Preference schedule for Best Album Covers.
+\end{center}
+
+The festival uses a modified Borda count where 1st place votes are worth $7$ points,
+2nd place $5$ points, 3rd place $2$ points, and 4th place $1$ point.
+
+\begin{prompt}
+Find the complete ranking of the four best album covers, with each score.
+
+1st: $\answer{B}$ with $\answer{188}$ \qquad
+2nd: $\answer{A}$ with $\answer{162}$
+
+\smallskip
+3rd: $\answer{C}$ with $\answer{150}$ \qquad
+4th: $\answer{D}$ with $\answer{130}$
+
+\begin{hint}
+The method is the same as an ordinary Borda count --- only the point values change.
+Go candidate by candidate through all six columns.
+\end{hint}
+
+\begin{solution}
+Taking B as a worked example:
+\[
+\begin{array}{lll}
+\text{12 voters: B is 2nd} & 5\text{ pts} & 60\\
+\text{11 voters: B is 2nd} & 5\text{ pts} & 55\\
+\text{8 voters: B is 4th}  & 1\text{ pt}  & 8\\
+\text{5 voters: B is 1st}  & 7\text{ pts} & 35\\
+\text{4 voters: B is 1st}  & 7\text{ pts} & 28\\
+\text{2 voters: B is 4th}  & 1\text{ pt}  & 2
+\end{array}
+\]
+for a total of $188$. Doing the same for the others gives
+\[ \text{B } 188 > \text{A } 162 > \text{C } 150 > \text{D } 130. \]
+As a check, the four scores total $630 = 42\cdot 15$, since each of the $42$ ballots
+hands out $7+5+2+1=15$ points.
+
+Note that B wins despite having only $9$ first-place votes to A's $14$ --- the modified
+weights still reward B's many second-place finishes.
+\end{solution}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Table 2 gives a preference schedule for election to the British Cheese Board.
+
+\begin{center}
+\begin{tabular}{c|cccccc}
+Preference & 22 & 15 & 11 & 10 & 6 & 2 \\\hline
+1st & A & E & C & E & B & A \\
+2nd & B & B & B & D & C & E \\
+3rd & C & C & D & C & A & D \\
+4th & D & D & E & A & D & B \\
+5th & E & A & A & B & E & C
+\end{tabular}
+
+\smallskip
+Table 2. Preference schedule for the British Cheese Board.
+\end{center}
+
+\begin{prompt}
+Using the Plurality-with-Elimination method, find the winner and the complete ranking.
+Record the vote totals in each round.
+
+\textbf{Round 1:}
+A: $\answer{24}$ \quad B: $\answer{6}$ \quad C: $\answer{11}$ \quad D: $\answer{0}$ \quad E: $\answer{25}$
+
+\smallskip
+Eliminated in round 1: $\answer{D}$
+
+\smallskip
+\textbf{Round 2:} A: $\answer{24}$ \quad B: $\answer{6}$ \quad C: $\answer{11}$ \quad E: $\answer{25}$ \qquad
+Eliminated: $\answer{B}$
+
+\smallskip
+\textbf{Round 3:} A: $\answer{24}$ \quad C: $\answer{17}$ \quad E: $\answer{25}$ \qquad
+Eliminated: $\answer{C}$
+
+\smallskip
+\textbf{Round 4:} A: $\answer{30}$ \quad E: $\answer{36}$
+
+\smallskip
+Winner: $\answer{E}$
+
+\begin{hint}
+When a candidate is eliminated, their votes transfer to whichever remaining candidate
+is highest on each of those ballots. Nobody's ballot is discarded here, so every round
+should still total $66$.
+\end{hint}
+
+\begin{solution}
+There are $66$ voters.
+
+\textbf{Round 1.} First-place votes: A $= 22+2 = 24$, E $= 15+10 = 25$, C $= 11$,
+B $= 6$, D $= 0$. D has the fewest and is eliminated --- D receives no first-place
+votes at all.
+
+\textbf{Round 2.} Removing D changes nobody's top choice, so the counts are unchanged:
+A $24$, E $25$, C $11$, B $6$. B is eliminated.
+
+\textbf{Round 3.} The $6$ voters whose first choice was B had C second, so those $6$
+votes go to C: C $= 11+6 = 17$. Now A $24$, E $25$, C $17$. C is eliminated.
+
+\textbf{Round 4.} C's $17$ votes split: the $11$-voter column ranked D, E, A after C,
+and with D gone those go to E; the $6$-voter column ranked A next among survivors, so
+those go to A. That gives
+\[ \text{A} = 24+6 = 30, \qquad \text{E} = 25+11 = 36. \]
+E wins.
+
+The complete ranking, in reverse order of elimination, is
+\[ \text{E},\ \text{A},\ \text{C},\ \text{B},\ \text{D}. \]
+\end{solution}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Suppose the voters in the British Cheese Board election were only asked about their top
+three choices, giving the schedule in Table 3 (with no other change).
+
+\begin{center}
+\begin{tabular}{c|cccccc}
+Preference & 22 & 15 & 11 & 10 & 6 & 2 \\\hline
+1st & A & E & C & E & B & A \\
+2nd & B & B & B & D & C & E \\
+3rd & C & C & D & C & A & D
+\end{tabular}
+
+\smallskip
+Table 3. Truncated preference schedule.
+\end{center}
+
+\begin{prompt}
+Using truncated Plurality-with-Elimination, find the winner and complete ranking,
+noting any exhausted ballots.
+
+\textbf{Round 1:} A: $\answer{24}$ \quad B: $\answer{6}$ \quad C: $\answer{11}$ \quad
+D: $\answer{0}$ \quad E: $\answer{25}$ \qquad Eliminated: $\answer{D}$
+
+\smallskip
+\textbf{Round 2:} A: $\answer{24}$ \quad B: $\answer{6}$ \quad C: $\answer{11}$ \quad
+E: $\answer{25}$ \qquad Eliminated: $\answer{B}$
+
+\smallskip
+\textbf{Round 3:} A: $\answer{24}$ \quad C: $\answer{17}$ \quad E: $\answer{25}$
+\qquad Eliminated: $\answer{C}$
+
+\smallskip
+\textbf{Round 4:} A: $\answer{30}$ \quad E: $\answer{25}$ \quad
+exhausted ballots: $\answer{11}$
+
+\smallskip
+Winner: $\answer{A}$
+
+\begin{hint}
+A ballot becomes \emph{exhausted} when every candidate it listed has been eliminated ---
+it then stops counting entirely, so later rounds may total fewer than $66$ votes.
+\end{hint}
+
+\begin{solution}
+The first three rounds are identical to the full election, because the eliminations of
+D, B, and C all resolve within the voters' top three choices.
+
+\textbf{Round 4} is where truncation bites. With B, C, and D all eliminated, look at
+what each column has left:
+\begin{itemize}
+\item $22$ voters (A, B, C): A survives $\to$ A.
+\item $15$ voters (E, B, C): E survives $\to$ E.
+\item $11$ voters (C, B, D): \emph{all three} are eliminated $\to$ ballot exhausted.
+\item $10$ voters (E, D, C): E survives $\to$ E.
+\item $6$ voters (B, C, A): A survives $\to$ A.
+\item $2$ voters (A, E, D): A survives $\to$ A.
+\end{itemize}
+So A $= 22+6+2 = 30$, E $= 15+10 = 25$, and $11$ ballots are exhausted. Only $55$
+votes still count, and \textbf{A wins}.
+
+The complete ranking is A, E, C, B, D.
+
+This is the whole point of the problem: truncating the ballots \emph{changed the
+winner} from E to A. The $11$ voters who ranked C first had E fourth on their full
+ballots, and in the complete election those votes carried E to victory. Once those
+voters were only allowed three choices, their ballots fell out of the count entirely
+and A won instead.
+\end{solution}
+\end{prompt}
+\end{problem}
+
+\end{document}

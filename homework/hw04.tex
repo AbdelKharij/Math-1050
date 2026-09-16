@@ -1,0 +1,234 @@
+\documentclass[12pt]{ximera}
+\title{Homework 4: Weighted Voting Systems and Banzhaf Power}
+\begin{document}
+\begin{abstract}
+Sections 2.1--2.2: which bracket notations describe a legitimate weighted voting
+system, when two systems are equivalent, dummies, and computing a Banzhaf power
+distribution from the critical players in each winning coalition.
+\end{abstract}
+\maketitle
+
+\section*{Sections 2.1--2.2: Weighted Voting and Banzhaf Power}
+
+Recall the quota restrictions: in $[q: w_1, w_2, \ldots, w_n]$ the quota $q$ must be
+\emph{more than half} of the total weight and \emph{no more than} the total weight. A
+player whose weight alone meets the quota is a \emph{dictator}.
+
+\begin{problem}
+Determine whether each of the following is a valid weighted voting system, based on
+the quota restrictions and a requirement of no dictators.
+
+\begin{prompt}
+\textbf{(a)} $[21:6,5,4,3,2]$
+
+\begin{multipleChoice}
+\choice{Valid}
+\choice[correct]{Not valid --- the quota is larger than the total weight}
+\choice{Not valid --- the quota is too small}
+\choice{Not valid --- there is a dictator}
+\end{multipleChoice}
+
+\begin{solution}
+The total weight is $6+5+4+3+2 = 20$, but the quota is $21 > 20$. No coalition, not
+even all five players voting together, could ever reach the quota, so nothing could
+ever pass. Not valid.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} $[7:8,3,1,1]$
+
+\begin{multipleChoice}
+\choice{Valid}
+\choice{Not valid --- the quota is larger than the total weight}
+\choice{Not valid --- the quota is too small}
+\choice[correct]{Not valid --- there is a dictator}
+\end{multipleChoice}
+
+\begin{solution}
+The total weight is $8+3+1+1 = 13$, and the quota $q=7$ does satisfy
+$6.5 < 7 \le 13$, so the quota itself is fine.
+
+The problem is the first player: their weight of $8$ already meets the quota of $7$
+all by itself. They can pass any motion regardless of what anyone else does, which
+makes them a dictator (and makes the other three players dummies). Not valid.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} $[9:8,4,3,2,1]$
+
+\begin{multipleChoice}
+\choice{Valid}
+\choice{Not valid --- the quota is larger than the total weight}
+\choice[correct]{Not valid --- the quota is not more than half the total weight}
+\choice{Not valid --- there is a dictator}
+\end{multipleChoice}
+
+\begin{hint}
+Add up the weights and compare the quota with half of that total. What could go wrong
+if the quota were exactly half?
+\end{hint}
+
+\begin{solution}
+The total weight is $8+4+3+2+1 = 18$, and half of that is $9$. The quota must be
+\emph{strictly} more than half, but here $q = 9$ is exactly half. Not valid.
+
+The reason the restriction is strict: with $q=9$, the coalition $\set{8,1}$ has weight
+$9$ and wins --- but so does the coalition of everyone else, $\set{4,3,2}$, which also
+has weight $9$. Two opposing coalitions could both pass their own contradictory
+motions at the same time.
+\end{solution}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Two weighted voting systems are \emph{equivalent} if and only if they have the same
+number of players and the same winning coalitions.
+
+Consider the weighted voting system $[8:5,3,2,1]$, with players A, B, C, and D.
+
+\begin{prompt}
+\textbf{(a)} Is this weighted voting system equivalent to $[2:1,1,0,0]$?
+
+\begin{multipleChoice}
+\choice{Yes}
+\choice[correct]{No}
+\end{multipleChoice}
+
+\begin{hint}
+In $[2:1,1,0,0]$, a coalition wins exactly when it contains both A and B. Can you find
+a winning coalition in $[8:5,3,2,1]$ that does \emph{not} contain B?
+\end{hint}
+
+\begin{solution}
+No. In $[2:1,1,0,0]$ only A and B have any weight, so a coalition wins precisely when
+it contains \emph{both} A and B.
+
+In $[8:5,3,2,1]$ the winning coalitions (those with weight at least $8$) are
+\[
+\set{A,B}=8,\quad \set{A,B,C}=10,\quad \set{A,B,D}=9,\quad \set{A,B,C,D}=11,\quad
+\set{A,C,D}=8.
+\]
+The last one is the counterexample: $\set{A,C,D}$ has weight $5+2+1=8$ and wins
+\emph{without} B. In $[2:1,1,0,0]$ that same coalition has weight $1$ and loses.
+
+The two systems have different winning coalitions, so they are not equivalent.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Are there any dummies in $[8:5,3,2,1]$?
+
+\begin{multipleChoice}
+\choice{Yes --- D is a dummy}
+\choice{Yes --- C and D are both dummies}
+\choice[correct]{No --- every player is critical in at least one winning coalition}
+\end{multipleChoice}
+
+\begin{solution}
+No. A dummy is a player who is never critical in any winning coalition.
+
+The coalition $\set{A,C,D}$ settles it for both of the small players. Its weight is
+exactly $8$, so removing either C or D drops it to $6$ or $7$ and it loses. Both C and
+D are therefore critical in that coalition, and neither is a dummy.
+
+(A and B are clearly not dummies either --- both are critical in $\set{A,B}$.)
+\end{solution}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+A law firm is run by four partners --- A, B, C, and D --- where A is the senior
+partner. Decisions can be made by agreement among any three partners, but they can
+also be made by the senior partner with any one other partner's support.
+
+\begin{prompt}
+\textbf{(a)} Represent this system using bracket notation, giving the three junior
+partners $1$ vote each.
+
+$[\answer{3} : \answer{2}, 1, 1, 1]$
+
+\begin{hint}
+Let A's weight be $w$ and the quota be $q$. Write down what must be true: any three
+partners win, two juniors alone do not, A plus one other wins, and A alone does not.
+\end{hint}
+
+\begin{solution}
+Let A have weight $w$ and let the quota be $q$. The conditions are:
+\begin{itemize}
+\item Any three partners win. In particular $\set{B,C,D}$ has weight $3$, so $q\le 3$.
+\item Two juniors alone must lose: $\set{B,C}$ has weight $2$, so $q > 2$.
+\end{itemize}
+Together these force $q = 3$. Then:
+\begin{itemize}
+\item A with one other partner wins: $w+1 \ge 3$, so $w \ge 2$.
+\item A alone must not win: $w < 3$.
+\end{itemize}
+So $w = 2$, and the system is $[3:2,1,1,1]$.
+
+Check the quota restriction: the total weight is $5$, and $2.5 < 3 \le 5$. \checkmark
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} How many winning coalitions are there in this system?
+
+$\answer{8}$
+
+\begin{solution}
+The winning coalitions (weight at least $3$) are
+\[
+\set{A,B},\ \set{A,C},\ \set{A,D},\ \set{A,B,C},\ \set{A,B,D},\ \set{A,C,D},\
+\set{B,C,D},\ \set{A,B,C,D},
+\]
+which is $8$ coalitions. Marking the critical players in each --- those whose removal
+would make the coalition lose:
+\[
+\begin{array}{ll}
+\set{A,B}=3: & \text{both A and B critical}\\
+\set{A,C}=3: & \text{both A and C critical}\\
+\set{A,D}=3: & \text{both A and D critical}\\
+\set{A,B,C}=4: & \text{only A critical}\\
+\set{A,B,D}=4: & \text{only A critical}\\
+\set{A,C,D}=4: & \text{only A critical}\\
+\set{B,C,D}=3: & \text{all three of B, C, D critical}\\
+\set{A,B,C,D}=5: & \text{nobody critical}
+\end{array}
+\]
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Determine the Banzhaf Power Distribution of this law firm. Give each
+share as a percentage, rounded to one decimal place.
+
+A: $\answer[tolerance=0.05]{50}\%$ \qquad
+B: $\answer[tolerance=0.05]{16.7}\%$ \qquad
+C: $\answer[tolerance=0.05]{16.7}\%$ \qquad
+D: $\answer[tolerance=0.05]{16.7}\%$
+
+\begin{hint}
+Count how many times each player is critical across all winning coalitions, then
+divide by the grand total of critical counts.
+\end{hint}
+
+\begin{solution}
+From the list in part (b), count each player's critical appearances:
+\[
+\text{A}: 6, \qquad \text{B}: 2, \qquad \text{C}: 2, \qquad \text{D}: 2,
+\]
+for a total critical count of $12$. The Banzhaf power distribution is therefore
+\[
+\text{A}: \frac{6}{12}=50\%, \qquad
+\text{B}=\text{C}=\text{D}: \frac{2}{12}=16.7\%.
+\]
+(These total $100\%$. \checkmark)
+
+The senior partner holds exactly half the power with only $40\%$ of the raw votes ---
+Banzhaf power is not proportional to weight.
+\end{solution}
+\end{prompt}
+\end{problem}
+
+\end{document}

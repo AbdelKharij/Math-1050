@@ -1,0 +1,452 @@
+\documentclass[12pt]{ximera}
+\title{Exam 3}
+\begin{document}
+\begin{abstract}
+Exam 3, covering Chapter 3: matching fair division methods to continuous and discrete
+situations, the method of markers on a candy array, sealed bids applied to household
+chores (where every value is negative), and a lone-divider sundae that ends in a
+standoff.
+\end{abstract}
+\maketitle
+
+\section*{Exam 3}
+
+A useful formula throughout:
+\[
+\text{value of a mixed share} = (\text{proportion of asset 1})\cdot(\text{value of asset 1})
++ (\text{proportion of asset 2})\cdot(\text{value of asset 2}).
+\]
+
+\begin{problem}
+Identify which fair division methods could possibly apply to each situation.
+
+\begin{prompt}
+\textbf{(a)} Three siblings need to fairly divide the land from their grandpa's ranch
+among themselves.
+
+\begin{selectAll}
+\choice[correct]{Lone-Divider Method}
+\choice{Sealed Bids Method}
+\choice[correct]{Lone-Chooser Method}
+\choice{Method of Markers}
+\end{selectAll}
+
+\begin{hint}
+Is land continuous or discrete? Which two of these methods are built for each kind of
+asset?
+\end{hint}
+
+\begin{solution}
+Land is a \emph{continuous} asset --- it can be divided into pieces of any size --- so
+the continuous methods apply: \textbf{Lone-Divider} and \textbf{Lone-Chooser}.
+
+Sealed Bids and the Method of Markers are both designed for \emph{discrete} assets:
+collections of indivisible objects.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Four business partners are separating from a shared business and need to
+divide $550$ owned apartments and other properties among them.
+
+\begin{selectAll}
+\choice{Lone-Divider Method}
+\choice[correct]{Sealed Bids Method}
+\choice{Lone-Chooser Method}
+\choice[correct]{Method of Markers}
+\end{selectAll}
+
+\begin{solution}
+Individual apartments and properties are \emph{discrete} --- you cannot hand someone
+$40\%$ of an apartment building in this setting --- so the discrete methods apply:
+\textbf{Sealed Bids} and the \textbf{Method of Markers}.
+
+With $550$ items the Method of Markers is especially well suited, since it needs many
+items of comparatively small individual value in order to work well. Sealed Bids works
+too, though it requires the partners to have enough cash on hand to settle up.
+\end{solution}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+In which of the following fair division methods is it possible for \emph{every} player
+to come out with \emph{greater} than their minimum fair share?
+
+\begin{selectAll}
+\choice{Lone-Divider Method}
+\choice[correct]{Sealed Bids Method}
+\choice{Lone-Chooser Method}
+\choice[correct]{Method of Markers}
+\end{selectAll}
+
+\begin{hint}
+In the divider-based methods, think about what the \emph{divider} ends up with. Can the
+divider ever do better than exactly a fair share?
+\end{hint}
+
+\begin{solution}
+\textbf{Sealed Bids} and the \textbf{Method of Markers}.
+
+In \emph{Sealed Bids}, each player is first brought to exactly their fair share, and
+then the surplus --- which exists whenever the players value the items differently ---
+is split equally among them. Every player ends strictly better off than a fair share.
+Homework 8 is a worked example: all four roommates finished \$52.50 ahead.
+
+In the \emph{Method of Markers}, every player receives a segment they value at a fair
+share or more, and the leftover items are then distributed among them, pushing
+everyone above the line.
+
+The two divider-based methods cannot do this, because of the \textbf{divider}. The
+divider cuts the asset into pieces they consider exactly equal, so whichever piece they
+end up with is worth exactly $\frac1N$ to them --- never more. The choosers may do
+better, but the divider cannot, so ``every player'' fails.
+\end{solution}
+\end{problem}
+
+\begin{problem}
+In the following discrete system with four players, we use the Method of Markers. The
+$21$ candies are laid out in an array, and each player's three markers are shown
+beneath it.
+
+\begin{center}
+\includegraphics[width=\textwidth]{candies.jpg}
+\end{center}
+
+The markers fall as follows:
+\[
+\begin{array}{ll}
+\text{Player A}: & 4,\ 9,\ 17\\
+\text{Player B}: & 5,\ 11,\ 16\\
+\text{Player C}: & 6,\ 10,\ 15\\
+\text{Player D}: & 6,\ 12,\ 16
+\end{array}
+\]
+
+\begin{prompt}
+Which items will go to each player, and which items will be surplus?
+
+Round 1 goes to player $\answer{A}$, who takes items 1--$\answer{4}$.
+
+\smallskip
+Round 2 goes to player $\answer{C}$, who takes items 5--$\answer{10}$.
+
+\smallskip
+Round 3 is a tie between players B and D at marker $\answer{16}$. The winner of the
+tiebreak takes items 11--16, and the remaining player takes items
+$\answer{17}$--21.
+
+\smallskip
+The surplus consists of $\answer{0}$ items.
+
+\begin{hint}
+In each round, compare only the relevant markers (first markers in round 1, second in
+round 2, and so on) among the players not yet served, and find the leftmost one lying
+past the items already distributed.
+\end{hint}
+
+\begin{solution}
+\textbf{Round 1.} First markers are $A_1=4$, $B_1=5$, $C_1=6$, $D_1=6$. A's is
+leftmost, so \textbf{A takes items 1--4} and leaves.
+
+\textbf{Round 2.} Among B, C, and D, the second markers are $B_2=11$, $C_2=10$,
+$D_2=12$. C's is leftmost, so \textbf{C takes items 5--10}.
+
+\textbf{Round 3.} Only B and D remain, and their third markers are both at $16$ --- a
+genuine tie, which is resolved by a coin flip or other random tiebreak. The winner
+takes items \textbf{11--16}, and the other player, being last, takes everything past
+their final marker: items \textbf{17--21}.
+
+\textbf{Surplus: none.} The four segments $1$--$4$, $5$--$10$, $11$--$16$, and
+$17$--$21$ cover all $21$ candies with nothing left over.
+
+That is unusual --- the Method of Markers normally leaves a surplus --- and it happens
+here precisely because $B_3$ and $D_3$ landed on the same marker. Had those two markers
+been even one position apart, the candies between them would have been surplus.
+\end{solution}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Jake and their partner Jessie live together and are using the method of sealed bids to
+split responsibilities for chores. They assign \emph{negative} values to each chore,
+based on how much they would be willing to pay the other to do it instead. A
+less-negative value means the task is less repulsive to that person.
+
+\begin{center}
+\begin{tabular}{|r|c|c|}\hline
+ & \textbf{Jake} & \textbf{Jessie} \\\hline
+Run the dishwasher & $-\$2$ & $-\$3$ \\
+Do the laundry & $-\$3$ & $-\$5$ \\
+Plan meals for the week & $-\$4$ & $-\$9$ \\
+Shop for groceries & $-\$2$ & $-\$8$ \\
+Take out the trash & $-\$3$ & $-\$2$ \\
+Clean the kitchen & $-\$5$ & $-\$6$ \\
+Clean the bathroom & $-\$8$ & $-\$4$ \\
+Water the houseplants & $-\$7$ & $-\$1$ \\\hline
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} Based on the listed bids, who will be assigned each task?
+
+Dishwasher: $\answer{Jake}$ \quad Laundry: $\answer{Jake}$ \quad
+Meal planning: $\answer{Jake}$ \quad Groceries: $\answer{Jake}$
+
+\smallskip
+Trash: $\answer{Jessie}$ \quad Kitchen: $\answer{Jake}$ \quad
+Bathroom: $\answer{Jessie}$ \quad Houseplants: $\answer{Jessie}$
+
+\begin{hint}
+Each item still goes to the \emph{highest} bidder. With negative numbers, the highest
+bid is the least negative one --- the person who minds the chore least.
+\end{hint}
+
+\begin{solution}
+Each chore goes to whoever values it highest, which with negative numbers means
+whoever minds it least:
+\[
+\begin{array}{lll}
+\text{Dishwasher} & -2 > -3 & \text{Jake}\\
+\text{Laundry} & -3 > -5 & \text{Jake}\\
+\text{Meal planning} & -4 > -9 & \text{Jake}\\
+\text{Groceries} & -2 > -8 & \text{Jake}\\
+\text{Trash} & -2 > -3 & \text{Jessie}\\
+\text{Kitchen} & -5 > -6 & \text{Jake}\\
+\text{Bathroom} & -4 > -8 & \text{Jessie}\\
+\text{Houseplants} & -1 > -7 & \text{Jessie}
+\end{array}
+\]
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} What are Jake's and Jessie's fair shares in this system? (These will be
+negative.)
+
+Jake: $\answer{-17}$ \qquad Jessie: $\answer{-19}$
+
+\begin{solution}
+Jake's total valuation of all the chores is
+\[ -2-3-4-2-3-5-8-7 = -\$34, \]
+so his fair share is $-34/2 = -\$17$.
+
+Jessie's total is
+\[ -3-5-9-8-2-6-4-1 = -\$38, \]
+so her fair share is $-38/2 = -\$19$.
+
+A fair share here means each should end up doing chores they find no worse than that
+amount of unpleasantness.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Compare part (b) with each partner's perceived value of the tasks they've
+been assigned. What do they each owe, or what are they owed, in the initial settlement?
+
+Jake's allotment value: $\answer{-16}$ \qquad Jessie's allotment value: $\answer{-7}$
+
+\smallskip
+Initial settlement --- Jake pays $\$\answer{1}$ and Jessie pays $\$\answer{12}$.
+
+\begin{solution}
+Jake takes the dishwasher, laundry, meal planning, groceries, and kitchen:
+\[ -2-3-4-2-5 = -\$16. \]
+Jessie takes the trash, bathroom, and houseplants:
+\[ -2-4-1 = -\$7. \]
+
+Compare each with the fair share:
+\begin{itemize}
+\item Jake: $-16$ versus a fair share of $-17$. His chore load is $\$1$ \emph{less}
+      unpleasant than fair, so he pays $\$1$ into the system.
+\item Jessie: $-7$ versus a fair share of $-19$. Her load is $\$12$ less unpleasant
+      than fair, so she pays $\$12$ in.
+\end{itemize}
+Both partners come out ahead of their fair share on chores alone, so both pay in ---
+which is what creates the surplus.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(d)} What is the surplus after the initial settlement?
+
+$\$\answer{13}$ \qquad and each partner's half is $\$\answer{6.50}$
+
+\begin{solution}
+Jake pays \$1 and Jessie pays \$12, so the system holds
+\[ \$1 + \$12 = \$13, \]
+and nothing is paid out. Split evenly, that is $\$13/2 = \$6.50$ each.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(e)} After splitting the surplus equally, how much money is each partner making
+or paying? Enter a positive number for money received, negative for money paid.
+
+Jake: $\answer{5.50}$ \qquad Jessie: $\answer{-5.50}$
+
+\begin{solution}
+Subtract each partner's \$6.50 share of the surplus from what they owed:
+\begin{itemize}
+\item Jake: paid \$1, receives \$6.50 back, so he nets $+\$5.50$ --- he \emph{receives}
+      \$5.50.
+\item Jessie: paid \$12, receives \$6.50 back, so she nets $-\$5.50$ --- she
+      \emph{pays} \$5.50.
+\end{itemize}
+
+So Jessie pays Jake \$5.50 a week. The final arrangement:
+\begin{itemize}
+\item \textbf{Jake} runs the dishwasher, does laundry, plans meals, shops for
+      groceries, and cleans the kitchen, and receives \$5.50.
+\item \textbf{Jessie} takes out the trash, cleans the bathroom, waters the houseplants,
+      and pays \$5.50.
+\end{itemize}
+Check: Jake's position is $-16 + 5.50 = -\$10.50$ against a fair share of $-\$17$, so he
+is \$6.50 ahead. Jessie's is $-7 - 5.50 = -\$12.50$ against $-\$19$, also \$6.50 ahead.
+\checkmark
+\end{solution}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Jake, Adam, and Joel want to share a $12$-inch ultra-sundae made up of half vanilla and
+half chocolate ice cream, using the lone-divider method. Adam will be the divider.
+\begin{itemize}
+\item Adam values the chocolate three times as much as the vanilla;
+\item Jake values the vanilla twice as much as the chocolate;
+\item Joel has no preference of one over the other.
+\end{itemize}
+
+\begin{prompt}
+\textbf{(a)} Complete the chart with each player's value system for this sundae, as
+fractions of the whole.
+
+Adam --- Vanilla: $\answer{1/4}$, \quad Chocolate: $\answer{3/4}$
+
+\smallskip
+Jake --- Vanilla: $\answer{2/3}$, \quad Chocolate: $\answer{1/3}$
+
+\smallskip
+Joel --- Vanilla: $\answer{1/2}$, \quad Chocolate: $\answer{1/2}$
+
+\begin{hint}
+``Values chocolate three times as much as vanilla'' means the two halves are in a
+$1:3$ ratio of value. The two fractions must add to $1$.
+\end{hint}
+
+\begin{solution}
+\textbf{Adam}: chocolate is worth $3$ times vanilla, a $1:3$ split, so vanilla is
+$\frac14$ and chocolate $\frac34$.
+
+\textbf{Jake}: vanilla is worth twice the chocolate, a $2:1$ split, so vanilla is
+$\frac23$ and chocolate $\frac13$.
+
+\textbf{Joel}: no preference, so $\frac12$ each.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Describe the three shares Adam will make, as a portion of Vanilla (V) plus
+a portion of Chocolate (C).
+
+$s_1$ = all of V $+$ $\answer{1/9}$ of C \qquad
+$s_2 = \answer{4/9}$ of C \qquad
+$s_3 = \answer{4/9}$ of C
+
+\begin{hint}
+Adam must make three shares each worth $\frac13$ to him. All of the vanilla is worth
+only $\frac14$ --- less than $\frac13$ --- so the first cut has to reach into the
+chocolate.
+\end{hint}
+
+\begin{solution}
+Adam needs three shares worth $\frac13$ each in his own values, where V $= \frac14$ and
+C $= \frac34$.
+
+All of the vanilla is worth only $\frac14 < \frac13$, so $s_1$ must include all of V
+plus some chocolate. The shortfall is
+\[ \tfrac13 - \tfrac14 = \tfrac{1}{12}, \]
+and since all of C is worth $\frac34$, the fraction of C needed is
+\[ \frac{1/12}{3/4} = \frac19. \]
+So $s_1 =$ all of V $+\ \frac19$ of C.
+
+That leaves $\frac89$ of the chocolate, worth $\frac89 \cdot \frac34 = \frac23$ to
+Adam, which splits into two shares of $\frac13$ each:
+\[ s_2 = s_3 = \tfrac49 \text{ of C}. \]
+Check: $\frac19+\frac49+\frac49 = 1$, so all the chocolate is accounted for. \checkmark
+
+(On the $12$-inch sundae, that is a cut $\frac23$ of an inch into the chocolate, then
+two equal $\frac{8}{3}$-inch pieces.)
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} What fraction of the whole does each player consider each share to be
+worth? Give your answers as fractions.
+
+Adam --- $s_1: \answer{1/3}$, \quad $s_2: \answer{1/3}$, \quad $s_3: \answer{1/3}$
+
+\smallskip
+Jake --- $s_1: \answer{19/27}$, \quad $s_2: \answer{4/27}$, \quad $s_3: \answer{4/27}$
+
+\smallskip
+Joel --- $s_1: \answer{5/9}$, \quad $s_2: \answer{2/9}$, \quad $s_3: \answer{2/9}$
+
+\begin{solution}
+Apply the mixed-share formula with each player's own values.
+
+\textbf{Adam} ($V=\frac14$, $C=\frac34$):
+\[ s_1 = \tfrac14 + \tfrac19\cdot\tfrac34 = \tfrac14+\tfrac{1}{12} = \tfrac13,
+\qquad s_2 = s_3 = \tfrac49\cdot\tfrac34 = \tfrac13. \]
+As the divider, all three are equal for him --- as they must be.
+
+\textbf{Jake} ($V=\frac23$, $C=\frac13$):
+\[ s_1 = \tfrac23 + \tfrac19\cdot\tfrac13 = \tfrac{18}{27}+\tfrac{1}{27} = \tfrac{19}{27} \approx 70.4\%, \]
+\[ s_2 = s_3 = \tfrac49\cdot\tfrac13 = \tfrac{4}{27} \approx 14.8\%. \]
+
+\textbf{Joel} ($V=\frac12$, $C=\frac12$):
+\[ s_1 = \tfrac12 + \tfrac19\cdot\tfrac12 = \tfrac{10}{18} = \tfrac59 \approx 55.6\%,
+\qquad s_2 = s_3 = \tfrac49\cdot\tfrac12 = \tfrac29 \approx 22.2\%. \]
+
+Each row totals $1$. \checkmark
+
+A fair share is $\frac13 \approx 33.3\%$, so the bid lists are: Adam $\set{s_1,s_2,s_3}$,
+Jake $\set{s_1}$, Joel $\set{s_1}$.
+\end{solution}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(d)} What is one fair division of the sundae among the three friends?
+
+\begin{freeResponse}
+\end{freeResponse}
+
+\begin{hint}
+Look at the bid lists from part (c). Can Jake and Joel both be satisfied with whole
+shares?
+\end{hint}
+
+\begin{solution}
+\textbf{There is no fair division using the shares as cut} --- this is a standoff. Both
+Jake and Joel consider \emph{only} $s_1$ to be worth a fair share, and there is just one
+$s_1$.
+
+The standard resolution is to settle the uncontested player first and re-divide the
+rest:
+\begin{enumerate}
+\item Give $s_2$ (or $s_3$) to \textbf{Adam}. As the divider he values every share at
+      exactly $\frac13$, so this is fair for him.
+\item Recombine the remaining two shares --- $s_1$ and $s_3$ --- into a single lot, and
+      have \textbf{Jake and Joel} divide it between themselves using divider-chooser.
+\end{enumerate}
+
+Check that this works. Jake values $s_1 + s_3$ at
+$\frac{19}{27}+\frac{4}{27} = \frac{23}{27} \approx 85.2\%$ of the sundae, and Joel
+values it at $\frac59 + \frac29 = \frac79 \approx 77.8\%$. Divider-chooser guarantees
+each of them at least half of what they think the lot is worth --- at least $42.6\%$ for
+Jake and at least $38.9\%$ for Joel. Both clear the $33.3\%$ they need, so every player
+ends up with a fair share.
+\end{solution}
+\end{prompt}
+\end{problem}
+
+\end{document}
