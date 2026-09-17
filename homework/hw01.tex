@@ -51,7 +51,7 @@ Work one column at a time. In the first column, which house was marked 1st? Whic
 marked 2nd? Read down the original table looking for the rank you want.
 \end{hint}
 
-\begin{solution}
+\begin{feedback}
 Each column of the original table lists, for each house, the rank that group of voters
 gave it. To convert, read each column and place each house in the row matching its
 rank.
@@ -67,7 +67,7 @@ Preference & 6 & 5 & 5 & 3 & 1 \\\hline
 4th & S & R & H & S & R
 \end{tabular}
 \end{center}
-\end{solution}
+\end{feedback}
 \end{prompt}
 
 \begin{prompt}
@@ -82,7 +82,7 @@ Preference & 6 & 5 & 5 & 3 & 1 \\\hline
 
 How many first-place votes did the winner receive? $\answer{11}$
 
-\begin{solution}
+\begin{feedback}
 Plurality counts only first-place votes:
 \[
 \text{R}: 6+5 = 11, \qquad \text{H}: 5+3+1 = 9, \qquad \text{G}: 0, \qquad \text{S}: 0.
@@ -92,7 +92,7 @@ Ravenclaw wins with $11$ of the $20$ first-place votes.
 Note that Gryffindor and Slytherin receive \emph{no} first-place votes at all, even
 though Gryffindor is ranked 2nd or 3rd on every single ballot. Plurality is blind to
 everything below the top line.
-\end{solution}
+\end{feedback}
 \end{prompt}
 \end{problem}
 
@@ -119,9 +119,9 @@ Table 2. Preference schedule for Best Pickled Herring.
 
 $\answer{77}$
 
-\begin{solution}
+\begin{feedback}
 $27+16+15+13+6 = 77$ voters.
-\end{solution}
+\end{feedback}
 \end{prompt}
 
 \begin{prompt}
@@ -135,10 +135,10 @@ $27+16+15+13+6 = 77$ voters.
 \choice{E}
 \end{multipleChoice}
 
-\begin{solution}
+\begin{feedback}
 First-place votes: A gets $27$, B gets $15+13=28$, D gets $16$, E gets $6$, and C gets
 $0$. B wins with $28$.
-\end{solution}
+\end{feedback}
 \end{prompt}
 
 \begin{prompt}
@@ -153,11 +153,11 @@ with each one's first-place vote count.
 4th: $\answer{E}$ with $\answer{6}$ \qquad
 5th: $\answer{C}$ with $\answer{0}$
 
-\begin{solution}
+\begin{feedback}
 Sorting the first-place counts:
 \[ \text{B }28 > \text{A }27 > \text{D }16 > \text{E }6 > \text{C }0. \]
 The counts add to $77$, as they must. \checkmark
-\end{solution}
+\end{feedback}
 \end{prompt}
 
 \begin{prompt}
@@ -182,7 +182,7 @@ by the point value of that candidate's position in it, then add across all five
 columns.
 \end{hint}
 
-\begin{solution}
+\begin{feedback}
 Taking B as the example, column by column:
 \[
 \begin{array}{lll}
@@ -201,7 +201,7 @@ Carrying out the same computation for every candidate gives
 \]
 B wins the Borda count too. As a check, the scores total $1155 = 77\cdot 15$, since
 each ballot distributes $5+4+3+2+1=15$ points.
-\end{solution}
+\end{feedback}
 \end{prompt}
 
 \begin{prompt}
@@ -216,7 +216,7 @@ each score.
 4th: $\answer{C}$ with $\answer{211}$ \qquad
 5th: $\answer{E}$ with $\answer{190}$
 
-\begin{solution}
+\begin{feedback}
 The Borda ranking is
 \[ \text{B } 270 > \text{D } 264 > \text{A } 220 > \text{C } 211 > \text{E } 190. \]
 
@@ -226,7 +226,7 @@ agree on the winner but disagree everywhere else. Most strikingly, C finished
 --- and ahead of E --- because C is ranked 2nd or 3rd on most ballots. A, meanwhile,
 drops from 2nd to 3rd: A has many first-place votes but is ranked dead last or nearly
 last by everyone else.
-\end{solution}
+\end{feedback}
 \end{prompt}
 \end{problem}
 

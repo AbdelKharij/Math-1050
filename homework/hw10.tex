@@ -38,14 +38,14 @@ $q_C = \answer[tolerance=0.0005]{5.067}$ \quad
 $q_D = \answer[tolerance=0.0005]{11.493}$ \quad
 $q_E = \answer[tolerance=0.0005]{17.493}$
 
-\begin{solution}
+\begin{feedback}
 \[ SD = \frac{3000}{40} = 75, \]
 so the quotas are
 \[
 q_A = 2.467,\quad q_B = 3.480,\quad q_C = 5.067,\quad q_D = 11.493,\quad q_E = 17.493,
 \]
 totaling $40$. \checkmark
-\end{solution}
+\end{feedback}
 \end{prompt}
 
 \begin{prompt}
@@ -66,7 +66,7 @@ Round \emph{up} when the quota exceeds its geometric mean cutoff, and \emph{down
 otherwise. Several of these are very close calls --- keep all three decimals.
 \end{hint}
 
-\begin{solution}
+\begin{feedback}
 \[
 \begin{array}{lllll}
 A: & q = 2.467 & \sqrt{2\cdot 3}=2.449 & 2.467 > 2.449 & \to 3\\
@@ -80,7 +80,7 @@ D and E are genuinely close: $q_D = 11.4933$ against a cutoff of $11.4891$, and
 $q_E = 17.49333$ against $17.49286$. Both round up, but only barely.
 
 The total is $3+4+5+12+18 = 42$, which is $2$ too many. A modified divisor is needed.
-\end{solution}
+\end{feedback}
 \end{prompt}
 
 \begin{prompt}
@@ -100,7 +100,7 @@ The standard divisor gave too many seats. Does a larger or a smaller divisor red
 the quotas?
 \end{hint}
 
-\begin{solution}
+\begin{feedback}
 Since the standard divisor gave $42$ seats --- two too many --- the quotas must come
 down, which means a \emph{larger} divisor. So $75.25$ is the right choice; $74.75$
 would only make things worse (it still totals $42$).
@@ -125,7 +125,7 @@ would be needed --- and school A, whose quota is $2.467$, would be rounded \emph
 to $2$ rather than up to $3$. Huntington-Hill's geometric-mean cutoff sits slightly
 below the arithmetic midpoint, which nudges small districts upward. That is exactly why
 it is the method the U.S.\ House of Representatives uses.
-\end{solution}
+\end{feedback}
 \end{prompt}
 \end{problem}
 
@@ -149,7 +149,7 @@ $95$ seats has been reapportioned:
 \begin{freeResponse}
 \end{freeResponse}
 
-\begin{solution}
+\begin{feedback}
 Beaversdam \emph{lost} a seat, dropping from $51$ to $50$, even though:
 \begin{itemize}
 \item its own population did not change;
@@ -160,7 +160,7 @@ Beaversdam \emph{lost} a seat, dropping from $51$ to $50$, even though:
 Worse, the seat Beaversdam lost went to Beruna --- a state whose population also did
 not change. Adding a new state with its own new seats should not shuffle
 representation between two untouched states.
-\end{solution}
+\end{feedback}
 \end{prompt}
 
 \begin{prompt}
@@ -173,7 +173,7 @@ representation between two untouched states.
 \choice{A violation of the quota rule}
 \end{multipleChoice}
 
-\begin{solution}
+\begin{feedback}
 The \textbf{new-states paradox}: adding a new state, along with the seats to
 accommodate it, changes the apportionment among the existing states.
 
@@ -181,7 +181,7 @@ The neighboring paradoxes are worth distinguishing. The \emph{Alabama paradox} i
 increasing the total number of seats causes a state to lose one. The \emph{population
 paradox} is when a state whose population is growing loses a seat to one that is
 shrinking. All three afflict the same method.
-\end{solution}
+\end{feedback}
 \end{prompt}
 
 \begin{prompt}
@@ -195,7 +195,7 @@ congress be using?
 \choice{Webster's method}
 \end{multipleChoice}
 
-\begin{solution}
+\begin{feedback}
 \textbf{Hamilton's method}. All three apportionment paradoxes --- Alabama, population,
 and new-states --- are possible only under Hamilton's method.
 
@@ -204,7 +204,7 @@ three paradoxes, because they apportion by picking a divisor and rounding, with 
 step that reshuffles surplus seats based on fractional parts. The trade-off is that
 divisor methods can violate the quota rule, which Hamilton's method never does. As the
 Balinski-Young theorem proves, no method can avoid both problems at once.
-\end{solution}
+\end{feedback}
 \end{prompt}
 \end{problem}
 
@@ -221,10 +221,10 @@ objective is to be the player who reduces the pile to zero.
 \choice{Bob}
 \end{multipleChoice}
 
-\begin{solution}
+\begin{feedback}
 Alice. With moves of $1$ through $4$, the losing positions are the multiples of $5$,
 and $23$ is not a multiple of $5$ --- so the first player wins.
-\end{solution}
+\end{feedback}
 \end{prompt}
 
 \begin{prompt}
@@ -233,7 +233,7 @@ first?
 
 $\answer{3}$ stones.
 
-\begin{solution}
+\begin{feedback}
 Alice takes $3$ stones, leaving $20$ --- a multiple of $5$.
 
 After that she mirrors Bob: whenever Bob takes $k$ stones, Alice takes $5-k$. Each
@@ -242,7 +242,7 @@ finally $0$ --- meaning Alice took the last stone.
 
 The strategy works because from a multiple of $5$, every move Bob can make (taking $1$
 to $4$) leaves a total that Alice can restore to the next lower multiple of $5$.
-\end{solution}
+\end{feedback}
 \end{prompt}
 \end{problem}
 
@@ -263,7 +263,7 @@ are a $5$ and an $8$.
 \end{array}
 \]
 
-\begin{solution}
+\begin{feedback}
 Each entry is Alice's card minus Bob's card, which is positive when Alice's is larger:
 \[
 \begin{array}{ll}
@@ -273,7 +273,7 @@ Each entry is Alice's card minus Bob's card, which is positive when Alice's is l
 9 \text{ vs } 8: & \text{Alice wins by } 1 \to +1
 \end{array}
 \]
-\end{solution}
+\end{feedback}
 \end{prompt}
 
 \begin{prompt}
@@ -286,7 +286,7 @@ Each entry is Alice's card minus Bob's card, which is positive when Alice's is l
 
 If so, the expected value of the game is $\answer{1}$.
 
-\begin{solution}
+\begin{feedback}
 Row minima: playing $4$ gives $-4$, playing $9$ gives $1$ --- so the maximin is $1$.
 Column maxima: Bob playing $5$ gives $4$, playing $8$ gives $1$ --- so the minimax is
 $1$.
@@ -299,7 +299,7 @@ The reasoning behind it is simple once you see it: Alice's $9$ beats both of Bob
 cards, so she should always play it. Knowing that, Bob plays his $8$ to keep his loss
 to $1$ rather than $4$. Neither player has any reason to deviate. Note the game is not
 fair --- it favors Alice by one point every time.
-\end{solution}
+\end{feedback}
 \end{prompt}
 \end{problem}
 
@@ -332,7 +332,7 @@ Alice wants large numbers. Compare her two rows entry by entry --- does one beat
 other in \emph{every} column?
 \end{hint}
 
-\begin{solution}
+\begin{feedback}
 Row $b$ beats row $a$ in both columns ($4 > 2$ and $0 > -3$), so \textbf{strategy $a$
 is dominated} and Alice should never play it.
 
@@ -343,7 +343,7 @@ dominated} for Bob.
 Saddle point: row minima $-3$ and $0$ give a maximin of $0$; column maxima $4$ and $0$
 give a minimax of $0$. They agree, so the saddle point is $\mathbf{0}$ at cell
 $(b,d)$.
-\end{solution}
+\end{feedback}
 \end{prompt}
 
 \begin{prompt}
@@ -369,7 +369,7 @@ Are there any dominated strategies?
 \choice[correct]{No, neither player has a dominated strategy}
 \end{multipleChoice}
 
-\begin{solution}
+\begin{feedback}
 No dominated strategies: neither of Alice's rows beats the other in both columns
 ($3 > -2$ but $-2 < 1$), and the same is true of Bob's columns.
 
@@ -379,7 +379,7 @@ saddle point.
 
 This is a genuine guessing game --- each player wants to match or avoid the other, and
 neither has a stable pure strategy. Both should mix.
-\end{solution}
+\end{feedback}
 \end{prompt}
 
 \begin{prompt}
@@ -405,7 +405,7 @@ Is there a saddle point?
 \end{multipleChoice}
 If so, its value is $\answer{-1}$.
 
-\begin{solution}
+\begin{feedback}
 Row $b$ beats row $a$ in both columns ($-1 > -3$ and $2 > 0$), so \textbf{$a$ is
 dominated} for Alice.
 
@@ -418,7 +418,7 @@ agree, so the saddle point is $\mathbf{-1}$.
 
 Both players play their dominant strategy, and Alice still loses a point every time ---
 the game simply favors Bob.
-\end{solution}
+\end{feedback}
 \end{prompt}
 \end{problem}
 

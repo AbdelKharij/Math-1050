@@ -23,11 +23,11 @@ the fastest when the standard divisor of an apportionment problem is decreased.
 \choice{False}
 \end{multipleChoice}
 
-\begin{solution}
+\begin{feedback}
 True. A quota is $q = \frac{p}{d}$, so changing the divisor scales every quota by the
 same factor --- and the same percentage change produces a larger absolute movement for a
 larger quota.
-\end{solution}
+\end{feedback}
 \end{prompt}
 
 \begin{prompt}
@@ -44,14 +44,14 @@ Compare this carefully with part (a). Does the direction of the divisor change a
 \emph{which} states move fastest?
 \end{hint}
 
-\begin{solution}
+\begin{feedback}
 False. The largest states' quotas move fastest in \emph{either} direction --- increasing
 the divisor does not reverse which states are most sensitive to it.
 
 Concretely, raising the divisor from $30$ to $33$ drops a state of population $230$ from
 $7.667$ to $6.970$, a change of $0.70$, while a state of population $43$ drops only from
 $1.433$ to $1.303$, a change of $0.13$.
-\end{solution}
+\end{feedback}
 \end{prompt}
 
 \begin{prompt}
@@ -63,11 +63,11 @@ the players is lost by the other.
 \choice{False}
 \end{multipleChoice}
 
-\begin{solution}
+\begin{feedback}
 True --- that is the definition. The players' payoffs always sum to zero, which is
 exactly why a single payoff matrix from one player's perspective captures the whole
 game.
-\end{solution}
+\end{feedback}
 \end{prompt}
 
 \begin{prompt}
@@ -78,11 +78,11 @@ game.
 \choice[correct]{False}
 \end{multipleChoice}
 
-\begin{solution}
+\begin{feedback}
 False. Problem 5(b) below is a counterexample: its maximin is $-1$ and its minimax is
 $2$, so no saddle point exists. Such games have no stable pair of pure strategies, and
 both players are better off mixing.
-\end{solution}
+\end{feedback}
 \end{prompt}
 \end{problem}
 
@@ -100,7 +100,7 @@ apportionment?
 \choice{Lower quota violation}
 \end{selectAll}
 
-\begin{solution}
+\begin{feedback}
 The \textbf{Alabama paradox} and the \textbf{New States paradox} (and the population
 paradox as well).
 
@@ -108,7 +108,7 @@ Hamilton's method always satisfies the quota rule --- every state receives eithe
 lower or its upper quota --- so neither quota violation is possible. What it cannot avoid
 are the paradoxes, which arise from handing out surplus seats by comparing fractional
 parts.
-\end{solution}
+\end{feedback}
 \end{prompt}
 
 \begin{prompt}
@@ -127,7 +127,7 @@ Webster's method is a divisor method, and it rounds conventionally rather than a
 or always down. What does each of those two facts rule in or out?
 \end{hint}
 
-\begin{solution}
+\begin{feedback}
 Both quota violations --- \textbf{upper} and \textbf{lower}.
 
 Webster's method is a divisor method, so it is immune to all of the paradoxes. But
@@ -139,7 +139,7 @@ upper quota $87$ --- and Webster's method awarded it $88$.
 
 Compare with the one-directional methods: Jefferson's can only violate the upper quota,
 and Adams' only the lower.
-\end{solution}
+\end{feedback}
 \end{prompt}
 \end{problem}
 
@@ -163,10 +163,10 @@ Standard divisor: $\answer{30}$
 $q_A = \answer[tolerance=0.0005]{1.433}$ \quad $q_B = \answer[tolerance=0.0005]{3.433}$
 \quad $q_C = \answer[tolerance=0.0005]{7.467}$ \quad $q_D = \answer[tolerance=0.0005]{7.667}$
 
-\begin{solution}
+\begin{feedback}
 \[ SD = \frac{600}{20} = 30, \]
 giving quotas $1.433$, $3.433$, $7.467$, and $7.667$, which total $20$. \checkmark
-\end{solution}
+\end{feedback}
 \end{prompt}
 
 \begin{prompt}
@@ -179,7 +179,7 @@ totaling $\answer{18}$, so the surplus is $\answer{2}$ scouts.
 Hamilton's apportionment: $A: \answer{1}$ \quad $B: \answer{3}$ \quad $C: \answer{8}$
 \quad $D: \answer{8}$
 
-\begin{solution}
+\begin{feedback}
 The lower quotas total $1+3+7+7 = 18$, leaving $2$ surplus scouts. The fractional parts
 are
 \[ A: .433, \qquad B: .433, \qquad C: .467, \qquad D: .667, \]
@@ -187,7 +187,7 @@ so D and C --- the two largest --- each gain a scout:
 \[ A = 1, \quad B = 3, \quad C = 8, \quad D = 8. \]
 (A and B tie at $.433$, but neither is in contention for a surplus seat, so the tie never
 has to be broken.)
-\end{solution}
+\end{feedback}
 \end{prompt}
 
 \begin{prompt}
@@ -210,7 +210,7 @@ $B: \answer[tolerance=0.005]{3.464}$, $C: \answer[tolerance=0.005]{7.483}$,
 $D: \answer[tolerance=0.005]{7.483}$, giving $A: \answer{2}$, $B: \answer{3}$,
 $C: \answer{7}$, $D: \answer{8}$ for a total of $\answer{20}$
 
-\begin{solution}
+\begin{feedback}
 \[
 \begin{array}{lccccl}
  & A & B & C & D & \text{total}\\
@@ -232,7 +232,7 @@ $20$, so Huntington-Hill needs no modified divisor.
 
 Note that C and D share the same cutoff of $7.483$ but land on opposite sides of it ---
 the method separates two neighborhoods whose quotas differ by only $0.2$.
-\end{solution}
+\end{feedback}
 \end{prompt}
 
 \begin{prompt}
@@ -255,7 +255,7 @@ Part (c) tells you which way each divisor must move: Jefferson is short by $2$ a
 a smaller divisor, Adams is over by $2$ and needs a larger one, Webster is short by $1$.
 \end{hint}
 
-\begin{solution}
+\begin{feedback}
 \textbf{Jefferson}, $d = 28$: modified quotas $1.536$, $3.679$, $8.000$, $8.214$;
 rounding down gives $1, 3, 8, 8 = 20$. \checkmark
 
@@ -280,7 +280,7 @@ The bias is on full display: Adams moves two scouts from the big neighborhoods t
 small ones, while Jefferson and Webster agree with Hamilton. Huntington-Hill sits in
 between, giving the smallest neighborhood the extra scout that Adams does, but without
 Adams' larger shift.
-\end{solution}
+\end{feedback}
 \end{prompt}
 \end{problem}
 
@@ -298,14 +298,14 @@ If Alice goes first, which player has the winning strategy?
 
 How many stones should she take first? $\answer{2}$
 
-\begin{solution}
+\begin{feedback}
 Alice wins. With moves of $1$ to $3$, the losing positions are the multiples of $4$, and
 $18 = 4\cdot 4 + 2$ is not one.
 
 She takes $2$ stones, leaving $16$. From then on she answers each of Bob's moves so the
 pair removes exactly $4$: if Bob takes $k$, she takes $4-k$. Bob faces $16$, $12$, $8$,
 $4$, and finally $0$ --- so Alice takes the last stone.
-\end{solution}
+\end{feedback}
 \end{prompt}
 \end{problem}
 
@@ -329,10 +329,10 @@ Does a saddle point exist?
 \end{multipleChoice}
 If so, its value is $\answer{0}$.
 
-\begin{solution}
+\begin{feedback}
 Row minima $-7$ and $0$ give a maximin of $0$; column maxima $0$ and $5$ give a minimax
 of $0$. The saddle point is $0$ at cell $(b,c)$.
-\end{solution}
+\end{feedback}
 \end{prompt}
 
 \begin{prompt}
@@ -350,11 +350,11 @@ Does a saddle point exist?
 \choice[correct]{No}
 \end{multipleChoice}
 
-\begin{solution}
+\begin{feedback}
 Row minima $-3$ and $-1$ give a maximin of $-1$; column maxima $4$ and $2$ give a minimax
 of $2$. Since $-1 \neq 2$, there is no saddle point --- this is the counterexample for
 Problem 1(d).
-\end{solution}
+\end{feedback}
 \end{prompt}
 
 \begin{prompt}
@@ -374,10 +374,10 @@ Does a saddle point exist?
 \end{multipleChoice}
 If so, its value is $\answer{1}$.
 
-\begin{solution}
+\begin{feedback}
 Row minima are $-1$, $-3$, and $1$, so the maximin is $1$. Column maxima are $2$, $5$,
 and $1$, so the minimax is $1$. The saddle point is $1$ at cell $(c,f)$.
-\end{solution}
+\end{feedback}
 \end{prompt}
 
 \begin{prompt}
@@ -397,13 +397,13 @@ Does a saddle point exist?
 \end{multipleChoice}
 If so, its value is $\answer{2}$.
 
-\begin{solution}
+\begin{feedback}
 Row minima are $-3$, $2$, and $-5$, so the maximin is $2$. Column maxima are $2$ and $4$,
 so the minimax is $2$. The saddle point is $2$ at cell $(b,d)$.
 
 Row $b$ dominates both other rows for Alice, and column $d$ dominates $e$ for Bob, so
 both players' choices are forced.
-\end{solution}
+\end{feedback}
 \end{prompt}
 \end{problem}
 
@@ -430,7 +430,7 @@ scissors:
 Entries are from Alice's perspective, so a win for Bob is negative.
 \end{hint}
 
-\begin{solution}
+\begin{feedback}
 \begin{itemize}
 \item rock vs.\ rock: a tie, $0$.
 \item rock vs.\ scissors: rock wins $1$ point for Alice, $+1$.
@@ -439,7 +439,7 @@ Entries are from Alice's perspective, so a win for Bob is negative.
 \end{itemize}
 
 This game has no saddle point: the maximin is $-2$ and the minimax is $1$.
-\end{solution}
+\end{feedback}
 \end{problem}
 
 \begin{problem}
@@ -471,7 +471,7 @@ A Condorcet candidate beats every other candidate head-to-head. With $18$ voters
 matchup is won with at least $10$.
 \end{hint}
 
-\begin{solution}
+\begin{feedback}
 \textbf{C}. Checking C's head-to-head matchups:
 \[
 \begin{array}{lll}
@@ -483,7 +483,7 @@ matchup is won with at least $10$.
 C beats every other candidate, so C is the Condorcet candidate --- despite having only
 $4$ first-place votes, the fewest of any candidate who received any. C is ranked 1st or
 2nd on every single ballot.
-\end{solution}
+\end{feedback}
 \end{prompt}
 
 \begin{prompt}
@@ -492,7 +492,7 @@ and D. How many winning coalitions does this system have?
 
 $\answer{6}$
 
-\begin{solution}
+\begin{feedback}
 A coalition wins when its weight reaches $10$. Checking every subset:
 \[
 \set{A,B}=12, \quad \set{A,C}=10, \quad \set{A,B,C}=15, \quad \set{A,B,D}=13,
@@ -503,7 +503,7 @@ which is $6$ winning coalitions.
 Every one of them contains A --- without A the remaining players total only $9$, short of
 the quota --- so A has veto power. Note also that $\set{A,D}=8$ and $\set{B,C,D}=9$ both
 fall short.
-\end{solution}
+\end{feedback}
 \end{prompt}
 
 \begin{prompt}
@@ -535,7 +535,7 @@ Nobody bids on $s_4$, so Chili --- the divider, for whom all four shares are equ
 take it. Then work out which assignments of $s_1$, $s_2$, $s_3$ satisfy the other three.
 \end{hint}
 
-\begin{solution}
+\begin{feedback}
 Chili is the divider and values all four shares equally, so any share is fair for her.
 Since none of the other three players bid on $s_4$, Chili must take it --- otherwise
 somebody would be stuck with a share they consider unfair.
@@ -550,7 +550,7 @@ gives exactly three valid divisions:
 \end{enumerate}
 In each case Chili takes $s_4$. Note that Bingo and Bluey can never both have $s_3$, which
 is what rules out the remaining combinations.
-\end{solution}
+\end{feedback}
 \end{prompt}
 \end{problem}
 

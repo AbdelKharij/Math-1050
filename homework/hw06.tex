@@ -30,7 +30,7 @@ $\langle D, B, A, C\rangle$ the running totals are $10$, $40$, $80$ --- so $A$ i
 pivotal.
 \end{hint}
 
-\begin{solution}
+\begin{feedback}
 Working through all $24$ orderings and marking where the running total first reaches
 $55$:
 \begin{itemize}
@@ -44,7 +44,7 @@ These total $24$, exactly one pivotal player per sequential coalition. \checkmar
 $D$ is pivotal only in the two orderings $\langle B,C,D,A\rangle$ and
 $\langle C,B,D,A\rangle$ --- the cases where $B$ and $C$ arrive first (reaching $50$,
 just short) and $D$'s $10$ votes push the total to $60$.
-\end{solution}
+\end{feedback}
 \end{prompt}
 
 \begin{prompt}
@@ -56,7 +56,7 @@ $B$: $\answer[tolerance=0.05]{25}\%$ \qquad
 $C$: $\answer[tolerance=0.05]{25}\%$ \qquad
 $D$: $\answer[tolerance=0.05]{8.3}\%$
 
-\begin{solution}
+\begin{feedback}
 Divide each pivotal count by the total of $24$:
 \[
 A: \frac{10}{24}\approx 41.7\%, \quad
@@ -69,7 +69,7 @@ Note that $B$ and $C$ have equal power ($25\%$ each) despite $B$ having $30$ vot
 $C$ only $20$. And $D$, with $10$ votes --- a quarter of $A$'s $40$ --- holds only
 $8.3\%$ of the power against $A$'s $41.7\%$, a fifth as much. Power is not
 proportional to weight.
-\end{solution}
+\end{feedback}
 \end{prompt}
 \end{problem}
 
@@ -82,11 +82,11 @@ players) in this system?
 
 $\answer{4096}$
 
-\begin{solution}
+\begin{feedback}
 Each of the $12$ players is independently either in or out, so there are
 \[ 2^{12} = 4096 \]
 subsets, counting the empty one.
-\end{solution}
+\end{feedback}
 \end{prompt}
 
 \begin{prompt}
@@ -94,9 +94,9 @@ subsets, counting the empty one.
 
 $\answer{4095}$
 
-\begin{solution}
+\begin{feedback}
 Discard the empty coalition: $2^{12}-1 = 4095$.
-\end{solution}
+\end{feedback}
 \end{prompt}
 
 \begin{prompt}
@@ -109,10 +109,10 @@ Three of the twelve players have their membership already decided. How many play
 are still free to be in or out?
 \end{hint}
 
-\begin{solution}
+\begin{feedback}
 The membership of $P_1$, $P_2$, and $P_3$ is fixed, leaving the other $9$ players free:
 \[ 2^9 = 512. \]
-\end{solution}
+\end{feedback}
 \end{prompt}
 
 \begin{prompt}
@@ -120,12 +120,12 @@ The membership of $P_1$, $P_2$, and $P_3$ is fixed, leaving the other $9$ player
 
 $\answer{479001600}$
 
-\begin{solution}
+\begin{feedback}
 A sequential coalition is an ordering of all $12$ players, so there are
 \[ 12! = 479{,}001{,}600 \]
 of them. This is why coalition \emph{types} matter --- enumerating half a billion
 orderings by hand is not an option.
-\end{solution}
+\end{feedback}
 \end{prompt}
 \end{problem}
 
@@ -144,11 +144,11 @@ ways are there to arrange two \textbf{A}'s and three \textbf{C}'s in a sequence?
 
 $\answer{10}$
 
-\begin{solution}
+\begin{feedback}
 Choose which $2$ of the $5$ positions hold the \textbf{A}'s:
 \[ C(5,2) = 10 \]
 arrangements.
-\end{solution}
+\end{feedback}
 \end{prompt}
 
 \begin{prompt}
@@ -163,7 +163,7 @@ Within a type, the two adults could be in either order, and the three children i
 order.
 \end{hint}
 
-\begin{solution}
+\begin{feedback}
 Within a given type, the two adults can be arranged in $2!=2$ ways and the three
 children in $3!=6$ ways, so each type covers
 \[ 2!\cdot 3! = 12 \]
@@ -186,7 +186,7 @@ Marking the pivotal role in each type:
 \end{array}
 \]
 So an adult is pivotal in $6$ of the $10$ types, and a child in $4$.
-\end{solution}
+\end{feedback}
 \end{prompt}
 
 \begin{prompt}
@@ -194,12 +194,12 @@ So an adult is pivotal in $6$ of the $10$ types, and a child in $4$.
 
 $\answer{36}$
 
-\begin{solution}
+\begin{feedback}
 Adults are pivotal in $6$ types, each covering $12$ distinct sequential coalitions,
 so the two adults are pivotal $6\times 12 = 72$ times between them. Split evenly:
 \[ 72 / 2 = 36 \]
 per adult.
-\end{solution}
+\end{feedback}
 \end{prompt}
 
 \begin{prompt}
@@ -207,12 +207,12 @@ per adult.
 
 $\answer{16}$
 
-\begin{solution}
+\begin{feedback}
 Children are pivotal in $4$ types, so $4\times 12 = 48$ sequential coalitions have a
 child pivotal. Split among the three children:
 \[ 48/3 = 16 \]
 each. As a check, $2(36) + 3(16) = 72 + 48 = 120$. \checkmark
-\end{solution}
+\end{feedback}
 \end{prompt}
 
 \begin{prompt}
@@ -222,7 +222,7 @@ system, as percentages rounded to two decimal places.
 Each adult: $\answer[tolerance=0.005]{30}\%$ \qquad
 Each child: $\answer[tolerance=0.005]{13.33}\%$
 
-\begin{solution}
+\begin{feedback}
 \[
 \text{Adult}: \frac{36}{120}=30\%, \qquad \text{Child}: \frac{16}{120}\approx 13.33\%.
 \]
@@ -231,7 +231,7 @@ Check: $2(30\%) + 3(13.33\%) = 60\% + 40\% = 100\%$. \checkmark
 An adult has twice a child's votes but well over twice a child's power: $30\%$ versus
 $13.33\%$, a ratio of $2.25$ to $1$. The two parents together hold $60\%$ of the
 power with only $4$ of the $7$ votes.
-\end{solution}
+\end{feedback}
 \end{prompt}
 \end{problem}
 

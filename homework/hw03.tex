@@ -36,10 +36,10 @@ $\answer{6}$
 Every unordered pair of candidates is compared exactly once.
 \end{hint}
 
-\begin{solution}
+\begin{feedback}
 With $4$ candidates, the number of pairs is
 \[ C(4,2)=\frac{4\cdot 3}{2}=6. \]
-\end{solution}
+\end{feedback}
 \end{prompt}
 
 \begin{prompt}
@@ -63,7 +63,7 @@ higher on that column's ballot; award that column's voters to them. The winner o
 matchup gets $1$ point.
 \end{hint}
 
-\begin{solution}
+\begin{feedback}
 For each pair, count the voters who rank the first candidate above the second. There
 are $42$ voters, so the two numbers in each matchup add to $42$.
 \[
@@ -78,7 +78,7 @@ are $42$ voters, so the two numbers in each matchup add to $42$.
 \]
 Awarding $1$ point per matchup win: A $= 2$, C $= 2$, B $= 1$, D $= 1$. The points
 total $6$, one per comparison. \checkmark
-\end{solution}
+\end{feedback}
 \end{prompt}
 
 \begin{prompt}
@@ -88,7 +88,7 @@ head-to-head comparison from part (b) to break the tie.
 
 1st: $\answer{A}$ \quad 2nd: $\answer{C}$ \quad 3rd: $\answer{B}$ \quad 4th: $\answer{D}$
 
-\begin{solution}
+\begin{feedback}
 The point totals leave two ties: A and C at $2$ points, and B and D at $1$ point.
 
 Break each with the head-to-head result:
@@ -99,7 +99,7 @@ Break each with the head-to-head result:
 The complete ranking is therefore A, C, B, D.
 
 Note that D beat the eventual winner A head-to-head ($28$--$14$), yet finishes last.
-\end{solution}
+\end{feedback}
 \end{prompt}
 \end{problem}
 
@@ -119,7 +119,7 @@ matchup. Try to build a schedule where one candidate is almost everyone's second
 choice --- strong head-to-head, but few first-place votes.
 \end{hint}
 
-\begin{solution}
+\begin{feedback}
 Many examples work. Here is a small one with three candidates and $9$ voters:
 
 \begin{center}
@@ -150,7 +150,7 @@ first place.
 This is not a defect unique to Plurality. Arrow's Impossibility Theorem says no ranked
 voting method with three or more candidates can satisfy all of the fairness criteria
 at once, so every method fails some criterion.
-\end{solution}
+\end{feedback}
 \end{problem}
 
 \begin{problem}
@@ -186,7 +186,7 @@ D: $\answer{7}$ \qquad Eliminated: $\answer{D}$
 \smallskip
 Winner: $\answer{A}$
 
-\begin{solution}
+\begin{feedback}
 There are $45$ voters.
 
 \textbf{Round 1.} First-place votes: A $15$, B $8+4 = 12$, C $11$, D $5+2 = 7$.
@@ -202,7 +202,7 @@ of those ballots: the $8$-voter column has A next, the $4$-voter column has C ne
 and the $2$-voter column (originally D, then B) has A next. So
 \[ \text{A } = 15+8+2 = 25, \qquad \text{C } = 16+4 = 20. \]
 \textbf{A wins}, and the complete ranking is A, C, B, D.
-\end{solution}
+\end{feedback}
 \end{prompt}
 
 \begin{prompt}
@@ -243,7 +243,7 @@ Round 1 is unchanged. The difference appears in round 2: when D is eliminated, w
 do those $5$ votes go now?
 \end{hint}
 
-\begin{solution}
+\begin{feedback}
 \textbf{Round 1} is identical: A $15$, B $12$, C $11$, D $7$. D is eliminated.
 
 \textbf{Round 2} is where the correction matters. The $5$-voter column now reads
@@ -254,7 +254,7 @@ Now \emph{C} has the fewest votes and is eliminated instead of B.
 \textbf{Round 3.} C's $11$ votes (the column C, B, A, D) go to B:
 \[ \text{A } = 20, \qquad \text{B } = 14+11 = 25. \]
 \textbf{B wins}, and the corrected ranking is B, A, C, D.
-\end{solution}
+\end{feedback}
 \end{prompt}
 
 \begin{prompt}
@@ -267,7 +267,7 @@ Now \emph{C} has the fewest votes and is eliminated instead of B.
 \choice{Independence of irrelevant alternatives}
 \end{multipleChoice}
 
-\begin{solution}
+\begin{feedback}
 The \textbf{monotonicity criterion}, which says that if a candidate wins an election
 and then some voters change their ballots to rank that candidate \emph{higher} (with
 no other changes), that candidate should still win.
@@ -282,7 +282,7 @@ candidate A could beat in a final round; B was not. A's extra support changed
 
 This is a known weakness of Plurality-with-Elimination (also called instant-runoff
 voting).
-\end{solution}
+\end{feedback}
 \end{prompt}
 \end{problem}
 

@@ -30,9 +30,9 @@ two-thirds majority of council members can overrule a veto.
 
 $\answer{4}$
 
-\begin{solution}
+\begin{feedback}
 A simple majority of $7$ council members means more than $3.5$, so at least $4$.
-\end{solution}
+\end{feedback}
 \end{prompt}
 
 \begin{prompt}
@@ -46,11 +46,11 @@ Without mayoral support the motion is vetoed, so the council must override. Two-
 of $7$ is not a whole number --- round up.
 \end{hint}
 
-\begin{solution}
+\begin{feedback}
 Overriding the veto takes a two-thirds majority of the $7$ council members, and
 \[ \tfrac23 \cdot 7 = 4.67, \]
 so at least $5$ council members are required.
-\end{solution}
+\end{feedback}
 \end{prompt}
 
 \begin{prompt}
@@ -86,7 +86,7 @@ Careful with $\set{M,C,C,C,C,C}$: if the mayor walks away, the five remaining co
 members can still override his veto.
 \end{hint}
 
-\begin{solution}
+\begin{feedback}
 The winning types are: with the mayor, $4$ or more council members; without the mayor,
 $5$ or more.
 
@@ -109,7 +109,7 @@ $5$, enough to override.
 
 Every other type is either losing (too few council members) or winning with no
 critical players.
-\end{solution}
+\end{feedback}
 \end{prompt}
 
 \begin{prompt}
@@ -122,13 +122,13 @@ Only two coalition types contribute. Multiply the number of critical players per
 coalition by how many distinct coalitions there are of that type.
 \end{hint}
 
-\begin{solution}
+\begin{feedback}
 Only two types contribute anything:
 \[
 \underbrace{35 \times 5}_{\set{M,C,C,C,C}} + \underbrace{21 \times 5}_{\set{C,C,C,C,C}}
 = 175 + 105 = 280.
 \]
-\end{solution}
+\end{feedback}
 \end{prompt}
 
 \begin{prompt}
@@ -136,10 +136,10 @@ Only two types contribute anything:
 
 $\answer{35}$
 
-\begin{solution}
+\begin{feedback}
 The mayor is critical only in the type $\set{M,C,C,C,C}$, and there are
 $C(7,4)=35$ such coalitions. So $M$'s critical count is $35$.
-\end{solution}
+\end{feedback}
 \end{prompt}
 
 \begin{prompt}
@@ -148,7 +148,7 @@ for each individual council member.
 
 As a group: $\answer{245}$ \qquad Each individual council member: $\answer{35}$
 
-\begin{solution}
+\begin{feedback}
 The group total is everything left over: $280 - 35 = 245$.
 
 Directly: council members are critical $35\times 4 = 140$ times in the
@@ -156,7 +156,7 @@ $\set{M,C,C,C,C}$ type and $21\times 5 = 105$ times in the $\set{C,C,C,C,C}$ typ
 $140+105 = 245$. \checkmark
 
 By symmetry the seven members share this equally: $245/7 = 35$ each.
-\end{solution}
+\end{feedback}
 \end{prompt}
 
 \begin{prompt}
@@ -166,7 +166,7 @@ players, as percentages.
 Mayor: $\answer[tolerance=0.05]{12.5}\%$ \qquad
 Each council member: $\answer[tolerance=0.05]{12.5}\%$
 
-\begin{solution}
+\begin{feedback}
 \[
 \text{Mayor}: \frac{35}{280}=\frac18=12.5\%, \qquad
 \text{Each council member}: \frac{35}{280}=12.5\%.
@@ -177,7 +177,7 @@ total $100\%$. \checkmark
 This is the surprise. The mayor has zero votes and cannot vote on anything --- yet his
 veto gives him precisely as much power as a full voting member of the council. Raw
 vote counts can be a very poor guide to actual influence.
-\end{solution}
+\end{feedback}
 \end{prompt}
 
 \begin{prompt}
@@ -190,7 +190,7 @@ Part (g) says all eight players have equal power, which suggests giving them all
 weight. How many of the eight must agree for a motion to pass?
 \end{hint}
 
-\begin{solution}
+\begin{feedback}
 Give every player, including the mayor, one vote, and set the quota at $5$:
 \[ [5:1,1,1,1,1,1,1,1]. \]
 
@@ -203,7 +203,7 @@ Check that this reproduces the original rules exactly:
 \end{itemize}
 The winning coalitions are identical, so the systems are equivalent --- and in this
 form the equal power distribution from part (g) is obvious by symmetry.
-\end{solution}
+\end{feedback}
 \end{prompt}
 \end{problem}
 
