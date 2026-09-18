@@ -1,0 +1,344 @@
+\documentclass[12pt]{ximera}
+\title{Practice Exam 1}
+\begin{document}
+\begin{abstract}
+Practice for Exam 1, covering Chapter 1: the Condorcet criterion and Pairwise Comparisons,
+Independence of Irrelevant Alternatives, Plurality-with-Elimination on truncated
+ballots, and a Borda Count that overrules an outright majority.
+\end{abstract}
+\maketitle
+
+\section*{Practice Exam 1}
+
+\begin{problem}
+Assess whether each of the following claims is true or false.
+
+\begin{prompt}
+\textbf{(a)} Claim: the Condorcet criterion is always satisfied by the Pairwise
+Comparisons method.
+
+\begin{multipleChoice}
+\choice[correct]{True}
+\choice{False}
+\end{multipleChoice}
+
+\begin{feedback}
+True. A Condorcet candidate is one who beats every other candidate head-to-head. Under
+Pairwise Comparisons, that candidate therefore wins every single matchup and earns the
+maximum possible score, which no one else can match. So if a Condorcet candidate
+exists, Pairwise Comparisons always elects them.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Claim: if a candidate wins the election using the Pairwise Comparisons
+method, this implies that they are a Condorcet candidate.
+
+\begin{multipleChoice}
+\choice{True}
+\choice[correct]{False}
+\end{multipleChoice}
+
+\begin{hint}
+Part (a) is the converse of this. Does winning the \emph{most} matchups mean winning
+\emph{all} of them?
+\end{hint}
+
+\begin{feedback}
+False --- this is the converse of (a), and it does not hold. The Pairwise Comparisons
+winner is whoever accumulates the most points, which does not require winning every
+matchup.
+
+For example, in the four-candidate schedule
+\begin{center}
+\begin{tabular}{c|ccccc}
+ & 16 & 12 & 8 & 4 & 2\\\hline
+1st & C & A & D & B & A\\
+2nd & B & B & A & D & D\\
+3rd & D & C & C & A & B\\
+4th & A & D & B & C & C
+\end{tabular}
+\end{center}
+A and C tie for the most points, and A wins the tiebreak --- but A lost head-to-head to D,
+$28$--$14$. A wins without being a Condorcet candidate.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Consider the following preference schedule for an election with four candidates.
+
+\begin{center}
+\begin{tabular}{c|ccc}
+ & 8 & 6 & 4 \\\hline
+1st & A & D & B \\
+2nd & C & A & D \\
+3rd & D & C & C \\
+4th & B & B & A
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} Give the complete ranking of candidates in this election using the
+Plurality method, with each one's first-place vote count.
+
+1st: $\answer{A}$ with $\answer{8}$ \quad 2nd: $\answer{D}$ with $\answer{6}$ \quad
+3rd: $\answer{B}$ with $\answer{4}$ \quad 4th: $\answer{C}$ with $\answer{0}$
+
+\begin{feedback}
+First-place votes: A $8$, D $6$, B $4$, C $0$. The ranking is A, D, B, C, and the
+counts total $18$. \checkmark
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Which candidate, if any, can be removed from this election to illustrate
+that the Plurality method violates the Independence-of-Alternatives criterion?
+
+\begin{multipleChoice}
+\choice{A}
+\choice[correct]{B}
+\choice{C}
+\choice{D}
+\choice{None of these}
+\end{multipleChoice}
+
+\begin{hint}
+The criterion is violated when removing a \emph{losing} candidate changes the winner.
+Try removing each loser in turn and re-count the first-place votes.
+\end{hint}
+
+\begin{feedback}
+Remove \textbf{B}. B is a loser with only $4$ first-place votes, so their removal
+should not matter --- but it does.
+
+With B gone, the third column (B, D, C, A) becomes (D, C, A), so those $4$ voters now
+have D at the top. The new counts are
+\[ \text{D} = 6+4 = 10, \qquad \text{A} = 8, \qquad \text{C} = 0, \]
+and \textbf{D wins instead of A}. Removing a losing candidate flipped the winner, which
+is exactly what the Independence-of-Alternatives criterion forbids.
+
+Checking the other options confirms B is the only one that works: removing C leaves A
+winning $8$ to $6$, and removing D leaves A winning $14$ to $4$. (A cannot be removed,
+since A is the winner, not a loser.)
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Which candidate, if any, is a Condorcet winner in this election?
+
+\begin{multipleChoice}
+\choice{A}
+\choice{B}
+\choice{C}
+\choice[correct]{D}
+\choice{None of these}
+\end{multipleChoice}
+
+\begin{feedback}
+\textbf{D}. Checking every head-to-head matchup involving D:
+\[
+\begin{array}{lll}
+\text{D vs A} & 10\text{--}8 & \text{D wins}\\
+\text{D vs B} & 14\text{--}4 & \text{D wins}\\
+\text{D vs C} & 10\text{--}8 & \text{D wins}
+\end{array}
+\]
+D beats every other candidate one-on-one, so D is the Condorcet candidate.
+
+Note what this means alongside part (a): D would win under Pairwise Comparisons, yet
+finishes \emph{second} under Plurality --- and D is preferred to A by $10$ voters out
+of $18$.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Consider the following \emph{truncated} preference schedule for an election with four
+candidates --- each voter ranked only their top two.
+
+\begin{center}
+\begin{tabular}{c|ccccc}
+ & 12 & 9 & 7 & 5 & 3\\\hline
+1st & D & B & A & C & A \\
+2nd & B & A & C & B & D \\
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} How many votes are necessary for a majority in this election?
+
+$\answer{19}$
+
+\begin{feedback}
+There are $12+9+7+5+3 = 36$ voters, so a majority requires more than $18$ --- that is,
+at least $19$ votes.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Using Plurality-with-Elimination, which candidate is eliminated in
+Round 1?
+
+A: $\answer{10}$ \quad B: $\answer{9}$ \quad C: $\answer{5}$ \quad D: $\answer{12}$
+\qquad Eliminated: $\answer{C}$
+
+\begin{feedback}
+First-place votes: D $12$, A $7+3 = 10$, B $9$, C $5$. Nobody has the $19$ needed for a
+majority, and C has the fewest, so \textbf{C is eliminated}.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Which candidate is eliminated in Round 2?
+
+A: $\answer{10}$ \quad B: $\answer{14}$ \quad D: $\answer{12}$ \qquad
+Eliminated: $\answer{A}$
+
+\begin{feedback}
+C's $5$ votes came from the column (C, B), so they transfer to B:
+\[ \text{B} = 9+5 = 14, \qquad \text{D} = 12, \qquad \text{A} = 10. \]
+Still no majority, and A now has the fewest, so \textbf{A is eliminated}.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(d)} Finish applying the method and give the complete ranking.
+
+Round 3 --- B: $\answer{14}$ \quad D: $\answer{15}$
+
+\smallskip
+Complete ranking: 1st $\answer{D}$, 2nd $\answer{B}$, 3rd $\answer{A}$, 4th $\answer{C}$
+
+\begin{feedback}
+A's $10$ votes split. The $7$-voter column was (A, C) --- both A and C are now
+eliminated, so those ballots are \textbf{exhausted}. The $3$-voter column was (A, D),
+so those go to D:
+\[ \text{D} = 12+3 = 15, \qquad \text{B} = 14. \]
+D wins, and the complete ranking in reverse order of elimination is D, B, A, C.
+
+Note that D wins with $15$ votes --- fewer than the $19$ that would have been a
+majority of the original electorate. With ballots exhausted, only $29$ votes remain in
+play, and $15$ is a majority of those.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(e)} How many exhausted votes are there in this election?
+
+\begin{multipleChoice}
+\choice{9}
+\choice{10}
+\choice[correct]{7}
+\choice{5}
+\choice{None}
+\end{multipleChoice}
+
+\begin{feedback}
+$7$. Only the $7$-voter column (A, C) had both of its ranked candidates eliminated.
+Every other column still had a surviving candidate when the election finished.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+A group of social scientists is considering where to hold a conference and agree to use
+the standard Borda Count to decide between Austin (A), Baltimore (B), Chicago (C), and
+Denver (D).
+
+\begin{center}
+\begin{tabular}{c|cccc}
+ & 10 & 7 & 6 & 5 \\\hline
+1st & A & B & D & A \\
+2nd & B & C & B & C \\
+3rd & C & D & A & B \\
+4th & D & A & C & D \\
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} How many votes are necessary for a majority in this election?
+
+$\answer{15}$
+
+\begin{feedback}
+There are $10+7+6+5 = 28$ voters, so a majority is more than $14$, that is, at least
+$15$ votes.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Compute the Borda points that each candidate earned. With four
+candidates, 1st place is worth $4$ points, down to $1$ point for 4th.
+
+A: $\answer{79}$ \quad B: $\answer{86}$ \quad C: $\answer{62}$ \quad D: $\answer{53}$
+
+\begin{hint}
+Go candidate by candidate across all four columns, multiplying the column's voter count
+by the point value of that candidate's position.
+\end{hint}
+
+\begin{feedback}
+Taking B as the worked example:
+\[
+\begin{array}{lll}
+\text{10 voters: B is 2nd} & 3\text{ pts} & 30\\
+\text{7 voters: B is 1st}  & 4\text{ pts} & 28\\
+\text{6 voters: B is 2nd}  & 3\text{ pts} & 18\\
+\text{5 voters: B is 3rd}  & 2\text{ pts} & 10
+\end{array}
+\]
+totaling $86$. Repeating for the rest:
+\[ \text{B } 86, \qquad \text{A } 79, \qquad \text{C } 62, \qquad \text{D } 53. \]
+As a check, these total $280 = 28\cdot 10$, since each ballot awards
+$4+3+2+1=10$ points. \checkmark
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Based on the standard Borda Count, what city should the conference be held
+in?
+
+\begin{multipleChoice}
+\choice{Austin (A)}
+\choice[correct]{Baltimore (B)}
+\choice{Chicago (C)}
+\choice{Denver (D)}
+\end{multipleChoice}
+
+\begin{feedback}
+Baltimore, with $86$ points --- the highest Borda score.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(d)} What fairness criterion is violated by the Borda Count method here?
+
+\begin{multipleChoice}
+\choice[correct]{The majority criterion}
+\choice{The monotonicity criterion}
+\choice{Independence of Irrelevant Alternatives}
+\choice{None --- no criterion is violated}
+\end{multipleChoice}
+
+\begin{feedback}
+The \textbf{majority criterion}, which says that a candidate with a majority of
+first-place votes should win the election.
+
+Austin has $10+5 = 15$ first-place votes out of $28$ --- an outright majority, since
+$15 \ge 15$. A clear majority of the scientists want Austin more than anything else,
+and yet the Borda Count sends the conference to Baltimore.
+
+The reason is that Borda rewards broad acceptability: Baltimore is ranked 1st, 2nd,
+2nd, and 3rd across the four blocs --- never worse than third --- while Austin is
+ranked dead last by the $7$-voter bloc and third by the $6$-voter bloc. Borda's
+willingness to overrule a majority in favor of a well-liked compromise is a deliberate
+feature of the method, but it is a genuine criterion violation.
+
+(The Condorcet criterion is violated too, since a majority candidate is automatically a
+Condorcet candidate --- Austin beats every other city head-to-head.)
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\end{document}

@@ -1,0 +1,284 @@
+\documentclass[12pt]{ximera}
+\title{Exam 3}
+\begin{document}
+\begin{abstract}
+Exam 3, covering Chapter 3: matching fair division methods to continuous and discrete
+assets, which methods leave someone at exactly a fair share, the method of markers on a
+thirteen-item array, lone-divider on a half-veggie, half-beef sub, and sealed bids for
+three roommates' chores.
+\end{abstract}
+\maketitle
+
+\section*{Exam 3}
+
+\begin{problem}
+Identify which fair division methods could possibly apply to each situation.
+
+\begin{prompt}
+\textbf{(a)} Three siblings need to divide their childhood videogame collection fairly.
+
+\begin{selectAll}
+\choice{Lone-Divider Method}
+\choice[correct]{Sealed Bids Method}
+\choice{Lone-Chooser Method}
+\choice[correct]{Method of Markers}
+\end{selectAll}
+
+\begin{feedback}
+Individual games are indivisible, so the assets are \emph{discrete}: Sealed Bids or
+the Method of Markers.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} A $100$-acre property consisting of $15$ acres of beach, $55$ acres of flat
+terrain, and $30$ acres of hilly terrain is to be split among four investors.
+
+\begin{selectAll}
+\choice[correct]{Lone-Divider Method}
+\choice{Sealed Bids Method}
+\choice[correct]{Lone-Chooser Method}
+\choice{Method of Markers}
+\end{selectAll}
+
+\begin{feedback}
+Land can be divided into pieces of any size, so the asset is \emph{continuous}:
+Lone-Divider or Lone-Chooser. The three terrain types simply make it a mixed
+continuous asset, like a half-veggie, half-meat sandwich.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+In which of the following fair division methods is there \emph{always} at least one
+player who comes out with exactly their minimum fair share?
+
+\begin{selectAll}
+\choice[correct]{Lone-Divider Method}
+\choice{Sealed Bids Method}
+\choice[correct]{Lone-Chooser Method}
+\choice{Method of Markers}
+\end{selectAll}
+
+\begin{feedback}
+Lone-Divider and Lone-Chooser. In both, the (first) divider cuts pieces they consider
+exactly equal, so they end with exactly $\frac1N$ of the value in their own eyes. In
+Sealed Bids everyone ends strictly above a fair share once the surplus is split, and in
+the Method of Markers the leftover items can lift everyone above it.
+\end{feedback}
+\end{problem}
+
+\begin{problem}
+Players A, B, and C have marked where they would divide the following $13$ items into
+three shares of equal value to them.
+
+\begin{center}
+\includegraphics[width=\textwidth]{markersArray.png}
+\end{center}
+
+The markers fall at A: $4$, $9$; B: $3$, $8$; C: $4$, $7$.
+
+\begin{prompt}
+\textbf{(a)} Identify each player's three fair shares. Enter the last item of each
+player's first and second shares.
+
+A: items $1$--$\answer{4}$, $5$--$\answer{9}$, and $10$--$13$
+
+\smallskip
+B: items $1$--$\answer{3}$, $4$--$\answer{8}$, and $9$--$13$
+
+\smallskip
+C: items $1$--$\answer{4}$, $5$--$\answer{7}$, and $8$--$13$
+
+\begin{feedback}
+Each marker ends one share, so a player's three shares run from the start to the first
+marker, from there to the second marker, and from there to the end.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Complete the fair division using the method of markers.
+
+Player $\answer{B}$ gets items 1--3, player $\answer{C}$ gets items 4--7, and player
+$\answer{A}$ gets items 10--13.
+
+\smallskip
+The surplus is items $\answer{8}$ and $\answer{9}$.
+
+\begin{feedback}
+First markers: A $4$, B $3$, C $4$; B's is leftmost, so B takes $1$--$3$. Second markers
+of A and C: $9$ and $7$; C's is leftmost, so C takes $4$--$7$. A, last, takes everything
+after its final marker: $10$--$13$. Items $8$ and $9$ are left over.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Three friends --- Matt, Kean, and Hope --- want to share an $18$-inch sub that is half
+vegetarian (V) and half roast beef (B), using the lone-divider method. The veggie half
+is on the left and the beef half on the right. Their preferences:
+\begin{itemize}
+\item Matt is vegan, so doesn't value the beef half at all;
+\item Kean likes both halves equally well;
+\item Hope considers the veggie half worth $60\%$ of the total and the beef worth $40\%$.
+\end{itemize}
+
+\begin{prompt}
+\textbf{(a)} Write each friend's value system, as fractions.
+
+Matt --- V: $\answer{1}$, B: $\answer{0}$ \quad
+Kean --- V: $\answer{1/2}$, B: $\answer{1/2}$ \quad
+Hope --- V: $\answer{3/5}$, B: $\answer{2/5}$
+
+\begin{feedback}
+Matt puts all of his value on the veggie half; Kean splits evenly; Hope's $60\%$ and
+$40\%$ are $\frac35$ and $\frac25$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} If Hope is the divider, what three shares does she cut? Enter fractions.
+
+$s_1=\answer{5/9}$ of V \qquad
+$s_2=\frac49$ of V $+$ $\answer{1/6}$ of B \qquad
+$s_3=\answer{5/6}$ of B
+
+\begin{hint}
+Each share must be worth $\frac13$ to Hope. The veggie half alone is worth $\frac35$ to
+her --- more than $\frac13$ --- so the first cut falls inside the veggie.
+\end{hint}
+
+\begin{feedback}
+The first share is a fraction $x$ of V with $\frac35x=\frac13$, so $x=\frac59$. The
+remaining $\frac49$ of V is worth $\frac49\cdot\frac35=\frac4{15}$, so the second share
+needs $\frac13-\frac4{15}=\frac1{15}$ more, from beef: $\frac25y=\frac1{15}$ gives
+$y=\frac16$. The third share is the other $\frac56$ of B, worth
+$\frac56\cdot\frac25=\frac13$. \checkmark
+
+On the $18$-inch sub, the cuts fall $5$ inches from the veggie end and $1.5$ inches into
+the beef.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} What is each share worth to each friend? Enter fractions.
+
+Matt: $s_1=\answer{5/9}$, $s_2=\answer{4/9}$, $s_3=\answer{0}$
+
+\smallskip
+Kean: $s_1=\answer{5/18}$, $s_2=\answer{11/36}$, $s_3=\answer{5/12}$
+
+\smallskip
+Hope: $s_1=\answer{1/3}$, $s_2=\answer{1/3}$, $s_3=\answer{1/3}$
+
+\begin{feedback}
+Matt values only the veggie: $\frac59$, $\frac49$, $0$.
+
+Kean values by size: $\frac59\cdot\frac12=\frac5{18}$;
+$\frac49\cdot\frac12+\frac16\cdot\frac12=\frac29+\frac1{12}=\frac{11}{36}$;
+$\frac56\cdot\frac12=\frac5{12}$.
+
+Hope, the divider, values each at exactly $\frac13$.
+
+Fair shares ($\ge\frac13$): Matt $\set{s_1,s_2}$; Kean only $\set{s_3}$; Hope any.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(d)} Can the shares be fairly assigned without cutting further?
+
+\begin{multipleChoice}
+\choice[correct]{Yes}
+\choice{No}
+\end{multipleChoice}
+
+\begin{feedback}
+Yes. Kean needs $s_3$, and nobody else needs it; Matt can take either $s_1$ or $s_2$;
+Hope takes whatever remains.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(e)} Describe one fair division of the sub using these shares.
+
+\begin{freeResponse}
+\end{freeResponse}
+
+\begin{feedback}
+For example: Kean takes $s_3$ ($\frac5{12}$ to him), Matt takes $s_1$ ($\frac59$), and
+Hope takes $s_2$ ($\frac13$). Swapping Matt and Hope --- Matt $s_2$ ($\frac49$), Hope
+$s_1$ --- is the other fair option.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Roommates Wei, Yan, and Ali are using the method of sealed bids to split weekly chores.
+They've estimated the cost of each chore to themselves:
+
+\begin{center}
+\begin{tabular}{|r|r|r|r|}\hline
+ & \textbf{Wei} & \textbf{Yan} & \textbf{Ali}\\\hline
+Tidying & $-\$8$ & $-\$4$ & $-\$10$\\
+Dishes & $-\$12$ & $-\$14$ & $-\$15$\\
+Laundry & $-\$11$ & $-\$9$ & $-\$6$\\
+Groceries & $-\$70$ & $-\$80$ & $-\$60$\\
+Trash & $-\$4$ & $-\$10$ & $-\$2$\\\hline
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} Who is assigned each chore?
+
+Tidying: $\answer{Yan}$ \quad Dishes: $\answer{Wei}$ \quad Laundry: $\answer{Ali}$ \quad
+Groceries: $\answer{Ali}$ \quad Trash: $\answer{Ali}$
+
+\begin{feedback}
+Each chore goes to whoever minds it least (the least negative bid): Tidying Yan ($-4$),
+Dishes Wei ($-12$), Laundry Ali ($-6$), Groceries Ali ($-60$), Trash Ali ($-2$).
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Fill in the rest of the table.
+
+Total value: Wei $\answer{-105}$, Yan $\answer{-117}$, Ali $\answer{-93}$
+
+\smallskip
+Fair share: Wei $\answer{-35}$, Yan $\answer{-39}$, Ali $\answer{-31}$
+
+\smallskip
+Allocation value: Wei $\answer{-12}$, Yan $\answer{-4}$, Ali $\answer{-68}$
+
+\smallskip
+Initial settlement (positive = pays in): Wei $\answer{23}$, Yan $\answer{35}$,
+Ali $\answer{-37}$
+
+\smallskip
+Total surplus: $\$\answer{21}$, so each roommate's share is $\$\answer{7}$
+
+\begin{feedback}
+Fair shares are a third of each total. Wei's dishes ($-12$) are $\$23$ better than his
+fair share of $-35$, so he pays $\$23$; Yan's tidying ($-4$) beats $-39$ by $\$35$; Ali's
+three chores ($-68$) are $\$37$ worse than $-31$, so Ali receives $\$37$. The system
+holds $23+35-37=\$21$, or $\$7$ per roommate.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Altogether, how much does each roommate owe or receive, in addition to
+their chores? Enter a positive number for money paid, negative for money received.
+
+Wei: $\answer{16}$ \quad Yan: $\answer{28}$ \quad Ali: $\answer{-44}$
+
+\begin{feedback}
+Subtract each \$7 share of the surplus: Wei pays $23-7=\$16$, Yan pays $35-7=\$28$, and
+Ali receives $37+7=\$44$. The payments balance: $16+28=44$. \checkmark
+
+Ali takes on the groceries, the most burdensome chore, and is paid well for it; every
+roommate ends \$7 better off than a fair share by their own estimates.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\end{document}

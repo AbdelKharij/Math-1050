@@ -1,0 +1,278 @@
+\documentclass[12pt]{ximera}
+\title{Practice Exam 2}
+\begin{document}
+\begin{abstract}
+Practice for Exam 2, covering Chapter 2: critical players and veto power, counting
+coalitions and sequential coalitions, Banzhaf and Shapley-Shubik power, and a city
+council analyzed with coalition types.
+\end{abstract}
+\maketitle
+
+\section*{Practice Exam 2}
+
+\begin{problem}
+Assess whether each of the following claims is true or false.
+
+\begin{prompt}
+\textbf{(a)} Claim: in a weighted voting system, it is possible for every player in a
+\emph{winning} coalition to be critical.
+
+\begin{multipleChoice}
+\choice[correct]{True}
+\choice{False}
+\end{multipleChoice}
+
+\begin{feedback}
+True. In a winning coalition that only just reaches the quota, losing any member drops
+it below. For example, in $[12:8,6,4,2]$ the coalition $\set{B,C,D}$ has weight exactly
+$12$, so all three members are critical.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Claim: in a weighted voting system, it is possible for a player with weight
+less than half of the quota to have veto power.
+
+\begin{multipleChoice}
+\choice[correct]{True}
+\choice{False}
+\end{multipleChoice}
+
+\begin{feedback}
+True. Veto power only requires that the other players together fall short of the quota.
+In $[10:4,3,2,1]$ the quota equals the total weight, so every player --- including the
+one with weight $1$, far below half of $10$ --- can block any motion.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Claim: in a weighted voting system, if two players have the same number of
+votes, then they have equal power in the system.
+
+\begin{multipleChoice}
+\choice[correct]{True}
+\choice{False}
+\end{multipleChoice}
+
+\begin{feedback}
+True. Two players with equal weight are interchangeable: swapping them turns every
+winning coalition into another winning coalition, so each is critical (or pivotal)
+exactly as often as the other.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Use counting of subsets and sequences to answer the following.
+
+\begin{prompt}
+\textbf{(a)} In a weighted voting system with $10$ players, how many coalitions have two
+or more players?
+
+\begin{multipleChoice}
+\choice{$2^{10}=1024$}
+\choice{$2^{9}=512$}
+\choice[correct]{$2^{10}-10-1=1013$}
+\choice{$2^{10}-1=1023$}
+\end{multipleChoice}
+
+\begin{feedback}
+Of the $2^{10}=1024$ subsets, $1$ is empty and $10$ contain a single player. Removing
+those leaves $1024-10-1=1013$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} In a system with $15$ players, how many coalitions include $P_1$ and exclude
+$P_{12}$, $P_{13}$, $P_{14}$, and $P_{15}$?
+
+$\answer{1024}$
+
+\begin{feedback}
+Five players are settled, so $10$ remain free to be in or out: $2^{10}=1024$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} In the system $[100:60,51,45,37,26,18]$ with six players, how many
+\emph{sequential} coalitions are there?
+
+$\answer{720}$
+
+\begin{feedback}
+A sequential coalition orders all six players: $6!=720$. The weights do not matter for
+this count.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Consider the weighted voting system $[12:8,6,4,2]$ with players A, B, C, and D.
+
+\begin{prompt}
+\textbf{(a)} How many winning coalitions are there?
+
+$\answer{7}$
+
+\begin{feedback}
+The coalitions with weight at least $12$ are
+\[
+\set{A,B}=14,\ \set{A,C}=12,\ \set{A,B,C}=18,\ \set{A,B,D}=16,\ \set{A,C,D}=14,\
+\set{B,C,D}=12,\ \set{A,B,C,D}=20.
+\]
+Critical players: both in $\set{A,B}$ and $\set{A,C}$; only A in $\set{A,B,C}$; A and B
+in $\set{A,B,D}$; A and C in $\set{A,C,D}$; all three in $\set{B,C,D}$; none in the
+grand coalition.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Claim: player D is critical in the winning coalition $\set{B,C,D}$.
+
+\begin{multipleChoice}
+\choice[correct]{True}
+\choice{False}
+\end{multipleChoice}
+
+\begin{feedback}
+True. $\set{B,C,D}$ has weight $6+4+2=12$; without D it drops to $10<12$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Claim: this system is \emph{equivalent} to $[4:3,2,1,0]$.
+
+\begin{multipleChoice}
+\choice{True}
+\choice[correct]{False}
+\end{multipleChoice}
+
+\begin{feedback}
+False. In $[4:3,2,1,0]$ the coalition $\set{B,C,D}$ has weight $2+1+0=3<4$ and loses,
+but in $[12:8,6,4,2]$ it wins. Different winning coalitions means the systems are not
+equivalent.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(d)} Determine the Banzhaf power distribution, as percentages rounded to two
+decimal places.
+
+A: $\answer[tolerance=0.005]{41.67}\%$ \quad B: $\answer[tolerance=0.005]{25}\%$ \quad
+C: $\answer[tolerance=0.005]{25}\%$ \quad D: $\answer[tolerance=0.005]{8.33}\%$
+
+\begin{feedback}
+Critical counts from part (a): A $5$, B $3$, C $3$, D $1$, total $12$. So A
+$\frac{5}{12}\approx 41.67\%$, B and C $\frac{3}{12}=25\%$ each, D $\frac1{12}\approx 8.33\%$.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+The following are all $6$ sequential coalitions for a weighted voting system with three
+players A, B, and C, with the pivotal player underlined.
+\[
+\begin{array}{ccc}
+\seq{A,B,\underline{C}} & \seq{B,A,\underline{C}} & \seq{C,\underline{A},B}\\
+\seq{A,\underline{C},B} & \seq{B,\underline{C},A} & \seq{C,\underline{B},A}
+\end{array}
+\]
+
+\begin{prompt}
+\textbf{(a)} Determine the Shapley-Shubik power distribution, as fractions.
+
+A: $\answer{1/6}$ \quad B: $\answer{1/6}$ \quad C: $\answer{2/3}$
+
+\begin{feedback}
+C is pivotal $4$ times, and A and B once each, out of $6$: $\frac16$, $\frac16$, $\frac46=\frac23$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Using the pivots shown, which coalitions are winning?
+
+\begin{selectAll}
+\choice{$\set{A,B}$}
+\choice[correct]{$\set{A,C}$}
+\choice[correct]{$\set{B,C}$}
+\choice[correct]{$\set{A,B,C}$}
+\choice{$\set{C}$}
+\end{selectAll}
+
+\begin{hint}
+A pivot at position $k$ means the first $k$ players win together, but the first $k-1$
+do not.
+\end{hint}
+
+\begin{feedback}
+$\seq{A,B,\underline{C}}$ shows $\set{A,B}$ loses and $\set{A,B,C}$ wins.
+$\seq{A,\underline{C},B}$ shows $\set{A,C}$ wins, and $\seq{B,\underline{C},A}$ shows
+$\set{B,C}$ wins. $\seq{C,\underline{A},B}$ shows $\set{C}$ alone loses. So the winning
+coalitions are $\set{A,C}$, $\set{B,C}$, and $\set{A,B,C}$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Determine the Banzhaf power distribution, as percentages.
+
+A: $\answer{20}\%$ \quad B: $\answer{20}\%$ \quad C: $\answer{60}\%$
+
+\begin{feedback}
+Critical players: both in $\set{A,C}$ and in $\set{B,C}$; only C in $\set{A,B,C}$ (removing
+A or B still leaves a winning pair). Counts A $1$, B $1$, C $3$, total $5$: $20\%$,
+$20\%$, $60\%$. Note that the two power indices disagree here.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Consider a city council with a mayor and four council members, $M$, $C_1$, $C_2$, $C_3$,
+$C_4$. Everyone has one vote, and a motion passes by simple majority \emph{or} by the mayor
+with any one council member's support. Use $*$ for any one council member.
+
+\begin{prompt}
+\textbf{(a)} There are five sequential coalition types, depending on where the mayor
+falls. In how many of them is the mayor pivotal?
+
+$\answer{2}$
+
+\begin{feedback}
+\[
+\begin{array}{ll}
+\seq{M,\underline{*},*,*,*} & \text{$M$ plus one member wins at step 2}\\
+\seq{*,\underline{M},*,*,*} & \text{$M$ joins one member}\\
+\seq{*,*,\underline{M},*,*} & \text{two members lose; adding $M$ wins}\\
+\seq{*,*,\underline{*},M,*} & \text{three members are a majority}\\
+\seq{*,*,\underline{*},*,M} & \text{same}
+\end{array}
+\]
+The mayor is pivotal in $2$ types.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} How many distinct sequential coalitions are there of each type, and in
+total?
+
+Each type: $\answer{24}$ \qquad Total: $\answer{120}$
+
+\begin{feedback}
+Within a type, the four council members can be arranged in $4!=24$ ways. Five types
+give $5\cdot 24=120=5!$. \checkmark
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Determine the Shapley-Shubik power distribution, as percentages.
+
+Mayor: $\answer{40}\%$ \quad Each council member: $\answer{15}\%$
+
+\begin{feedback}
+The mayor is pivotal in $2\cdot 24=48$ sequential coalitions: $\frac{48}{120}=40\%$.
+Council members are pivotal in the other $72$, split four ways: $18$ each, or $15\%$.
+The mayor's one vote carries as much power as almost three council votes.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\end{document}

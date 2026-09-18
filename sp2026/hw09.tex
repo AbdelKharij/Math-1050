@@ -1,0 +1,242 @@
+\documentclass[12pt]{ximera}
+\title{Homework 9: Huntington-Hill, Paradoxes, and the Subtraction Game}
+\begin{document}
+\begin{abstract}
+Sections 4.5--4.6 and the subtraction game: the Huntington-Hill method with geometric
+mean cutoffs, the new-states paradox, and a subtraction game the second player wins.
+\end{abstract}
+\maketitle
+
+\section*{Sections 4.5--4.6: Huntington-Hill and the Paradoxes}
+
+Round all apportionment answers to three decimal places.
+
+\begin{problem}
+A city school district is apportioning $40$ teacher's aides to its five schools.
+
+\begin{center}
+\begin{tabular}{|r|c|c|c|c|c|c|}\hline
+\textbf{School} & A & B & C & D & E & \textbf{Total} \\\hline
+\textbf{Population} & 185 & 261 & 380 & 862 & 1312 & 3{,}000 \\\hline
+\end{tabular}
+\end{center}
+
+Solve this apportionment using the Huntington-Hill method, rounding based on comparing
+each quota to the geometric mean $\sqrt{\lfloor q_i\rfloor \cdot \lceil q_i\rceil}$ of
+its lower and upper quotas.
+
+\begin{prompt}
+\textbf{(a)} Compute the standard divisor and the standard quotas.
+
+Standard divisor: $\answer{75}$
+
+\smallskip
+$q_A = \answer[tolerance=0.0005]{2.467}$ \quad
+$q_B = \answer[tolerance=0.0005]{3.48}$ \quad
+$q_C = \answer[tolerance=0.0005]{5.067}$ \quad
+$q_D = \answer[tolerance=0.0005]{11.493}$ \quad
+$q_E = \answer[tolerance=0.0005]{17.493}$
+
+\begin{feedback}
+\[ SD = \frac{3000}{40} = 75, \]
+so the quotas are
+\[
+q_A = 2.467,\quad q_B = 3.480,\quad q_C = 5.067,\quad q_D = 11.493,\quad q_E = 17.493,
+\]
+totaling $40$. \checkmark
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Compute each geometric mean cutoff, and round accordingly.
+
+Cutoffs: $A: \answer[tolerance=0.0005]{2.449}$ \quad
+$B: \answer[tolerance=0.0005]{3.464}$ \quad
+$C: \answer[tolerance=0.0005]{5.477}$ \quad
+$D: \answer[tolerance=0.0005]{11.489}$ \quad
+$E: \answer[tolerance=0.0005]{17.493}$
+
+\smallskip
+Rounded quotas: $A: \answer{3}$ \quad $B: \answer{4}$ \quad $C: \answer{5}$ \quad
+$D: \answer{12}$ \quad $E: \answer{18}$ \quad giving a total of $\answer{42}$
+
+\begin{hint}
+Round \emph{up} when the quota exceeds its geometric mean cutoff, and \emph{down}
+otherwise. Several of these are very close calls --- keep all three decimals.
+\end{hint}
+
+\begin{feedback}
+\[
+\begin{array}{lllll}
+A: & q = 2.467 & \sqrt{2\cdot 3}=2.449 & 2.467 > 2.449 & \to 3\\
+B: & q = 3.480 & \sqrt{3\cdot 4}=3.464 & 3.480 > 3.464 & \to 4\\
+C: & q = 5.067 & \sqrt{5\cdot 6}=5.477 & 5.067 < 5.477 & \to 5\\
+D: & q = 11.493 & \sqrt{11\cdot 12}=11.489 & 11.493 > 11.489 & \to 12\\
+E: & q = 17.493 & \sqrt{17\cdot 18}=17.493 & \text{just above} & \to 18
+\end{array}
+\]
+D and E are genuinely close: $q_D = 11.4933$ against a cutoff of $11.4891$, and
+$q_E = 17.49333$ against $17.49286$. Both round up, but only barely.
+
+The total is $3+4+5+12+18 = 42$, which is $2$ too many. A modified divisor is needed.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Which modified divisor should be used?
+
+\begin{multipleChoice}
+\choice{$74.75$}
+\choice[correct]{$75.25$}
+\end{multipleChoice}
+
+With it, the final apportionment is \\
+$A: \answer{3}$ \quad $B: \answer{4}$ \quad $C: \answer{5}$ \quad $D: \answer{11}$
+\quad $E: \answer{17}$
+
+\begin{hint}
+The standard divisor gave too many seats. Does a larger or a smaller divisor reduce
+the quotas?
+\end{hint}
+
+\begin{feedback}
+Since the standard divisor gave $42$ seats --- two too many --- the quotas must come
+down, which means a \emph{larger} divisor. So $75.25$ is the right choice; $74.75$
+would only make things worse (it still totals $42$).
+
+With $d = 75.25$:
+\[
+\begin{array}{lllll}
+A: & q = 2.458 & \text{cutoff } 2.449 & \text{above} & \to 3\\
+B: & q = 3.468 & \text{cutoff } 3.464 & \text{above} & \to 4\\
+C: & q = 5.050 & \text{cutoff } 5.477 & \text{below} & \to 5\\
+D: & q = 11.455 & \text{cutoff } 11.489 & \text{below} & \to 11\\
+E: & q = 17.435 & \text{cutoff } 17.493 & \text{below} & \to 17
+\end{array}
+\]
+which totals $40$. \checkmark
+
+The two borderline cases, D and E, are precisely the ones that flip.
+
+\textbf{Compare with Webster's method}, which uses conventional rounding. At the
+standard divisor of $75$ that would give $2, 3, 5, 11, 17 = 38$, so a smaller divisor
+would be needed --- and school A, whose quota is $2.467$, would be rounded \emph{down}
+to $2$ rather than up to $3$. Huntington-Hill's geometric-mean cutoff sits slightly
+below the arithmetic midpoint, which nudges small districts upward. That is exactly why
+it is the method the U.S.\ House of Representatives uses.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Narnia has grown from two states to three. To accommodate the new state of
+Chippingford, the Narnian congress has been increased by $5$ seats and the new total of
+$95$ seats has been reapportioned:
+
+\begin{center}
+\begin{tabular}{|r|c|c|c|}\hline
+\textbf{State} & Beruna & Beaversdam & Chippingford \\\hline
+\textbf{Population} & 7600 & 9720 & 1000 \\\hline
+\textbf{Original apportionment} & 39 & 51 & -- \\\hline
+\textbf{New apportionment} & 40 & 50 & 5 \\\hline
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} Why might Beaversdam residents be frustrated with this reapportionment?
+
+\begin{freeResponse}
+\end{freeResponse}
+
+\begin{feedback}
+Beaversdam \emph{lost} a seat, dropping from $51$ to $50$, even though:
+\begin{itemize}
+\item its own population did not change;
+\item the congress got \emph{bigger}, gaining $5$ seats; and
+\item the new seats were added specifically to accommodate Chippingford, which took
+      exactly the $5$ seats that were added.
+\end{itemize}
+Worse, the seat Beaversdam lost went to Beruna --- a state whose population also did
+not change. Adding a new state with its own new seats should not shuffle
+representation between two untouched states.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} What is the formal term for this phenomenon?
+
+\begin{multipleChoice}
+\choice{The Alabama paradox}
+\choice{The population paradox}
+\choice[correct]{The new-states paradox}
+\choice{A violation of the quota rule}
+\end{multipleChoice}
+
+\begin{feedback}
+The \textbf{new-states paradox}: adding a new state, along with the seats to
+accommodate it, changes the apportionment among the existing states.
+
+The neighboring paradoxes are worth distinguishing. The \emph{Alabama paradox} is when
+increasing the total number of seats causes a state to lose one. The \emph{population
+paradox} is when a state whose population is growing loses a seat to one that is
+shrinking. All three afflict the same method.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Of the apportionment methods we've discussed, which must the Narnian
+congress be using?
+
+\begin{multipleChoice}
+\choice[correct]{Hamilton's method}
+\choice{Jefferson's method}
+\choice{Adams' method}
+\choice{Webster's method}
+\end{multipleChoice}
+
+\begin{feedback}
+\textbf{Hamilton's method}. All three apportionment paradoxes --- Alabama, population,
+and new-states --- are possible only under Hamilton's method.
+
+The divisor methods (Jefferson, Adams, Webster, Huntington-Hill) are immune to all
+three paradoxes, because they apportion by picking a divisor and rounding, with no
+step that reshuffles surplus seats based on fractional parts. The trade-off is that
+divisor methods can violate the quota rule, which Hamilton's method never does. As the
+Balinski-Young theorem proves, no method can avoid both problems at once.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Alice and Bob are playing a version of the Subtraction Game where they start with a pile
+of $54$ stones and on each turn they may take $1$, $2$, $3$, $4$, or $5$ stones. The
+objective is to claim the last stone.
+
+\begin{prompt}
+\textbf{(a)} Describe the winning strategy.
+
+\begin{freeResponse}
+\end{freeResponse}
+
+\begin{feedback}
+Always leave your opponent a multiple of $6$: whenever they take $k$ stones, take $6-k$.
+Each round removes exactly $6$, so your opponent eventually faces $0$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} If both players play optimally and Alice goes first, who will win?
+
+\begin{multipleChoice}
+\choice{Alice}
+\choice[correct]{Bob}
+\end{multipleChoice}
+
+\begin{feedback}
+Bob. $54=6\cdot 9$ is already a multiple of $6$, so Alice starts in a losing position:
+whatever she takes, Bob restores a multiple of $6$.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\end{document}

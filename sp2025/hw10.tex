@@ -1,0 +1,243 @@
+\documentclass[12pt]{ximera}
+\title{Homework 10: Webster, Huntington-Hill, and the Paradoxes}
+\begin{document}
+\begin{abstract}
+Sections 4.4--4.6: Webster's and the Huntington-Hill methods on a lopsided
+apportionment where both break the quota rule, the biases of Jefferson's and Adams'
+methods, and the new-states paradox.
+\end{abstract}
+\maketitle
+
+\section*{Sections 4.4--4.6: Divisor Methods and Paradoxes}
+
+\begin{problem}
+Use Webster's method to complete the following apportionment. The city of Gotham needs
+to apportion $100$ new villains to its four districts:
+\begin{center}
+\begin{tabular}{|r|c|c|c|c|c|}\hline
+\textbf{District} & A & B & C & D & \textbf{Total}\\\hline
+\textbf{Population} & 86{,}915 & 5{,}400 & 4{,}325 & 3{,}360 & 100{,}000\\\hline
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} Compute the standard divisor and the standard quotas (three decimals).
+
+$SD=\answer{1000}$ \qquad $q_A=\answer[tolerance=0.0005]{86.915}$ \quad
+$q_B=\answer[tolerance=0.0005]{5.4}$ \quad $q_C=\answer[tolerance=0.0005]{4.325}$ \quad
+$q_D=\answer[tolerance=0.0005]{3.36}$
+
+\begin{feedback}
+$SD=\frac{100{,}000}{100}=1000$, so each quota is the population divided by $1000$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Round each standard quota conventionally. What is the total?
+
+$A:\answer{87}$ \quad $B:\answer{5}$ \quad $C:\answer{4}$ \quad $D:\answer{3}$, \quad
+total $\answer{99}$
+
+\begin{feedback}
+$86.915\to 87$, $5.4\to 5$, $4.325\to 4$, $3.36\to 3$, totaling $99$ --- one short, so
+the divisor must shrink slightly.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Using the modified divisor $d=987$, find Webster's apportionment.
+
+$A:\answer{88}$ \quad $B:\answer{5}$ \quad $C:\answer{4}$ \quad $D:\answer{3}$
+
+\begin{feedback}
+The modified quotas are $88.060$, $5.471$, $4.382$, $3.404$, which round to
+$88, 5, 4, 3$ --- a total of $100$. \checkmark (Any divisor from about $982.1$ to $993.3$
+gives the same result.)
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Use the Huntington-Hill method to complete the same apportionment.
+\begin{center}
+\begin{tabular}{|r|c|c|c|c|c|}\hline
+\textbf{District} & A & B & C & D & \textbf{Total}\\\hline
+\textbf{Population} & 86{,}915 & 5{,}400 & 4{,}325 & 3{,}360 & 100{,}000\\\hline
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} Compute the geometric-mean cutoff $\sqrt{\lfloor q\rfloor\lceil q\rceil}$ for
+each standard quota, and round accordingly. What is the total?
+
+Cutoffs: $A:\answer[tolerance=0.0005]{86.499}$ \quad $B:\answer[tolerance=0.0005]{5.477}$
+\quad $C:\answer[tolerance=0.0005]{4.472}$ \quad $D:\answer[tolerance=0.0005]{3.464}$
+
+\smallskip
+Rounded: $A:\answer{87}$ \quad $B:\answer{5}$ \quad $C:\answer{4}$ \quad $D:\answer{3}$,
+\quad total $\answer{99}$
+
+\begin{feedback}
+\[
+\begin{array}{llll}
+A: & 86.915 \text{ vs } \sqrt{86\cdot 87}=86.499 & \text{above} & \to 87\\
+B: & 5.400 \text{ vs } \sqrt{5\cdot 6}=5.477 & \text{below} & \to 5\\
+C: & 4.325 \text{ vs } \sqrt{4\cdot 5}=4.472 & \text{below} & \to 4\\
+D: & 3.360 \text{ vs } \sqrt{3\cdot 4}=3.464 & \text{below} & \to 3
+\end{array}
+\]
+The total is $99$, one short.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Using the modified divisor $d=990$, find the Huntington-Hill apportionment.
+
+$A:\answer{88}$ \quad $B:\answer{5}$ \quad $C:\answer{4}$ \quad $D:\answer{3}$
+
+\begin{feedback}
+The modified quotas are $87.793$, $5.455$, $4.369$, $3.394$. Against the cutoffs
+$\sqrt{87\cdot 88}=87.499$, $5.477$, $4.472$, $3.464$, only A rounds up, giving
+$88, 5, 4, 3$ --- a total of $100$. \checkmark
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+\begin{prompt}
+\textbf{(a)} Describe the difference between Adams' method of apportionment and
+Jefferson's.
+
+\begin{freeResponse}
+\end{freeResponse}
+
+\begin{feedback}
+Both are divisor methods: pick a modified divisor, divide it into each population, and
+round. Jefferson's method rounds every modified quota \emph{down}, so it needs a divisor
+smaller than the standard one. Adams' method rounds every modified quota \emph{up}, so it
+needs a divisor larger than the standard one.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} What bias is inherent in each?
+
+Jefferson's method favors:
+\begin{multipleChoice}
+\choice[correct]{Large states}
+\choice{Small states}
+\end{multipleChoice}
+
+Adams' method favors:
+\begin{multipleChoice}
+\choice{Large states}
+\choice[correct]{Small states}
+\end{multipleChoice}
+
+\begin{feedback}
+Rounding down costs every state up to one seat, and Jefferson compensates by shrinking
+the divisor --- which raises large states' quotas the most, so the extra seats flow to
+them. Rounding up gives every state, however small, at least one seat's boost, and
+Adams compensates by growing the divisor, which cuts large states' quotas the most.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} What can you conclude about quota breaking in Webster's method and the
+Huntington-Hill method, based on Problems 1 and 2?
+
+\begin{multipleChoice}
+\choice{Both always satisfy the quota rule}
+\choice[correct]{Both can violate the quota rule}
+\choice{Only Webster's method can violate the quota rule}
+\choice{Only the Huntington-Hill method can violate the quota rule}
+\end{multipleChoice}
+
+\begin{feedback}
+District A's standard quota is $86.915$, so its upper quota is $87$ --- yet both methods
+gave it $88$. So both Webster's and the Huntington-Hill methods can violate the quota
+rule, even though they are less biased than Jefferson's or Adams'.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Narnia has grown from two states to three. To accommodate the new state of
+Chippingford, the Narnian congress has been increased by $5$ seats and the new total of
+$95$ seats has been reapportioned:
+
+\begin{center}
+\begin{tabular}{|r|c|c|c|}\hline
+\textbf{State} & Beruna & Beaversdam & Chippingford \\\hline
+\textbf{Population} & 7600 & 9720 & 1000 \\\hline
+\textbf{Original apportionment} & 39 & 51 & -- \\\hline
+\textbf{New apportionment} & 40 & 50 & 5 \\\hline
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} Why might Beaversdam residents be frustrated with this reapportionment?
+
+\begin{freeResponse}
+\end{freeResponse}
+
+\begin{feedback}
+Beaversdam \emph{lost} a seat, dropping from $51$ to $50$, even though:
+\begin{itemize}
+\item its own population did not change;
+\item the congress got \emph{bigger}, gaining $5$ seats; and
+\item the new seats were added specifically to accommodate Chippingford, which took
+      exactly the $5$ seats that were added.
+\end{itemize}
+Worse, the seat Beaversdam lost went to Beruna --- a state whose population also did
+not change. Adding a new state with its own new seats should not shuffle
+representation between two untouched states.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} What is the formal term for this phenomenon?
+
+\begin{multipleChoice}
+\choice{The Alabama paradox}
+\choice{The population paradox}
+\choice[correct]{The new-states paradox}
+\choice{A violation of the quota rule}
+\end{multipleChoice}
+
+\begin{feedback}
+The \textbf{new-states paradox}: adding a new state, along with the seats to
+accommodate it, changes the apportionment among the existing states.
+
+The neighboring paradoxes are worth distinguishing. The \emph{Alabama paradox} is when
+increasing the total number of seats causes a state to lose one. The \emph{population
+paradox} is when a state whose population is growing loses a seat to one that is
+shrinking. All three afflict the same method.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Of the apportionment methods we've discussed, which must the Narnian
+congress be using?
+
+\begin{multipleChoice}
+\choice[correct]{Hamilton's method}
+\choice{Jefferson's method}
+\choice{Adams' method}
+\choice{Webster's method}
+\end{multipleChoice}
+
+\begin{feedback}
+\textbf{Hamilton's method}. All three apportionment paradoxes --- Alabama, population,
+and new-states --- are possible only under Hamilton's method.
+
+The divisor methods (Jefferson, Adams, Webster, Huntington-Hill) are immune to all
+three paradoxes, because they apportion by picking a divisor and rounding, with no
+step that reshuffles surplus seats based on fractional parts. The trade-off is that
+divisor methods can violate the quota rule, which Hamilton's method never does. As the
+Balinski-Young theorem proves, no method can avoid both problems at once.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\end{document}

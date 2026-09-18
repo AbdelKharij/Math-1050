@@ -1,0 +1,557 @@
+\documentclass[12pt]{ximera}
+\title{Final Exam}
+\begin{document}
+\begin{abstract}
+The cumulative final: how modified divisors move quotas, which methods suffer which
+paradoxes and quota violations, a full five-method apportionment of girl scouts, the
+subtraction game, saddle points, and bonus problems on Condorcet candidates, weighted
+voting, and fair division.
+\end{abstract}
+\maketitle
+
+\section*{Final Exam}
+
+\begin{problem}
+Assess whether each of the following claims is true or false.
+
+\begin{prompt}
+\textbf{(a)} Claim: the quotas of states with the \emph{largest} populations will change
+the fastest when the standard divisor of an apportionment problem is decreased.
+
+\begin{multipleChoice}
+\choice[correct]{True}
+\choice{False}
+\end{multipleChoice}
+
+\begin{feedback}
+True. A quota is $q = \frac{p}{d}$, so changing the divisor scales every quota by the
+same factor --- and the same percentage change produces a larger absolute movement for a
+larger quota.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Claim: the quotas of states with the \emph{smallest} populations will change
+the fastest when the standard divisor of an apportionment problem is increased.
+
+\begin{multipleChoice}
+\choice{True}
+\choice[correct]{False}
+\end{multipleChoice}
+
+\begin{hint}
+Compare this carefully with part (a). Does the direction of the divisor change affect
+\emph{which} states move fastest?
+\end{hint}
+
+\begin{feedback}
+False. The largest states' quotas move fastest in \emph{either} direction --- increasing
+the divisor does not reverse which states are most sensitive to it.
+
+Concretely, raising the divisor from $30$ to $33$ drops a state of population $230$ from
+$7.667$ to $6.970$, a change of $0.70$, while a state of population $43$ drops only from
+$1.433$ to $1.303$, a change of $0.13$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Claim: a \emph{zero-sum} game is a game where every point earned by one of
+the players is lost by the other.
+
+\begin{multipleChoice}
+\choice[correct]{True}
+\choice{False}
+\end{multipleChoice}
+
+\begin{feedback}
+True --- that is the definition. The players' payoffs always sum to zero, which is
+exactly why a single payoff matrix from one player's perspective captures the whole
+game.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(d)} Claim: every 2-player zero-sum game has a \emph{saddle point}.
+
+\begin{multipleChoice}
+\choice{True}
+\choice[correct]{False}
+\end{multipleChoice}
+
+\begin{feedback}
+False. Problem 5(b) below is a counterexample: its maximin is $-1$ and its minimax is
+$2$, so no saddle point exists. Such games have no stable pair of pure strategies, and
+both players are better off mixing.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Identify all applicable answers.
+
+\begin{prompt}
+\textbf{(a)} Which of the following can occur when using Hamilton's method of
+apportionment?
+
+\begin{selectAll}
+\choice[correct]{Alabama paradox}
+\choice{Upper quota violation}
+\choice[correct]{New States paradox}
+\choice{Lower quota violation}
+\end{selectAll}
+
+\begin{feedback}
+The \textbf{Alabama paradox} and the \textbf{New States paradox} (and the population
+paradox as well).
+
+Hamilton's method always satisfies the quota rule --- every state receives either its
+lower or its upper quota --- so neither quota violation is possible. What it cannot avoid
+are the paradoxes, which arise from handing out surplus seats by comparing fractional
+parts.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Which of the following can occur when using Webster's method of
+apportionment?
+
+\begin{selectAll}
+\choice[correct]{Upper quota violation}
+\choice{New States paradox}
+\choice[correct]{Lower quota violation}
+\choice{Population paradox}
+\end{selectAll}
+
+\begin{hint}
+Webster's method is a divisor method, and it rounds conventionally rather than always up
+or always down. What does each of those two facts rule in or out?
+\end{hint}
+
+\begin{feedback}
+Both quota violations --- \textbf{upper} and \textbf{lower}.
+
+Webster's method is a divisor method, so it is immune to all of the paradoxes. But
+because it rounds conventionally rather than always in one direction, its bias is small
+but can go either way, so it can break the quota rule at either end.
+
+Homework 8 has an upper-quota violation: district A had a standard quota of $86.915$ ---
+upper quota $87$ --- and Webster's method awarded it $88$.
+
+Compare with the one-directional methods: Jefferson's can only violate the upper quota,
+and Adams' only the lower.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Twenty girl scouts are selling cookies and plan to knock on $600$ doors across four
+neighborhoods, so they need to apportion scouts to each neighborhood.
+
+\begin{center}
+\begin{tabular}{|r|c|c|c|c|c|}\hline
+\textbf{Neighborhood} & A & B & C & D & \textbf{Total}\\\hline
+\textbf{Population} & 43 & 103 & 224 & 230 & 600\\\hline
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} Compute the standard divisor and standard quotas, to three decimals.
+
+Standard divisor: $\answer{30}$
+
+\smallskip
+$q_A = \answer[tolerance=0.0005]{1.433}$ \quad $q_B = \answer[tolerance=0.0005]{3.433}$
+\quad $q_C = \answer[tolerance=0.0005]{7.467}$ \quad $q_D = \answer[tolerance=0.0005]{7.667}$
+
+\begin{feedback}
+\[ SD = \frac{600}{20} = 30, \]
+giving quotas $1.433$, $3.433$, $7.467$, and $7.667$, which total $20$. \checkmark
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Complete this apportionment with Hamilton's method.
+
+Lower quotas: $A: \answer{1}$, $B: \answer{3}$, $C: \answer{7}$, $D: \answer{7}$,
+totaling $\answer{18}$, so the surplus is $\answer{2}$ scouts.
+
+\smallskip
+Hamilton's apportionment: $A: \answer{1}$ \quad $B: \answer{3}$ \quad $C: \answer{8}$
+\quad $D: \answer{8}$
+
+\begin{feedback}
+The lower quotas total $1+3+7+7 = 18$, leaving $2$ surplus scouts. The fractional parts
+are
+\[ A: .433, \qquad B: .433, \qquad C: .467, \qquad D: .667, \]
+so D and C --- the two largest --- each gain a scout:
+\[ A = 1, \quad B = 3, \quad C = 8, \quad D = 8. \]
+(A and B tie at $.433$, but neither is in contention for a surplus seat, so the tie never
+has to be broken.)
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Round the standard quotas as if doing just the first step of each method.
+
+Jefferson (down): $A: \answer{1}$, $B: \answer{3}$, $C: \answer{7}$, $D: \answer{7}$,
+total $\answer{18}$
+
+\smallskip
+Adams (up): $A: \answer{2}$, $B: \answer{4}$, $C: \answer{8}$, $D: \answer{8}$,
+total $\answer{22}$
+
+\smallskip
+Webster (conventional): $A: \answer{1}$, $B: \answer{3}$, $C: \answer{7}$, $D: \answer{8}$,
+total $\answer{19}$
+
+\smallskip
+Huntington-Hill cutoffs: $A: \answer[tolerance=0.005]{1.414}$,
+$B: \answer[tolerance=0.005]{3.464}$, $C: \answer[tolerance=0.005]{7.483}$,
+$D: \answer[tolerance=0.005]{7.483}$, giving $A: \answer{2}$, $B: \answer{3}$,
+$C: \answer{7}$, $D: \answer{8}$ for a total of $\answer{20}$
+
+\begin{feedback}
+\[
+\begin{array}{lccccl}
+ & A & B & C & D & \text{total}\\
+\text{quota} & 1.433 & 3.433 & 7.467 & 7.667 & 20\\
+\text{Jefferson} & 1 & 3 & 7 & 7 & 18\\
+\text{Adams} & 2 & 4 & 8 & 8 & 22\\
+\text{Webster} & 1 & 3 & 7 & 8 & 19
+\end{array}
+\]
+
+The Huntington-Hill cutoffs are
+\[
+\sqrt{1\cdot 2}=1.414, \quad \sqrt{3\cdot 4}=3.464, \quad \sqrt{7\cdot 8}=7.483,
+\quad \sqrt{7\cdot 8}=7.483.
+\]
+Comparing: $1.433 > 1.414$ rounds up to $2$; $3.433 < 3.464$ rounds down to $3$;
+$7.467 < 7.483$ rounds down to $7$; $7.667 > 7.483$ rounds up to $8$. That totals exactly
+$20$, so Huntington-Hill needs no modified divisor.
+
+Note that C and D share the same cutoff of $7.483$ but land on opposite sides of it ---
+the method separates two neighborhoods whose quotas differ by only $0.2$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(d)} Complete the apportionment using each method, choosing the appropriate
+modified divisor from $28$, $29.5$, and $33$.
+
+\textbf{Jefferson} --- divisor $\answer{28}$, giving $A: \answer{1}$, $B: \answer{3}$,
+$C: \answer{8}$, $D: \answer{8}$
+
+\smallskip
+\textbf{Adams} --- divisor $\answer{33}$, giving $A: \answer{2}$, $B: \answer{4}$,
+$C: \answer{7}$, $D: \answer{7}$
+
+\smallskip
+\textbf{Webster} --- divisor $\answer[tolerance=0.05]{29.5}$, giving $A: \answer{1}$,
+$B: \answer{3}$, $C: \answer{8}$, $D: \answer{8}$
+
+\begin{hint}
+Part (c) tells you which way each divisor must move: Jefferson is short by $2$ and needs
+a smaller divisor, Adams is over by $2$ and needs a larger one, Webster is short by $1$.
+\end{hint}
+
+\begin{feedback}
+\textbf{Jefferson}, $d = 28$: modified quotas $1.536$, $3.679$, $8.000$, $8.214$;
+rounding down gives $1, 3, 8, 8 = 20$. \checkmark
+
+\textbf{Adams}, $d = 33$: modified quotas $1.303$, $3.121$, $6.788$, $6.970$; rounding up
+gives $2, 4, 7, 7 = 20$. \checkmark
+
+\textbf{Webster}, $d = 29.5$: modified quotas $1.458$, $3.492$, $7.593$, $7.797$;
+conventional rounding gives $1, 3, 8, 8 = 20$. \checkmark
+
+Comparing all five:
+\[
+\begin{array}{lcccc}
+ & A & B & C & D\\
+\text{Hamilton} & 1 & 3 & 8 & 8\\
+\text{Jefferson} & 1 & 3 & 8 & 8\\
+\text{Adams} & 2 & 4 & 7 & 7\\
+\text{Webster} & 1 & 3 & 8 & 8\\
+\text{Huntington-Hill} & 2 & 3 & 7 & 8
+\end{array}
+\]
+The bias is on full display: Adams moves two scouts from the big neighborhoods to the
+small ones, while Jefferson and Webster agree with Hamilton. Huntington-Hill sits in
+between, giving the smallest neighborhood the extra scout that Adams does, but without
+Adams' larger shift.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Alice and Bob are playing a variation of the Subtraction Game: start with $18$ stones,
+each turn a player takes $1$, $2$, or $3$ stones, and the winner takes the final stone.
+
+\begin{prompt}
+If Alice goes first, which player has the winning strategy?
+
+\begin{multipleChoice}
+\choice[correct]{Alice}
+\choice{Bob}
+\end{multipleChoice}
+
+How many stones should she take first? $\answer{2}$
+
+\begin{feedback}
+Alice wins. With moves of $1$ to $3$, the losing positions are the multiples of $4$, and
+$18 = 4\cdot 4 + 2$ is not one.
+
+She takes $2$ stones, leaving $16$. From then on she answers each of Bob's moves so the
+pair removes exactly $4$: if Bob takes $k$, she takes $4-k$. Bob faces $16$, $12$, $8$,
+$4$, and finally $0$ --- so Alice takes the last stone.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+The following payoff matrices each represent Alice's perspective for a zero-sum game.
+Identify the saddle point if it exists.
+
+\begin{prompt}
+\textbf{(a)}
+\[
+\begin{array}{c|c|c|}
+\phantom{|} & c & d \\\hline
+a & -7 & 2 \\\hline
+b & 0 & 5 \\\hline
+\end{array}
+\]
+Does a saddle point exist?
+\begin{multipleChoice}
+\choice[correct]{Yes}
+\choice{No}
+\end{multipleChoice}
+If so, its value is $\answer{0}$.
+
+\begin{feedback}
+Row minima $-7$ and $0$ give a maximin of $0$; column maxima $0$ and $5$ give a minimax
+of $0$. The saddle point is $0$ at cell $(b,c)$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)}
+\[
+\begin{array}{c|c|c|}
+\phantom{|} & c & d \\\hline
+a & 4 & -3 \\\hline
+b & -1 & 2 \\\hline
+\end{array}
+\]
+Does a saddle point exist?
+\begin{multipleChoice}
+\choice{Yes}
+\choice[correct]{No}
+\end{multipleChoice}
+
+\begin{feedback}
+Row minima $-3$ and $-1$ give a maximin of $-1$; column maxima $4$ and $2$ give a minimax
+of $2$. Since $-1 \neq 2$, there is no saddle point --- this is the counterexample for
+Problem 1(d).
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)}
+\[
+\begin{array}{c|c|c|c|}
+\phantom{|} & d & e & f \\\hline
+a & -1 & 5 & 0 \\\hline
+b & -2 & 0 & -3 \\\hline
+c & 2 & 3 & 1 \\\hline
+\end{array}
+\]
+Does a saddle point exist?
+\begin{multipleChoice}
+\choice[correct]{Yes}
+\choice{No}
+\end{multipleChoice}
+If so, its value is $\answer{1}$.
+
+\begin{feedback}
+Row minima are $-1$, $-3$, and $1$, so the maximin is $1$. Column maxima are $2$, $5$,
+and $1$, so the minimax is $1$. The saddle point is $1$ at cell $(c,f)$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(d)}
+\[
+\begin{array}{c|c|c|}
+\phantom{|} & d & e \\\hline
+a & 0 & -3 \\\hline
+b & 2 & 4 \\\hline
+c & -5 & 1 \\\hline
+\end{array}
+\]
+Does a saddle point exist?
+\begin{multipleChoice}
+\choice[correct]{Yes}
+\choice{No}
+\end{multipleChoice}
+If so, its value is $\answer{2}$.
+
+\begin{feedback}
+Row minima are $-3$, $2$, and $-5$, so the maximin is $2$. Column maxima are $2$ and $4$,
+so the minimax is $2$. The saddle point is $2$ at cell $(b,d)$.
+
+Row $b$ dominates both other rows for Alice, and column $d$ dominates $e$ for Bob, so
+both players' choices are forced.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Complete the payoff matrix from Alice's perspective for a two-player zero-sum game
+similar to Rock/Paper/Scissors, except that only Alice has paper and only Bob has
+scissors:
+\begin{itemize}
+\item rock wins \emph{1 point} versus scissors;
+\item scissors wins \emph{2 points} versus paper;
+\item paper wins \emph{1 point} versus rock;
+\item everything else is a tie.
+\end{itemize}
+
+\[
+\begin{array}{c|c|c|}
+\phantom{|} & \text{Bob: rock} & \text{Bob: scissors} \\\hline
+\text{Alice: rock} & \answer{0} & \answer{1} \\\hline
+\text{Alice: paper} & \answer{1} & \answer{-2} \\\hline
+\end{array}
+\]
+
+\begin{hint}
+Entries are from Alice's perspective, so a win for Bob is negative.
+\end{hint}
+
+\begin{feedback}
+\begin{itemize}
+\item rock vs.\ rock: a tie, $0$.
+\item rock vs.\ scissors: rock wins $1$ point for Alice, $+1$.
+\item paper vs.\ rock: paper wins $1$ point for Alice, $+1$.
+\item paper vs.\ scissors: scissors wins $2$ points for Bob, $-2$.
+\end{itemize}
+
+This game has no saddle point: the maximin is $-2$ and the minimax is $1$.
+\end{feedback}
+\end{problem}
+
+\begin{problem}
+The following are bonus questions from previous chapters.
+
+\begin{prompt}
+\textbf{(a)} Identify the Condorcet candidate in the following election.
+
+\begin{center}
+\begin{tabular}{c|ccc}
+Number of Votes: & 8 & 6 & 4 \\\hline
+1st & B & A & C \\
+2nd & C & D & B \\
+3rd & A & C & D \\
+4th & D & B & A
+\end{tabular}
+\end{center}
+
+\begin{multipleChoice}
+\choice{A}
+\choice{B}
+\choice[correct]{C}
+\choice{D}
+\choice{There is no Condorcet candidate}
+\end{multipleChoice}
+
+\begin{hint}
+A Condorcet candidate beats every other candidate head-to-head. With $18$ voters, a
+matchup is won with at least $10$.
+\end{hint}
+
+\begin{feedback}
+\textbf{C}. Checking C's head-to-head matchups:
+\[
+\begin{array}{lll}
+\text{C vs A} & 12\text{--}6 & \text{C wins}\\
+\text{C vs B} & 10\text{--}8 & \text{C wins}\\
+\text{C vs D} & 12\text{--}6 & \text{C wins}
+\end{array}
+\]
+C beats every other candidate, so C is the Condorcet candidate --- despite having only
+$4$ first-place votes, the fewest of any candidate who received any. C is ranked 1st or
+2nd on every single ballot.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Consider the weighted voting system $[10:7,5,3,1]$ with players A, B, C,
+and D. How many winning coalitions does this system have?
+
+$\answer{6}$
+
+\begin{feedback}
+A coalition wins when its weight reaches $10$. Checking every subset:
+\[
+\set{A,B}=12, \quad \set{A,C}=10, \quad \set{A,B,C}=15, \quad \set{A,B,D}=13,
+\quad \set{A,C,D}=11, \quad \set{A,B,C,D}=16,
+\]
+which is $6$ winning coalitions.
+
+Every one of them contains A --- without A the remaining players total only $9$, short of
+the quota --- so A has veto power. Note also that $\set{A,D}=8$ and $\set{B,C,D}=9$ both
+fall short.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Suppose Bandit, Chili, Bingo, and Bluey are having a picnic. Chili splits
+the food into four shares that she views as equal, and the others view only the following
+shares as fair:
+
+\begin{center}
+\begin{tabular}{c|ccc}
+Name & Bandit & Bingo & Bluey \\\hline
+Fair shares & $\set{s_1, s_2, s_3}$ & $\set{s_2, s_3}$ & $\set{s_1, s_3}$
+\end{tabular}
+\end{center}
+
+Identify three different fair divisions. In every one of them, Chili receives
+$s_{\answer{4}}$.
+
+\smallskip
+Division 1: Bandit $s_1$, Bingo $s_2$, Bluey $s_{\answer{3}}$
+
+\smallskip
+Division 2: Bandit $s_3$, Bingo $s_2$, Bluey $s_{\answer{1}}$
+
+\smallskip
+Division 3: Bandit $s_{\answer{2}}$, Bingo $s_3$, Bluey $s_1$
+
+\begin{hint}
+Nobody bids on $s_4$, so Chili --- the divider, for whom all four shares are equal --- must
+take it. Then work out which assignments of $s_1$, $s_2$, $s_3$ satisfy the other three.
+\end{hint}
+
+\begin{feedback}
+Chili is the divider and values all four shares equally, so any share is fair for her.
+Since none of the other three players bid on $s_4$, Chili must take it --- otherwise
+somebody would be stuck with a share they consider unfair.
+
+That leaves $s_1$, $s_2$, $s_3$ for Bandit, Bingo, and Bluey. Bingo will take $s_2$ or
+$s_3$, and Bluey will take $s_1$ or $s_3$; Bandit is flexible. Working through the cases
+gives exactly three valid divisions:
+\begin{enumerate}
+\item Bandit $s_1$, Bingo $s_2$, Bluey $s_3$;
+\item Bandit $s_3$, Bingo $s_2$, Bluey $s_1$;
+\item Bandit $s_2$, Bingo $s_3$, Bluey $s_1$.
+\end{enumerate}
+In each case Chili takes $s_4$. Note that Bingo and Bluey can never both have $s_3$, which
+is what rules out the remaining combinations.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\end{document}

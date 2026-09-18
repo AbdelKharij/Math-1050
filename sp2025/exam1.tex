@@ -1,0 +1,299 @@
+\documentclass[12pt]{ximera}
+\title{Exam 1}
+\begin{document}
+\begin{abstract}
+Exam 1, covering Chapter 1: the Condorcet criterion and Pairwise Comparisons,
+Independence of Irrelevant Alternatives, Plurality-with-Elimination on truncated
+ballots, and bookkeeping for Pairwise Comparisons points.
+\end{abstract}
+\maketitle
+
+\section*{Exam 1}
+
+\begin{problem}
+Assess whether each of the following claims is true or false.
+
+\begin{prompt}
+\textbf{(a)} Claim: the Condorcet criterion is always satisfied by the Pairwise
+Comparisons method.
+
+\begin{multipleChoice}
+\choice[correct]{True}
+\choice{False}
+\end{multipleChoice}
+
+\begin{feedback}
+True. A Condorcet candidate is one who beats every other candidate head-to-head. Under
+Pairwise Comparisons, that candidate therefore wins every single matchup and earns the
+maximum possible score, which no one else can match. So if a Condorcet candidate
+exists, Pairwise Comparisons always elects them.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Claim: if a candidate wins the election using the Pairwise Comparisons
+method, this implies that they are a Condorcet candidate.
+
+\begin{multipleChoice}
+\choice{True}
+\choice[correct]{False}
+\end{multipleChoice}
+
+\begin{hint}
+Part (a) is the converse of this. Does winning the \emph{most} matchups mean winning
+\emph{all} of them?
+\end{hint}
+
+\begin{feedback}
+False --- this is the converse of (a), and it does not hold. The Pairwise Comparisons
+winner is whoever accumulates the most points, which does not require winning every
+matchup.
+
+Homework 3 has a concrete example: in the Best Sandwich Shop election, A won with $2$
+points but lost head-to-head to D, $28$--$14$. A won the election without being a
+Condorcet candidate --- indeed, no Condorcet candidate existed there at all.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Consider the following preference schedule for an election with four candidates.
+
+\begin{center}
+\begin{tabular}{c|ccc}
+ & 8 & 6 & 4 \\\hline
+1st & A & D & B \\
+2nd & C & A & D \\
+3rd & D & C & C \\
+4th & B & B & A
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} Give the complete ranking of candidates in this election using the
+Plurality method, with each one's first-place vote count.
+
+1st: $\answer{A}$ with $\answer{8}$ \quad 2nd: $\answer{D}$ with $\answer{6}$ \quad
+3rd: $\answer{B}$ with $\answer{4}$ \quad 4th: $\answer{C}$ with $\answer{0}$
+
+\begin{feedback}
+First-place votes: A $8$, D $6$, B $4$, C $0$. The ranking is A, D, B, C, and the
+counts total $18$. \checkmark
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Which candidate, if any, can be removed from this election to illustrate
+that the Plurality method violates the Independence-of-Alternatives criterion?
+
+\begin{multipleChoice}
+\choice{A}
+\choice[correct]{B}
+\choice{C}
+\choice{D}
+\choice{None of these}
+\end{multipleChoice}
+
+\begin{hint}
+The criterion is violated when removing a \emph{losing} candidate changes the winner.
+Try removing each loser in turn and re-count the first-place votes.
+\end{hint}
+
+\begin{feedback}
+Remove \textbf{B}. B is a loser with only $4$ first-place votes, so their removal
+should not matter --- but it does.
+
+With B gone, the third column (B, D, C, A) becomes (D, C, A), so those $4$ voters now
+have D at the top. The new counts are
+\[ \text{D} = 6+4 = 10, \qquad \text{A} = 8, \qquad \text{C} = 0, \]
+and \textbf{D wins instead of A}. Removing a losing candidate flipped the winner, which
+is exactly what the Independence-of-Alternatives criterion forbids.
+
+Checking the other options confirms B is the only one that works: removing C leaves A
+winning $8$ to $6$, and removing D leaves A winning $14$ to $4$. (A cannot be removed,
+since A is the winner, not a loser.)
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Which candidate, if any, is a Condorcet winner in this election?
+
+\begin{multipleChoice}
+\choice{A}
+\choice{B}
+\choice{C}
+\choice[correct]{D}
+\choice{None of these}
+\end{multipleChoice}
+
+\begin{feedback}
+\textbf{D}. Checking every head-to-head matchup involving D:
+\[
+\begin{array}{lll}
+\text{D vs A} & 10\text{--}8 & \text{D wins}\\
+\text{D vs B} & 14\text{--}4 & \text{D wins}\\
+\text{D vs C} & 10\text{--}8 & \text{D wins}
+\end{array}
+\]
+D beats every other candidate one-on-one, so D is the Condorcet candidate.
+
+Note what this means alongside part (a): D would win under Pairwise Comparisons, yet
+finishes \emph{second} under Plurality --- and D is preferred to A by $10$ voters out
+of $18$.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Consider the following \emph{truncated} preference schedule for an election with four
+candidates --- each voter ranked only their top two.
+
+\begin{center}
+\begin{tabular}{c|ccccc}
+ & 12 & 9 & 7 & 5 & 3\\\hline
+1st & D & B & A & C & A \\
+2nd & B & A & C & B & D \\
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} How many voters participated in this election?
+
+$\answer{36}$
+
+\begin{feedback}
+$12+9+7+5+3=36$ voters, so a majority would take at least $19$ votes.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Using Plurality-with-Elimination, which candidate is eliminated in
+Round 1?
+
+A: $\answer{10}$ \quad B: $\answer{9}$ \quad C: $\answer{5}$ \quad D: $\answer{12}$
+\qquad Eliminated: $\answer{C}$
+
+\begin{feedback}
+First-place votes: D $12$, A $7+3 = 10$, B $9$, C $5$. Nobody has the $19$ needed for a
+majority, and C has the fewest, so \textbf{C is eliminated}.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Which candidate is eliminated in Round 2?
+
+A: $\answer{10}$ \quad B: $\answer{14}$ \quad D: $\answer{12}$ \qquad
+Eliminated: $\answer{A}$
+
+\begin{feedback}
+C's $5$ votes came from the column (C, B), so they transfer to B:
+\[ \text{B} = 9+5 = 14, \qquad \text{D} = 12, \qquad \text{A} = 10. \]
+Still no majority, and A now has the fewest, so \textbf{A is eliminated}.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(d)} Finish applying the method and give the complete ranking.
+
+Round 3 --- B: $\answer{14}$ \quad D: $\answer{15}$
+
+\smallskip
+Complete ranking: 1st $\answer{D}$, 2nd $\answer{B}$, 3rd $\answer{A}$, 4th $\answer{C}$
+
+\begin{feedback}
+A's $10$ votes split. The $7$-voter column was (A, C) --- both A and C are now
+eliminated, so those ballots are \textbf{exhausted}. The $3$-voter column was (A, D),
+so those go to D:
+\[ \text{D} = 12+3 = 15, \qquad \text{B} = 14. \]
+D wins, and the complete ranking in reverse order of elimination is D, B, A, C.
+
+Note that D wins with $15$ votes --- fewer than the $19$ that would have been a
+majority of the original electorate. With ballots exhausted, only $29$ votes remain in
+play, and $15$ is a majority of those.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(e)} How many exhausted votes are there in this election?
+
+\begin{multipleChoice}
+\choice{9}
+\choice{10}
+\choice[correct]{7}
+\choice{5}
+\choice{None}
+\end{multipleChoice}
+
+\begin{feedback}
+$7$. Only the $7$-voter column (A, C) had both of its ranked candidates eliminated.
+Every other column still had a surviving candidate when the election finished.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Suppose an election with 5 candidates ($A,B,C,D,E$) is run using the Pairwise Comparisons
+method.
+
+\begin{prompt}
+\textbf{(a)} How many pairwise comparisons will be necessary?
+
+$\answer{10}$
+
+\begin{feedback}
+Each pair of candidates meets once: $C(5,2)=\frac{5\cdot 4}{2}=10$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} What is the total number of Pairwise Comparisons points awarded? (Each
+comparison awards $1$ point to the winner, or half a point to each of two tied
+candidates.)
+
+$\answer{10}$
+
+\begin{feedback}
+Every comparison hands out exactly $1$ point in total, whether it is won or tied, so
+$10$ comparisons award $10$ points.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} What is the maximum number of points a single candidate can earn?
+
+$\answer{4}$
+
+\begin{feedback}
+A candidate takes part in only $4$ comparisons --- one against each other candidate
+--- so the most they can earn is $4$, by winning them all.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(d)} Suppose candidate A wins $1$ comparison and ties $1$, B wins $0$ and ties $2$, C wins $0$ and
+ties $1$, and D is a Condorcet candidate. How many points does E earn?
+
+$\answer{3}$
+
+\begin{hint}
+A Condorcet candidate wins every comparison. Then use the total from part (b).
+\end{hint}
+
+\begin{feedback}
+A earns $1+\frac12=1.5$, B earns $2\cdot\frac12=1$, C earns $0.5$, and D, as a Condorcet
+candidate, wins all $4$ of its comparisons for $4$ points. That is $1.5+1+0.5+4=7$. The points total $10$, so E earns what is left: $3$ points.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(e)} Give the complete ranking of the candidates.
+
+1st: $\answer{D}$ \quad 2nd: $\answer{E}$ \quad 3rd: $\answer{A}$ \quad 4th: $\answer{B}$ \quad 5th: $\answer{C}$
+
+\begin{feedback}
+By points: D $4$, E $3$, A $1.5$, B $1$, C $0.5$.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\end{document}

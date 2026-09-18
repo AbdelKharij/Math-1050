@@ -1,0 +1,303 @@
+\documentclass[12pt]{ximera}
+\title{Homework 8: Apportionment --- Hamilton, Jefferson, Adams, Webster}
+\begin{document}
+\begin{abstract}
+Sections 4.1--4.4: standard divisors and quotas, Hamilton's method applied to
+apportioning RAs across seventeen residence halls, and the three divisor methods
+applied to a district where one of them breaks the quota rule.
+\end{abstract}
+\maketitle
+
+\section*{Sections 4.1--4.4: Methods of Apportionment}
+
+\begin{problem}
+The residence halls at a university have the following population capacities,
+totaling $6558$ students:
+
+\begin{center}
+\begin{tabular}{r|c|c|c|c|c|c}
+\textbf{Hall} & Aspen & Cedar & Pine & Birch & Willow & Larch \\\hline
+\textbf{Pop.} & 270 & 270 & 331 & 184 & 544 & 544 \\
+\end{tabular}
+
+\smallskip
+\begin{tabular}{r|c|c|c|c|c|c}
+\textbf{Hall} & Spruce & Poplar & Hickory & Maple & Linden & Elm \\\hline
+\textbf{Pop.} & 99 & 136 & 107 & 496 & 321 & 202 \\
+\end{tabular}
+
+\smallskip
+\begin{tabular}{r|c|c|c|c|c}
+\textbf{Hall} & Walnut & Oak & Alder & Chestnut & Sycamore \\\hline
+\textbf{Pop.} & 770 & 235 & 116 & 713 & 1220 \\
+\end{tabular}
+\end{center}
+
+The university has hired $220$ RAs altogether and wants to apportion them using
+Hamilton's method.
+
+\begin{prompt}
+\textbf{(a)} Compute the standard divisor, to two decimal places.
+
+$\answer[tolerance=0.005]{29.81}$
+
+\smallskip
+What does that value represent in this situation?
+\begin{multipleChoice}
+\choice[correct]{The number of students per RA}
+\choice{The number of RAs per residence hall}
+\choice{The number of residence halls per RA}
+\end{multipleChoice}
+
+\begin{feedback}
+The standard divisor is the total population divided by the number of seats:
+\[ SD = \frac{6558}{220} \approx 29.81. \]
+It represents the number of \emph{students per RA} --- roughly one RA for every $30$
+students.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Compute the standard quota of each of these residence halls, to two
+decimal places. (A hall's quota is its population divided by the standard divisor.)
+
+Sycamore: $\answer[tolerance=0.005]{40.93}$ \qquad
+Walnut: $\answer[tolerance=0.005]{25.83}$ \qquad
+Chestnut: $\answer[tolerance=0.005]{23.92}$
+
+\smallskip
+Willow: $\answer[tolerance=0.005]{18.25}$ \qquad
+Maple: $\answer[tolerance=0.005]{16.64}$ \qquad
+Spruce: $\answer[tolerance=0.005]{3.32}$
+
+\begin{feedback}
+Dividing each population by $29.81$:
+\[
+\begin{array}{llll}
+\text{Aspen } 9.06 & \text{Cedar } 9.06 & \text{Pine } 11.10 & \text{Birch } 6.17\\
+\text{Willow } 18.25 & \text{Larch } 18.25 & \text{Spruce } 3.32 & \text{Poplar } 4.56\\
+\text{Hickory } 3.59 & \text{Maple } 16.64 & \text{Linden } 10.77 & \text{Elm } 6.78\\
+\text{Walnut } 25.83 & \text{Oak } 7.88 & \text{Alder } 3.89 & \text{Chestnut } 23.92\\
+\text{Sycamore } 40.93 & & &
+\end{array}
+\]
+These sum to $220$, as the standard quotas always must.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} What is the total of the (standard) \emph{lower} quotas?
+
+$\answer{211}$
+
+\smallskip
+How many surplus RAs remain to be handed out? $\answer{9}$
+
+\begin{hint}
+Round every quota \emph{down} and add. The shortfall from $220$ is the surplus.
+\end{hint}
+
+\begin{feedback}
+Rounding every quota down and adding gives $211$. Since $220$ RAs must be placed, there
+is a surplus of
+\[ 220 - 211 = 9 \]
+RAs still to assign.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(d)} Under Hamilton's method, the surplus goes to the halls with the largest
+fractional parts. Which halls receive an extra RA?
+
+\begin{selectAll}
+\choice{Aspen}
+\choice{Cedar}
+\choice{Pine}
+\choice{Birch}
+\choice{Willow}
+\choice{Larch}
+\choice{Spruce}
+\choice{Poplar}
+\choice[correct]{Hickory}
+\choice[correct]{Maple}
+\choice[correct]{Linden}
+\choice[correct]{Elm}
+\choice[correct]{Walnut}
+\choice[correct]{Oak}
+\choice[correct]{Alder}
+\choice[correct]{Chestnut}
+\choice[correct]{Sycamore}
+\end{selectAll}
+
+\begin{feedback}
+Ranking the halls by fractional part, largest first:
+\[
+\begin{array}{lll}
+\text{Sycamore } .927 & \text{Chestnut } .919 & \text{Alder } .891\\
+\text{Oak } .884 & \text{Walnut } .831 & \text{Elm } .776\\
+\text{Linden } .769 & \text{Maple } .639 & \text{Hickory } .590\\
+\end{array}
+\]
+Those are the top nine, so each of them gets one extra RA. The next in line is Poplar
+at $.562$, which just misses.
+
+The final Hamilton apportionment is:
+\[
+\begin{array}{llll}
+\text{Aspen } 9 & \text{Cedar } 9 & \text{Pine } 11 & \text{Birch } 6\\
+\text{Willow } 18 & \text{Larch } 18 & \text{Spruce } 3 & \text{Poplar } 4\\
+\text{Hickory } 4 & \text{Maple } 17 & \text{Linden } 11 & \text{Elm } 7\\
+\text{Walnut } 26 & \text{Oak } 8 & \text{Alder } 4 & \text{Chestnut } 24\\
+\text{Sycamore } 41 & & &
+\end{array}
+\]
+which totals $220$. \checkmark
+
+Notice Hickory (population $107$) receives $4$ RAs while Poplar (population $136$)
+receives only $4$ as well --- and Alder, with just $116$ students, also gets $4$. Small
+halls can do disproportionately well or badly on the strength of a fractional part.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+The city of Gotham needs to apportion $100$ new villains to its four districts:
+
+\begin{center}
+\begin{tabular}{|r|c|c|c|c|c|}\hline
+\textbf{District} & A & B & C & D & \textbf{Total} \\\hline
+\textbf{Population} & 86{,}915 & 5{,}400 & 4{,}325 & 3{,}360 & 100{,}000 \\\hline
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} Compute the standard divisor and the standard quotas.
+
+Standard divisor: $\answer{1000}$
+
+\smallskip
+$q_A = \answer[tolerance=0.0005]{86.915}$ \quad
+$q_B = \answer[tolerance=0.0005]{5.4}$ \quad
+$q_C = \answer[tolerance=0.0005]{4.325}$ \quad
+$q_D = \answer[tolerance=0.0005]{3.36}$
+
+\begin{feedback}
+\[ SD = \frac{100{,}000}{100} = 1000, \]
+so the quotas are just the populations divided by $1000$:
+\[ q_A = 86.915, \quad q_B = 5.400, \quad q_C = 4.325, \quad q_D = 3.360, \]
+totaling $100$. \checkmark
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Apply Hamilton's method.
+
+$A = \answer{87}$ \quad $B = \answer{6}$ \quad $C = \answer{4}$ \quad $D = \answer{3}$
+
+\begin{feedback}
+The lower quotas are $86, 5, 4, 3$, totaling $98$, so $2$ surplus seats remain.
+The fractional parts are
+\[ A: .915, \qquad B: .400, \qquad C: .325, \qquad D: .360, \]
+so the two largest --- A and B --- each gain a seat:
+\[ A = 87, \quad B = 6, \quad C = 4, \quad D = 3. \]
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Apply Jefferson's method (round every modified quota \emph{down}), using a
+modified divisor between $900$ and $1100$.
+
+$A = \answer{88}$ \quad $B = \answer{5}$ \quad $C = \answer{4}$ \quad $D = \answer{3}$
+
+\begin{hint}
+Rounding down at the standard divisor gives only $98$ seats, so you need a
+\emph{smaller} divisor to push the quotas up. Try something around $980$.
+\end{hint}
+
+\begin{feedback}
+Rounding down at $SD = 1000$ yields only $98$ seats, so the divisor must shrink.
+Any modified divisor from about $976.6$ to $987.7$ works. Taking $d = 980$:
+\[
+\begin{array}{llll}
+A: \frac{86915}{980}=88.69 \to 88 &
+B: \frac{5400}{980}=5.51 \to 5 &
+C: \frac{4325}{980}=4.41 \to 4 &
+D: \frac{3360}{980}=3.43 \to 3
+\end{array}
+\]
+which totals $100$. \checkmark
+
+\textbf{Note the quota rule violation.} District A's standard quota was $86.915$, so
+its lower and upper quotas are $86$ and $87$. Jefferson's method awards A \textbf{88}
+seats --- more than its upper quota. Jefferson's method systematically favors large
+districts in exactly this way.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(d)} Apply Adams' method (round every modified quota \emph{up}).
+
+$A = \answer{85}$ \quad $B = \answer{6}$ \quad $C = \answer{5}$ \quad $D = \answer{4}$
+
+\begin{hint}
+Rounding up at the standard divisor gives too many seats, so you need a \emph{larger}
+divisor. Try something around $1030$.
+\end{hint}
+
+\begin{feedback}
+Rounding up at $SD=1000$ gives $87+6+5+4 = 102$, which is too many, so the divisor must
+grow. Any modified divisor from about $1022.5$ to $1034.7$ works. Taking $d = 1030$:
+\[
+\begin{array}{llll}
+A: \frac{86915}{1030}=84.38 \to 85 &
+B: \frac{5400}{1030}=5.24 \to 6 &
+C: \frac{4325}{1030}=4.20 \to 5 &
+D: \frac{3360}{1030}=3.26 \to 4
+\end{array}
+\]
+totaling $100$. \checkmark
+
+\textbf{Another quota rule violation, in the opposite direction.} A's lower quota is
+$86$, but Adams' method awards it only $85$. Adams' method favors small districts, just
+as Jefferson's favors large ones.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(e)} Apply Webster's method (conventional rounding of the modified quotas).
+
+$A = \answer{88}$ \quad $B = \answer{5}$ \quad $C = \answer{4}$ \quad $D = \answer{3}$
+
+\begin{feedback}
+Conventional rounding at $SD = 1000$ gives $87+5+4+3 = 99$, one short, so the divisor
+must shrink slightly. Any modified divisor from about $982.1$ to $993.3$ works. Taking
+$d = 987$:
+\[
+\begin{array}{llll}
+A: 88.06 \to 88 & B: 5.47 \to 5 & C: 4.38 \to 4 & D: 3.40 \to 3
+\end{array}
+\]
+totaling $100$. \checkmark
+
+Webster's method lands on the same apportionment as Jefferson's here, and so it also
+exceeds A's upper quota of $87$. Webster's method is usually the most even-handed of
+the three, but on a population this lopsided --- one district holding nearly $87\%$ of
+the people --- it can still break the quota rule.
+
+Comparing all four methods on this problem:
+\[
+\begin{array}{lcccc}
+ & A & B & C & D\\
+\text{Hamilton} & 87 & 6 & 4 & 3\\
+\text{Jefferson} & 88 & 5 & 4 & 3\\
+\text{Adams} & 85 & 6 & 5 & 4\\
+\text{Webster} & 88 & 5 & 4 & 3
+\end{array}
+\]
+Only Hamilton's method stays within the quota here --- but as Homework 9 shows,
+Hamilton's method has troubles of its own.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\end{document}
