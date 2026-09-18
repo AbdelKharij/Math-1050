@@ -1,13 +1,9 @@
-# Math 1050 (ISU) — conversion notes
+# Introduction to Mathematical Ideas — conversion notes
 
 Source: `MATH_1050(1).zip`, `FA2025/` only (HW1–HW10, Exam 1, Exam 3, Practice Exam 3,
-Practice Final, Final). Original documents are print worksheets by Dr. Kirin J Martin,
-Iowa State University.
+Practice Final, Final). Original documents are an instructor's print worksheets.
 
-**Not to be confused with `~/Documents/work/Math1050`**, which is a different MATH 1050
-(chapter-based college algebra, published at `AbdelKharij/Math1050`). That repo was
-left untouched; this course is Iowa State's "Introduction to Mathematical Ideas" —
-voting theory, weighted voting, fair division, and apportionment.
+This course covers voting theory, weighted voting, fair division, and apportionment.
 
 Every problem with a determinate answer was converted to an interactive Ximera answer
 (`\answer`, `\multipleChoice`, `\selectAll`); open-ended parts use `\freeResponse` with
