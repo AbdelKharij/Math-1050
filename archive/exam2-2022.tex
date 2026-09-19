@@ -1,0 +1,218 @@
+\documentclass[12pt]{ximera}
+\title{Exam 2 (2022)}
+\begin{document}
+\begin{abstract}
+An archived exam on Chapter 2 and the start of Chapter 3: gridlock, anarchy, and veto power, Banzhaf power, a mayor's Shapley-Shubik pivots, counting sequential coalitions, continuous versus discrete assets, and divider-chooser.
+\end{abstract}
+\maketitle
+
+\section*{Exam 2 (2022)}
+
+This exam allowed one handwritten sheet of notes.
+
+\begin{problem}
+Consider the following weighted voting systems.
+\[
+\begin{array}{ll}
+1) & $[26:10,6,5,4]$\\
+2) & $[35:9,8,7,6]$\\
+3) & $[13:11,9,6,2]$\\
+4) & $[14:10,9,6,4]$\\
+5) & $[11:7,4,2,1]$\\
+\end{array}
+\]
+
+\begin{prompt}
+\textbf{(a)} Which systems have gridlock?
+\begin{selectAll}
+\choice[correct]{System 1}
+\choice[correct]{System 2}
+\choice{System 3}
+\choice{System 4}
+\choice{System 5}
+\end{selectAll}
+\begin{feedback}
+Gridlock means the quota exceeds the total weight, so no coalition can win.
+System 1: $10+6+5+4=25<26$. System 2: $9+8+7+6=30<35$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Which systems have anarchy?
+\begin{selectAll}
+\choice{System 1}
+\choice{System 2}
+\choice[correct]{System 3}
+\choice[correct]{System 4}
+\choice{System 5}
+\end{selectAll}
+\begin{feedback}
+Anarchy means the quota is at most half the total weight, so two disjoint coalitions
+could both win. System 3: $11+2\ge13$ and $9+6\ge13$. System 4: $10+4\ge14$ and $9+6\ge14$. System 5 is neither.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Which players in system 5 have veto power?
+\begin{selectAll}
+\choice[correct]{$P_1$}
+\choice[correct]{$P_2$}
+\choice{$P_3$}
+\choice{$P_4$}
+\end{selectAll}
+\begin{feedback}
+Without $P_1$ the others total $4+2+1=7<11$; without $P_2$ they total $7+2+1=10<11$. Without $P_3$ or $P_4$ the rest still reach $11$.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Four business partners make decisions with the weighted voting system $[12:7,5,3,2]$, with
+players $P_1,\dots,P_4$ in that order.
+
+\begin{prompt}
+\textbf{(a)} How many winning coalitions are there? $\answer{5}$
+\begin{feedback}
+$\set{P_1,P_2}=12$, $\set{P_1,P_2,P_3}=15$, $\set{P_1,P_2,P_4}=14$, $\set{P_1,P_3,P_4}=12$, and the grand coalition $17$. ($\set{P_2,P_3,P_4}=10$ loses.)
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Find the critical counts and the Banzhaf power distribution, as fractions.
+
+Critical counts: $P_1$: $\answer{5}$, $P_2$: $\answer{3}$,
+$P_3$: $\answer{1}$, $P_4$: $\answer{1}$
+
+\smallskip
+$\beta_1=\answer{1/2}$, $\beta_2=\answer{3/10}$,
+$\beta_3=\answer{1/10}$, $\beta_4=\answer{1/10}$
+\begin{feedback}
+$P_1$ is critical in all five. $P_2$ is critical in $\set{P_1,P_2}$, $\set{P_1,P_2,P_3}$, and $\set{P_1,P_2,P_4}$. $P_3$ and $P_4$ are critical only in $\set{P_1,P_3,P_4}$. The total is $10$, so $\frac5{10},\frac3{10},\frac1{10},\frac1{10}$.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+A city council has $9$ seats: $8$ councilors and the mayor, $M$. They use simple majority ($5$ votes), but a No vote by the mayor can only be overridden by $6$ or more Yes votes. Write
+$\underline{\ }$ for a councilor.
+
+\begin{prompt}
+\textbf{(a)} In a sequential coalition with $M$ in slot $6$, which slot holds the
+pivotal player? $\answer{6}$
+\begin{feedback}
+The first $5$ players are councilors: a majority, but not enough to override the mayor. Adding $M$ makes a majority that includes the mayor, so $M$ in slot $6$ is pivotal.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} In a sequential coalition with $M$ in slot $4$, which slot
+holds the pivotal player? $\answer{5}$
+\begin{feedback}
+The first $5$ players include the mayor and form a majority, so they win; the councilor in slot $5$ is pivotal.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} In which slots is the mayor pivotal?
+\begin{selectAll}
+\choice{1}
+\choice{2}
+\choice{3}
+\choice{4}
+\choice[correct]{5}
+\choice[correct]{6}
+\choice{7}
+\choice{8}
+\choice{9}
+\end{selectAll}
+\begin{feedback}
+In slots $1$--$5$, the coalition first wins at slot $5$ (a majority with the mayor), so $M$ is pivotal only in slot $5$. In slots $7$--$9$, six councilors win without $M$ at slot $6$. So $M$ is pivotal in slots $5$ and $6$: a Shapley-Shubik power of $\frac29$.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+How many ways are there to fill slots $1,2,3,5,7,8,9$ (seven slots) of a sequential coalition
+with seven different councilor names A, B, C, D, E, F, G? (This is unrelated to the
+previous problem.) $\answer{5040}$
+\begin{feedback}
+Only the number of slots and names matters: $7!=7\cdot6\cdot5\cdot4\cdot3\cdot2\cdot1=5040$.
+\end{feedback}
+\end{problem}
+
+\begin{problem}
+Each of the following is to be divided among $5$ players. Is it a continuous or a
+discrete fair-division problem?
+
+\begin{prompt}
+\textbf{(a)} A pizza with one part mozzarella-prosciutto, one part meat lover's, one part five-cheese, and one part mushroom-artichoke.
+\begin{multipleChoice}
+\choice[correct]{Continuous}
+\choice{Discrete}
+\end{multipleChoice}
+\begin{feedback}
+Continuous: a pizza can be cut anywhere.
+\end{feedback}
+\end{prompt}
+\begin{prompt}
+\textbf{(b)} A silver locket that is impossible to open, a cracked seal made of unobtanium, and a golden cup with a house crest.
+\begin{multipleChoice}
+\choice{Continuous}
+\choice[correct]{Discrete}
+\end{multipleChoice}
+\begin{feedback}
+Discrete: these are indivisible objects.
+\end{feedback}
+\end{prompt}
+\begin{prompt}
+\textbf{(c)} $200{,}000$ barrels of light crude, $75{,}000{,}000$ gallons of liquefied natural gas, and $50{,}300$ metric tonnes of anthracite coal.
+\begin{multipleChoice}
+\choice[correct]{Continuous}
+\choice{Discrete}
+\end{multipleChoice}
+\begin{feedback}
+Continuous: bulk quantities can be split in any proportion.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Charli and Denise have inherited a house and a plot of land. They both think the house is
+worth \$160K. Charli thinks the land is worth \$120K, and Denise thinks it is
+worth \$200K. The land can be divided in any way necessary. Denise is the divider and
+makes share $s_1$ from the house and some of the land, and share $s_2$ from the rest of the
+land.
+
+\begin{prompt}
+\textbf{(a)} What fraction of the land goes with the house in $s_1$, so that both shares
+are equal in Denise's opinion? $\answer{1/10}$
+\begin{feedback}
+Denise values everything at $160+200=360$ (in thousands), so each share must be worth
+$180$ to her. The house needs another $20$ in land, which is $\frac{20}{200}=\frac1{10}$
+of the land. So $s_1=H+\frac1{10}L$ and $s_2=\frac9{10}L$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} How much is each share worth in Charli's opinion, in thousands of
+dollars?
+
+$s_1$: $\answer{172}$ \quad $s_2$: $\answer{108}$
+\begin{feedback}
+$s_1=160+\frac1{10}\cdot120=172$ and $s_2=\frac9{10}\cdot120=108$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Which share will Charli choose?
+\begin{multipleChoice}
+\choice[correct]{$s_1$}
+\choice{$s_2$}
+\end{multipleChoice}
+\begin{feedback}
+$s_1$, worth $172>140$, half of Charli's total of $280$. (Denise, the divider, gets $s_2$, worth exactly $180$ to her.)
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\end{document}

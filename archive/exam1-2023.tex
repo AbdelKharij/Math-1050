@@ -1,0 +1,179 @@
+\documentclass[12pt]{ximera}
+\title{Exam 1 (2023)}
+\begin{document}
+\begin{abstract}
+An archived exam on Chapter 1: true/false on the fairness criteria, a Borda count that violates the Majority criterion, Plurality-with-Elimination, and Pairwise Comparisons.
+\end{abstract}
+\maketitle
+
+\section*{Exam 1 (2023)}
+
+This page combines the two versions of the exam, which differed only in their
+true/false statements.
+
+\begin{problem}
+True or false?
+
+\begin{prompt}
+\textbf{(a)} A candidate who wins a majority of first-place votes will always win under
+the Plurality method.
+\begin{multipleChoice}
+\choice[correct]{True}
+\choice{False}
+\end{multipleChoice}
+\begin{feedback}
+True. A majority is more first-place votes than all the others combined.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} A candidate who wins a plurality of first-place votes will always win a
+majority.
+\begin{multipleChoice}
+\choice{True}
+\choice[correct]{False}
+\end{multipleChoice}
+\begin{feedback}
+False. With three or more candidates, the most votes can be less than half, as in
+Problem 3 below, where A leads with $14$ of $50$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} A candidate who wins a majority of first-place votes is always a Condorcet
+candidate.
+\begin{multipleChoice}
+\choice[correct]{True}
+\choice{False}
+\end{multipleChoice}
+\begin{feedback}
+True. Those same majority voters prefer the candidate over every opponent.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(d)} A Condorcet candidate always wins under the Pairwise Comparisons method.
+\begin{multipleChoice}
+\choice[correct]{True}
+\choice{False}
+\end{multipleChoice}
+\begin{feedback}
+True. Winning every comparison gives the most points.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(e)} A candidate who wins a majority of first-place votes always wins under the
+Borda count method.
+\begin{multipleChoice}
+\choice{True}
+\choice[correct]{False}
+\end{multipleChoice}
+\begin{feedback}
+False. Problem 2 below is a counterexample: H has $21$ of $40$ first-place votes but
+loses the Borda count.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(f)} There must be a Condorcet candidate in every election.
+\begin{multipleChoice}
+\choice{True}
+\choice[correct]{False}
+\end{multipleChoice}
+\begin{feedback}
+False. Head-to-head results can form a cycle, with A beating B, B beating C, and C
+beating A.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(g)} A Condorcet candidate always wins under the Plurality-with-Elimination
+method.
+\begin{multipleChoice}
+\choice{True}
+\choice[correct]{False}
+\end{multipleChoice}
+\begin{feedback}
+False. A Condorcet candidate with few first-place votes can be eliminated early.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Three candidates, H, D, and C, are running for mayor.
+\begin{center}
+\begin{tabular}{c|ccc}
+Number of voters & 21 & 10 & 9\\\hline
+1st & H & D & D\\
+2nd & D & C & H\\
+3rd & C & H & C
+\end{tabular}
+\end{center}
+Use the (standard) Borda count to find the points and the winner.
+
+H: $\answer{91}$ \quad D: $\answer{99}$ \quad C: $\answer{50}$ \qquad Winner: $\answer{D}$
+
+\begin{feedback}
+\[
+\begin{aligned}
+\text{H:}&\ 21\cdot3+10\cdot1+9\cdot2=91\\
+\text{D:}&\ 21\cdot2+10\cdot3+9\cdot3=99\\
+\text{C:}&\ 21\cdot1+10\cdot2+9\cdot1=50
+\end{aligned}
+\]
+D wins, even though H has a majority of first-place votes. This violates the Majority
+criterion.
+\end{feedback}
+\end{problem}
+
+\begin{problem}
+Campers at a zoo's summer camp rank their favorite animals: alligators (A), baboons (B),
+camels (C), and dolphins (D).
+\begin{center}
+\begin{tabular}{c|ccccc}
+Number of voters & 14 & 12 & 6 & 5 & 13\\\hline
+1st & A & D & B & B & C\\
+2nd & B & A & C & D & A\\
+3rd & C & B & A & C & D\\
+4th & D & C & D & A & B
+\end{tabular}
+\end{center}
+Determine the winner under Plurality-with-Elimination.
+
+Eliminated in round 1: $\answer{B}$ \quad in round 2: $\answer{A}$ \qquad Winner:
+$\answer{C}$
+
+\begin{feedback}
+A majority of $50$ is $26$.
+\begin{itemize}
+\item Round 1: A $14$, C $13$, D $12$, B $11$. Eliminate B: $6$ votes go to C and $5$
+      to D.
+\item Round 2: C $19$, D $17$, A $14$. Eliminate A; its $14$ voters rank C next.
+\item Round 3: C $33$, D $17$. Camels win.
+\end{itemize}
+\end{feedback}
+\end{problem}
+
+\begin{problem}
+A soccer team returning from an away game is choosing where to stop for dinner: Wendy's
+(W), Taco Bell (T), or Subway (S).
+\begin{center}
+\begin{tabular}{c|cccc}
+Number of voters & 10 & 8 & 5 & 7\\\hline
+1st & W & S & T & T\\
+2nd & T & T & S & W\\
+3rd & S & W & W & S
+\end{tabular}
+\end{center}
+Use Pairwise Comparisons to determine where the team stops.
+
+$\answer{T}$
+
+\begin{feedback}
+T beats W $20$--$10$ and S $22$--$8$; W beats S $17$--$13$. Taco Bell wins with $2$
+points.
+\end{feedback}
+\end{problem}
+
+\end{document}

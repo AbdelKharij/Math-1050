@@ -1,0 +1,181 @@
+\documentclass[12pt]{ximera}
+\title{Exam 1 (2022)}
+\begin{document}
+\begin{abstract}
+An archived exam on Chapter 1: full rankings by three methods, a Condorcet candidate, a truncated Borda count, missing Borda points, Arrow's Impossibility Theorem, and counting pairwise comparisons.
+\end{abstract}
+\maketitle
+
+\section*{Exam 1 (2022)}
+
+This exam allowed one handwritten sheet of notes.
+
+\begin{problem}
+Use the following preference schedule to find the full ranking of candidates A, B, C,
+D, E by each method. (The Borda count is not required here.)
+\begin{center}
+\begin{tabular}{c|ccccc}
+Number of votes & 12 & 10 & 9 & 6 & 2\\\hline
+1st & E & C & B & A & E\\
+2nd & A & B & D & D & C\\
+3rd & C & A & C & B & A\\
+4th & B & E & A & C & D\\
+5th & D & D & E & E & B
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} Plurality: 1st $\answer{E}$, 2nd $\answer{C}$, 3rd $\answer{B}$,
+4th $\answer{A}$, 5th $\answer{D}$
+
+\begin{feedback}
+First-place votes: E $14$, C $10$, B $9$, A $6$, D $0$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Plurality-with-Elimination: 1st $\answer{B}$, 2nd $\answer{E}$,
+3rd $\answer{C}$, 4th $\answer{A}$, 5th $\answer{D}$
+
+\begin{feedback}
+With $39$ voters a majority is $20$.
+\begin{itemize}
+\item Round 1: E $14$, C $10$, B $9$, A $6$, D $0$. Eliminate D.
+\item Round 2: unchanged. Eliminate A; its $6$ voters rank B next (D is gone).
+\item Round 3: B $15$, E $14$, C $10$. Eliminate C; its $10$ voters rank B next.
+\item Round 4: B $25$, E $14$. B wins.
+\end{itemize}
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Pairwise Comparisons: 1st $\answer{C}$, 2nd $\answer{A}$, 3rd $\answer{B}$,
+4th $\answer{E}$, 5th $\answer{D}$
+
+\begin{feedback}
+\[
+\begin{array}{lll@{\qquad}lll}
+\text{A vs B} & 20\text{--}19 & \text{A} & \text{B vs C} & 15\text{--}24 & \text{C}\\
+\text{A vs C} & 18\text{--}21 & \text{C} & \text{B vs D} & 31\text{--}8 & \text{B}\\
+\text{A vs D} & 30\text{--}9 & \text{A} & \text{B vs E} & 25\text{--}14 & \text{B}\\
+\text{A vs E} & 25\text{--}14 & \text{A} & \text{C vs D} & 24\text{--}15 & \text{C}\\
+\text{C vs E} & 25\text{--}14 & \text{C} & \text{D vs E} & 15\text{--}24 & \text{E}
+\end{array}
+\]
+Points: C $4$, A $3$, B $2$, E $1$, D $0$.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Is there a Condorcet candidate for the election in Problem 1?
+
+\begin{multipleChoice}
+\choice{Yes, A}
+\choice{Yes, B}
+\choice[correct]{Yes, C}
+\choice{Yes, E}
+\choice{No}
+\end{multipleChoice}
+
+\begin{feedback}
+C wins all four of its comparisons. Notice that neither the Plurality winner (E) nor the
+Plurality-with-Elimination winner (B) is the Condorcet candidate.
+\end{feedback}
+\end{problem}
+
+\begin{problem}
+A club elects its president using a truncated Borda count, as for the Heisman Trophy:
+each voter lists a top three, worth $3$, $2$, and $1$ points. The candidates are Aaron,
+Bella, Caroline, Damien, and Eva (A, B, C, D, E).
+\begin{center}
+\begin{tabular}{c|ccccc}
+Number of votes & 6 & 5 & 3 & 3 & 2\\\hline
+1st & A & D & C & E & D\\
+2nd & C & E & A & C & B\\
+3rd & B & C & B & A & A
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+Find the points and the top three candidates.
+
+A: $\answer{29}$ \quad B: $\answer{13}$ \quad C: $\answer{32}$ \quad D: $\answer{21}$
+\quad E: $\answer{19}$
+
+\smallskip
+1st $\answer{C}$, 2nd $\answer{A}$, 3rd $\answer{D}$
+
+\begin{feedback}
+\[
+\begin{aligned}
+\text{A:}&\ 6\cdot3+3\cdot2+3\cdot1+2\cdot1=29\\
+\text{B:}&\ 6\cdot1+3\cdot1+2\cdot2=13\\
+\text{C:}&\ 6\cdot2+5\cdot1+3\cdot3+3\cdot2=32\\
+\text{D:}&\ 5\cdot3+2\cdot3=21\\
+\text{E:}&\ 5\cdot2+3\cdot3=19
+\end{aligned}
+\]
+(Check: $19$ ballots at $6$ points each is $114$.) Caroline wins without a single
+first-place vote from the largest group.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+An election with four candidates is decided by a modified Borda count with $7$ points
+for 1st place, $3$ for 2nd, $2$ for 3rd, and $1$ for 4th. There are $20$ ballots. A gets
+$93$ points, B $85$, and C $50$. How many points did D get? $\answer{32}$
+
+\begin{feedback}
+Each ballot awards $7+3+2+1=13$ points, for $20\cdot13=260$ in total. D has
+$260-(93+85+50)=32$.
+\end{feedback}
+\end{problem}
+
+\begin{problem}
+Someone claims to have invented a new voting system, ``MyVote,'' for city council
+elections. The details are a business secret, but they guarantee that MyVote satisfies
+the Majority, Monotonicity, and Independence-of-Irrelevant-Alternatives criteria.
+
+\begin{prompt}
+\textbf{(a)} Which theorem shows that, even if these claims are true, MyVote must violate
+another fairness criterion in some situations?
+
+\begin{multipleChoice}
+\choice[correct]{Arrow's Impossibility Theorem}
+\choice{The Pythagorean Theorem}
+\choice{Condorcet's Paradox}
+\choice{May's Theorem}
+\end{multipleChoice}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Which criterion must it violate?
+
+\begin{multipleChoice}
+\choice[correct]{The Condorcet criterion}
+\choice{The Majority criterion}
+\choice{The Monotonicity criterion}
+\choice{None: MyVote could satisfy all four}
+\end{multipleChoice}
+
+\begin{feedback}
+Arrow's Impossibility Theorem says no voting method can satisfy all four fairness
+criteria in every election. So MyVote must sometimes violate the Condorcet criterion:
+some elections will have a candidate who beats every other candidate head to head but
+does not win under MyVote.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Elections often have many obscure candidates. How many pairwise comparisons are needed
+to evaluate an election with $28$ candidates? $\answer{378}$
+
+\begin{feedback}
+$\frac{28\cdot27}{2}=378$.
+\end{feedback}
+\end{problem}
+
+\end{document}

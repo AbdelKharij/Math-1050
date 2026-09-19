@@ -1,0 +1,381 @@
+\documentclass[12pt]{ximera}
+\title{Exam 3 Review}
+\begin{document}
+\begin{abstract}
+Review for an Exam 3 on fair division and the start of apportionment: lone-divider and lone-chooser, sealed bids, markers, Hamilton's method and the Alabama paradox, and Jefferson's method.
+\end{abstract}
+\maketitle
+
+\section*{Exam 3 Review}
+
+Topics: lone-divider, lone-chooser, sealed bids, the method of markers, and
+apportionment by Hamilton's and Jefferson's methods. Once you are comfortable with the
+material, try these with a stopwatch: you should be able to finish them in under $60$
+minutes.
+
+\begin{problem}
+Four burglars A, B, C, D divide their haul (fair division works for criminals too). D is
+the lone divider and made four shares; the others' bids are:
+\begin{center}
+\begin{tabular}{r|ccc}
+ & A & B & C\\\hline
+Acceptable & $\set{s_2,s_4}$ & $\set{s_1,s_2}$ & $\set{s_2,s_3,s_4}$
+\end{tabular}
+\end{center}
+How many different fair allocations of all four shares are there? $\answer{5}$
+
+\begin{feedback}
+D accepts anything, so only A, B, C constrain the choice.
+\begin{itemize}
+\item A $s_2$: B must take $s_1$; C takes $s_3$ or $s_4$ ($2$ ways).
+\item A $s_4$, B $s_1$: C takes $s_2$ or $s_3$ ($2$ ways).
+\item A $s_4$, B $s_2$: C must take $s_3$ ($1$ way).
+\end{itemize}
+D gets whatever is left each time.
+\end{feedback}
+\end{problem}
+
+\begin{problem}
+Three friends share a cake that is one quarter each buttercream, chocolate ganache,
+vanilla, and strawberry.
+\begin{itemize}
+\item Alex loves chocolate and buttercream equally, but hates strawberry and vanilla.
+\item Benji loves chocolate and strawberry equally, but hates buttercream and vanilla.
+\item Catarina loves chocolate and vanilla equally, but hates buttercream and strawberry.
+\end{itemize}
+They use the lone-chooser method. (1) Catarina cuts two shares of equal value to her: one
+with half the chocolate, half the vanilla, and all the strawberry, and the other with the
+rest. (2) Benji picks the share he prefers. (3) Catarina and Benji each cut their share
+into three sub-shares. (4) Alex picks one sub-share from each.
+
+\begin{prompt}
+\textbf{(a)} What is Catarina's first share (half chocolate, half vanilla, all strawberry)
+worth to Benji? $\answer{3/4}$
+
+\smallskip
+So Benji picks it, and Catarina keeps the other: half chocolate, half vanilla, and all
+the buttercream.
+\begin{feedback}
+To Benji, chocolate and strawberry are worth $\frac12$ each, so the share is worth
+$\frac14+\frac12=\frac34$. The other share is worth only $\frac14$ to him.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Catarina's share is worth $\frac12$ to her, so each sub-share must be worth
+$\frac16$. She cuts one sub-share of pure chocolate and one of pure vanilla. What
+fraction of the whole chocolate goes in her pure-chocolate sub-share? $\answer{1/3}$
+\begin{feedback}
+Chocolate is worth $\frac12$ to her, so $\frac13$ of it is worth $\frac16$. The same goes
+for vanilla. The third sub-share is the rest: $\frac16$ of the chocolate, $\frac16$ of
+the vanilla, and all the buttercream, also worth $\frac1{12}+\frac1{12}=\frac16$.
+
+Benji's share is worth $\frac34$ to him, so he makes three sub-shares of $\frac14$ each:
+all his chocolate ($\frac12$ of the whole), half the strawberry, and the other half of
+the strawberry with his vanilla.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Alex picks Catarina's third sub-share and Benji's chocolate sub-share. What
+is Alex's total, as a fraction of the cake's value to Alex? $\answer{5/6}$
+\begin{feedback}
+Catarina's third sub-share: $\frac16$ of the chocolate ($\frac16\cdot\frac12=\frac1{12}$)
+plus all the buttercream ($\frac12$), for $\frac7{12}$. Benji's chocolate sub-share is
+half the chocolate: $\frac14$. Total: $\frac7{12}+\frac3{12}=\frac{10}{12}=\frac56$. A
+very good deal for Alex!
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Alex, Bill, and Carla share a sandwich with equal parts meatball (M) and veggie (V).
+Alex likes meatball twice as much as veggie, Bill hates veggie, and Carla likes both
+equally.
+
+\begin{prompt}
+\textbf{(a)} Which methods are suitable?
+\begin{selectAll}
+\choice[correct]{Lone-divider}
+\choice[correct]{Lone-chooser}
+\choice{Sealed bids}
+\choice{Method of markers}
+\end{selectAll}
+\begin{feedback}
+A sandwich is a continuous asset, so a continuous method is needed.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} \textbf{Lone-divider.} Alex divides into $s_1=\frac M2$, $s_2=\frac M2$,
+$s_3=V$. Which shares are acceptable to Bill and to Carla?
+
+\begin{selectAll}
+\choice[correct]{Bill: $s_1$}
+\choice[correct]{Bill: $s_2$}
+\choice{Bill: $s_3$}
+\choice{Carla: $s_1$}
+\choice{Carla: $s_2$}
+\choice[correct]{Carla: $s_3$}
+\end{selectAll}
+\begin{feedback}
+To Alex, $M=\frac23$ and $V=\frac13$, so all three shares are worth $\frac13$. Bill values
+each meatball half at $\frac12$ and the veggie at $0$. Carla values the meatball halves at
+$\frac14$ each and the veggie at $\frac12$. So Carla gets $s_3$, Bill takes either
+meatball half, and Alex gets the other.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} \textbf{Lone-chooser}, with Alex as chooser. Bill cuts $\frac M2$ and
+$\frac M2+V$; Carla takes $\frac M2+V$, worth $\frac34$ to her. Bill cuts his half into
+three sixths of the meatball; Carla cuts hers into $\frac M2$, $\frac V2$, $\frac V2$.
+Alex takes one of Bill's sixths and Carla's meatball half. What fraction of the meatball
+does Alex end up with, and what is that worth to Alex?
+
+Fraction of meatball: $\answer{2/3}$ \quad Worth to Alex: $\answer{4/9}$
+\begin{feedback}
+$\frac16+\frac12=\frac23$ of the meatball, worth $\frac23\cdot\frac23=\frac49$ to Alex.
+Bill keeps $\frac13$ of the meatball, which is $\frac13$ in his view, and Carla keeps all
+the veggie, worth $\frac12$ to her.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Three people bid on the items at an estate sale, using sealed bids.
+\begin{center}
+\begin{tabular}{r|rrr}
+ & A & B & C\\\hline
+Cabinet & 100 & 100 & 200\\
+Table & 200 & 100 & 100\\
+Bookshelf & 50 & 100 & 50
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} Who gets each item?
+
+Cabinet $\answer{C}$ \quad Table $\answer{A}$ \quad Bookshelf $\answer{B}$
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Initial settlement (positive = pays), to the nearest cent:
+
+A $\answer[tolerance=0.005]{83.33}$ \quad B $\answer{0}$ \quad C
+$\answer[tolerance=0.005]{83.33}$
+\begin{feedback}
+Totals: A $350$, B $300$, C $350$, so fair shares are $116.67$, $100$, and $116.67$. A and C
+each receive items worth $200$ and pay the $83.33$ excess; B's bookshelf is worth exactly
+B's fair share.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Each person's share of the surplus, to the nearest cent:
+$\$\answer[tolerance=0.005]{55.56}$
+\begin{feedback}
+The surplus is $\frac{500}3\approx166.67$; a third of that is $\frac{500}9\approx55.56$.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Housemates A, B, C use sealed bids to divide yardwork. The amounts are what each would
+charge for the chore.
+\begin{center}
+\begin{tabular}{r|rrr}
+ & A & B & C\\\hline
+Leaves & 50 & 55 & 20\\
+Grass & 40 & 15 & 30\\
+Hedge & 30 & 35 & 40
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} Who does each chore?
+
+Leaves $\answer{C}$ \quad Grass $\answer{B}$ \quad Hedge $\answer{A}$
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Initial settlement (positive = pays): A $\answer{10}$ \quad B $\answer{20}$
+\quad C $\answer{10}$
+\begin{feedback}
+Fair shares of the work are $40$, $35$, and $30$. A does $30$ worth, B $15$, and C $20$.
+Everyone does less than a fair share in their own view, so everyone pays in.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Surplus: $\$\answer{40}$
+\begin{feedback}
+$10+20+10=40$, or $\$13.33$ each.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+There are $4$ Brach's (B), $5$ candy corn (C), and $6$ Droobles (D), lined up as follows:
+\begin{center}
+\begin{tabular}{ccccccccccccccc}
+1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15\\\hline
+B & C & D & D & D & B & C & D & D & B & B & C & C & D & C
+\end{tabular}
+\end{center}
+Xavier likes Brach's best, Yvonne candy corn, and Zeynab Droobles, but each also wants as
+many pieces as possible. They use the method of markers with two rules: (1) each share
+holds between one-third of the favorite candy rounded down and one-third rounded up; (2)
+subject to rule 1, shares are as balanced in piece count as possible.
+
+\begin{prompt}
+\textbf{(a)} Zeynab's markers are forced. After which pieces does she place them?
+
+$\answer{4}$ and $\answer{8}$
+\begin{feedback}
+Six Droobles means exactly $2$ per share. The first share must contain pieces $3$ and $4$
+but not $5$; the second must contain $5$ and $8$ but not $9$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Xavier marks after $5$ and $10$, and Yvonne after $6$ and $12$. Complete the
+allocation.
+
+Zeynab gets $1$--$\answer{4}$ \quad Xavier gets $\answer{6}$--$\answer{10}$ \quad
+Yvonne gets $\answer{13}$--$15$
+\begin{feedback}
+Zeynab's first marker is leftmost, so she takes $1$--$4$. Xavier's second marker
+(after $10$) precedes Yvonne's (after $12$), so he takes his second share, $6$--$10$.
+Yvonne takes her last share, $13$--$15$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Which pieces are the surplus?
+\begin{selectAll}
+\choice[correct]{5}
+\choice{6}
+\choice{10}
+\choice[correct]{11}
+\choice[correct]{12}
+\choice{13}
+\end{selectAll}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+You are one of three players sharing assets worth $1,1,2,2,3,5,5,5$ in your view, lined
+up in that order.
+
+\begin{prompt}
+\textbf{(a)} How much should each fair share be worth? $\answer{8}$
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Why is the method of markers a problem in this order?
+\begin{freeResponse}
+\end{freeResponse}
+\begin{feedback}
+The running totals are $1,2,4,6,9,\ldots$, which skip $8$, and every later share is worth
+at least $5$. There is no way to cut three consecutive shares worth $8$: one share is
+always too small (as little as $5$) or too large (at least $10$).
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Describe a rearrangement that allows three perfect shares, and what could
+still go wrong.
+\begin{freeResponse}
+\end{freeResponse}
+\begin{feedback}
+For example, $1,2,5\mid1,2,5\mid3,5$. Still, the other players may value the items
+differently, and there is no guarantee that everyone can find three acceptable shares in
+the same order.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+The four states of Alphabitia use Hamilton's method to apportion the $60$ seats of their
+General Assembly.
+\begin{center}
+\begin{tabular}{r|rrrrr}
+ & A & B & C & D & Total\\\hline
+Population & 152 & 18 & 92 & 38 & 300
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} Standard divisor $\answer{5}$; quotas A $\answer{30.4}$, B $\answer{3.6}$,
+C $\answer{18.4}$, D $\answer{7.6}$
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Hamilton apportionment: A $\answer{30}$, B $\answer{4}$, C $\answer{18}$,
+D $\answer{8}$
+\begin{feedback}
+Lower quotas total $58$; the residues $0.6$ of B and D are the largest.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} The Assembly grows to $61$ seats. Find the new standard quota for A and the
+new Hamilton apportionment.
+
+$q_A=\answer[tolerance=0.005]{30.91}$ \qquad A $\answer{31}$, B $\answer{3}$,
+C $\answer{19}$, D $\answer{8}$
+\begin{feedback}
+$SD=\frac{300}{61}\approx4.918$, and the quotas are $30.91$, $3.66$, $18.71$, $7.73$. The
+lower quotas total $58$, so $3$ seats go to the largest residues: A ($0.91$), D ($0.73$),
+and C ($0.71$).
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(d)} What happened?
+\begin{multipleChoice}
+\choice[correct]{The Alabama paradox: B lost a seat when the house grew}
+\choice{The population paradox}
+\choice{The new-states paradox}
+\choice{A quota-rule violation}
+\end{multipleChoice}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Three provinces --- Alberta, Beringia, and Carolina --- form a new federation and use
+Jefferson's method to apportion $50$ seats on their council.
+\begin{center}
+\begin{tabular}{r|rrr}
+Divisor & Alberta & Beringia & Carolina\\\hline
+Population & 9,470 & 3,899 & 6,631\\
+$400$ & 23.675 & 9.748 & 16.578\\
+$394$ & 24.04 & 9.90 & 16.83\\
+$390$ & 24.282 & 9.997 & 17.003\\
+$385$ & 24.60 & 10.13 & 17.22
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} Which divisor works? $\answer{390}$ \qquad Apportionment: Alberta
+$\answer{24}$, Beringia $\answer{9}$, Carolina $\answer{17}$
+\begin{feedback}
+Rounding down: $400\to48$, $394\to49$, $390\to50$, $385\to51$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} What would have gone wrong had the $390$ row been rounded to two decimals
+like the others?
+\begin{freeResponse}
+\end{freeResponse}
+\begin{feedback}
+$9.997$ would appear as $10.00$, and the lower quotas would seem to be $24+10+17=51$. We
+would wrongly reject $390$. Whenever a rounded quota looks like an exact integer, use
+more digits to see which side of the integer it is really on.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\end{document}

@@ -1,0 +1,285 @@
+\documentclass[12pt]{ximera}
+\title{Exam 3 (2022)}
+\begin{document}
+\begin{abstract}
+An archived exam on Chapter 3 and the start of Chapter 4: lone-divider bids, dividing a pizza, sealed bids with positive and negative assets, the method of markers, and Hamilton and Jefferson apportionments.
+\end{abstract}
+\maketitle
+
+\section*{Exam 3 (2022)}
+
+This exam allowed one handwritten sheet of notes.
+
+\begin{problem}
+Four brothers A, B, C, D are dividing their real estate empire using the lone-divider
+method. The divider made four shares $s_1,\dots,s_4$ that are equal in his view, and the
+others submitted their bids:
+\begin{center}
+\begin{tabular}{r|cccc}
+ & A & B & C & D\\\hline
+Acceptable & $\set{s_3}$ & $\set{s_1,s_2}$ & $\set{s_1,s_2,s_3,s_4}$ & $\set{s_2,s_3}$
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} Which brother was the divider? $\answer{C}$
+\begin{feedback}
+The divider finds every share acceptable, and only C does.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Which share does each brother get? Enter share numbers.
+
+A: $\answer{3}$ \quad B: $\answer{1}$ \quad C: $\answer{4}$ \quad D: $\answer{2}$
+\begin{feedback}
+A must get $s_3$. That leaves only $s_2$ for D, and then only $s_1$ for B. C, the
+divider, gets $s_4$.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Three friends A, B, C share a pizza that is one quarter each cheese, salami, veggie, and
+supreme, using the lone-divider method with A as divider. A likes cheese and salami
+equally, and veggie as much as cheese and salami together, but gives the supreme part a
+value of \$0. The whole pizza is worth \$12 to A.
+
+\begin{prompt}
+\textbf{(a)} What is each part worth to A, and how much is each of A's shares worth?
+
+Cheese $\$\answer{3}$ \quad Salami $\$\answer{3}$ \quad Veggie $\$\answer{6}$ \quad
+Supreme $\$\answer{0}$ \qquad Each share: $\$\answer{4}$
+\begin{feedback}
+If cheese and salami are worth $x$ each, veggie is worth $2x$, so $4x=12$ and $x=3$.
+Each of three equal shares is worth $\$12\div3=\$4$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Describe one way for A to make three shares.
+\begin{freeResponse}
+\end{freeResponse}
+\begin{feedback}
+Answers vary. One way: start with all the cheese ($\$3$) and add $\$1$ of salami, which
+is $\frac13$ of it: $s_1=C+\frac13S$. The remaining $\frac23S$ is worth $\$2$, so add
+$\$2$ of veggie, which is $\frac13$ of it: $s_2=\frac23S+\frac13V$. The rest is
+$s_3=\frac23V+Su$, automatically worth $\$4$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} B values salami and supreme equally and doesn't like cheese or veggie at
+all. For the shares in the sample answer to (b), what is each share worth to B (as
+dollars of a \$12 pizza)?
+
+$s_1$: $\$\answer{2}$ \quad $s_2$: $\$\answer{4}$ \quad $s_3$: $\$\answer{6}$
+\begin{feedback}
+To B, salami and supreme are worth $\$6$ each. $s_1=\frac13\cdot6=2$,
+$s_2=\frac23\cdot6=4$, and $s_3=6$. B finds $s_2$ and $s_3$ acceptable.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Four siblings divide the assets of a toothbrush factory by sealed bids. Bids are in
+thousands of dollars.
+\begin{center}
+\begin{tabular}{r|rrrr}
+ & Adi & Beatrice & Chris & Deanna\\\hline
+Office building & 500 & 350 & 400 & 450\\
+Unsold product & 350 & 360 & 400 & 390\\
+Warehouse & 150 & 130 & 200 & 240
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} Who gets each item?
+
+Office: $\answer{Adi}$ \quad Product: $\answer{Chris}$ \quad Warehouse: $\answer{Deanna}$
+\begin{feedback}
+Each item goes to its highest bidder; Beatrice gets no item.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Find the initial settlement for each sibling (positive = pays in, negative =
+receives).
+
+Adi $\answer{250}$ \quad Beatrice $\answer{-210}$ \quad Chris $\answer{150}$ \quad
+Deanna $\answer{-30}$
+\begin{feedback}
+\[
+\begin{array}{r|rrrr}
+ & \text{Adi} & \text{Beatrice} & \text{Chris} & \text{Deanna}\\\hline
+\text{Total} & 1000 & 840 & 1000 & 1080\\
+\text{Fair share} & 250 & 210 & 250 & 270\\
+\text{Items} & 500 & 0 & 400 & 240\\
+\text{Items}-\text{fair} & 250 & -210 & 150 & -30
+\end{array}
+\]
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} How much surplus is left? $\answer{160}$ thousand, or $\answer{40}$
+thousand per sibling
+\begin{feedback}
+$250+150-210-30=160$, split four ways.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Two housemates must clean before returning the keys, and they use sealed bids with
+negative assets. Their estimates of each chore's cost, in dollars:
+\begin{center}
+\begin{tabular}{r|rr}
+ & Anna & Billy\\\hline
+Clean windows & 23 & 35\\
+Vacuum carpet & 15 & 12\\
+Clean bathroom & 30 & 28\\
+Take out trash & 22 & 25
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} Which chores does Anna do?
+\begin{selectAll}
+\choice[correct]{Windows}
+\choice{Carpet}
+\choice{Bathroom}
+\choice[correct]{Trash}
+\end{selectAll}
+\begin{feedback}
+Each chore goes to whoever minds it least: Anna does windows and trash, Billy the carpet
+and bathroom.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Initial settlement (positive = pays): Anna $\answer{0}$ \quad Billy
+$\answer{10}$
+\begin{feedback}
+Anna's total is $90$, so her fair share of the work is $45$, exactly what her chores
+cost her ($23+22$). Billy's total is $100$, a fair share $50$, but his chores cost only
+$12+28=40$, so he pays the $\$10$ difference.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} What is the surplus? $\$\answer{10}$
+\begin{feedback}
+The $\$10$ Billy pays in is split $\$5$ each: Anna ends up receiving $\$5$, and Billy
+pays a net $\$5$.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Three players divide $14$ pieces of candy, lined up in a row, by the method of markers.
+A's fair shares are $(1\text{--}4)$, $(5\text{--}8)$, $(9\text{--}14)$; B's are
+$(1\text{--}7)$, $(8\text{--}11)$, $(12\text{--}14)$; and C's are $(1\text{--}3)$,
+$(4\text{--}8)$, $(9\text{--}14)$.
+
+\begin{prompt}
+\textbf{(a)} How is the candy allocated? Enter the first and last piece.
+
+C gets $\answer{1}$--$\answer{3}$ \quad A gets $\answer{5}$--$\answer{8}$ \quad
+B gets $\answer{12}$--$\answer{14}$
+\begin{feedback}
+The leftmost first marker is C's (after piece $3$), so C takes $1$--$3$. Of the
+remaining second markers, A's (after $8$) comes before B's (after $11$), so A takes
+$5$--$8$. B gets its last share, $12$--$14$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Which pieces are left over?
+\begin{selectAll}
+\choice[correct]{4}
+\choice{8}
+\choice[correct]{9}
+\choice[correct]{10}
+\choice[correct]{11}
+\choice{12}
+\end{selectAll}
+\begin{feedback}
+Pieces $4$ and $9$--$11$ form the surplus.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+A college reorganizes into four departments: Animal Science, Biology, Chemistry, and Math
+(A, B, C, M). It will apportion $30$ administrative staffers by student enrollment using
+Hamilton's method.
+\begin{center}
+\begin{tabular}{r|rrrrr}
+ & A & B & C & M & Total\\\hline
+Enrollment & 3700 & 1400 & 1600 & 2300 & 9000
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} Standard divisor: $\answer{300}$
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Standard quotas: A $\answer[tolerance=0.005]{12.33}$, B
+$\answer[tolerance=0.005]{4.67}$, C $\answer[tolerance=0.005]{5.33}$, M
+$\answer[tolerance=0.005]{7.67}$
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Hamilton apportionment: A $\answer{12}$, B $\answer{5}$, C $\answer{5}$,
+M $\answer{8}$
+\begin{feedback}
+Lower quotas $12,4,5,7$ total $28$, so $2$ staffers remain. The largest residues are
+B and M ($0.67$ each).
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(d)} With $31$ staffers the standard quotas become $12.7$, $4.8$, $5.5$, and $7.9$.
+Which department gets the extra staffer, compared with part (c)? $\answer{A}$
+\begin{feedback}
+Lower quotas still total $28$, now with $3$ staffers to hand out. The largest residues
+are M ($0.9$), B ($0.8$), and A ($0.7$), giving A $13$, B $5$, C $5$, M $8$. Only A
+changed.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+The college now uses Jefferson's method for the $30$ staffers instead. Modified quotas for
+several divisors:
+\begin{center}
+\begin{tabular}{r|rrrr}
+Divisor & A & B & C & M\\\hline
+$290$ & 12.76 & 4.83 & 5.52 & 7.93\\
+$287$ & 12.89 & 4.88 & 5.57 & 8.01\\
+$285$ & 12.98 & 4.91 & 5.61 & 8.07\\
+$281$ & 13.17 & 4.98 & 5.69 & 8.19\\
+$280$ & 13.21 & 5.00 & 5.71 & 8.21
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} Which divisor works? $\answer{281}$
+\begin{feedback}
+Rounding down: $290\to28$, $287\to29$, $285\to29$, $281\to30$, $280\to31$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Jefferson apportionment: A $\answer{13}$, B $\answer{4}$, C $\answer{5}$,
+M $\answer{8}$
+\begin{feedback}
+Compared with Hamilton, Jefferson moves a staffer from the smaller department B to the
+largest, A, which is typical of its bias toward large states.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\end{document}

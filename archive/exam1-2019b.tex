@@ -1,0 +1,220 @@
+\documentclass[12pt]{ximera}
+\title{Exam 1 (2019, Version B)}
+\begin{document}
+\begin{abstract}
+An archived exam on Chapter 1: majority thresholds, Plurality and
+Plurality-with-Elimination winners, Condorcet candidates, full rankings by Borda count
+and Pairwise Comparisons, and working backward from point totals.
+\end{abstract}
+\maketitle
+
+\section*{Exam 1 (2019, Version B)}
+
+\begin{problem}
+Problems 1--4 refer to the following preference schedule for an election with four
+candidates.
+\begin{center}
+\begin{tabular}{c|ccc}
+Number of voters & 8 & 6 & 5\\\hline
+1st & B & D & C\\
+2nd & D & B & A\\
+3rd & A & C & D\\
+4th & C & A & B
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{1.} To obtain a majority of the votes cast, a candidate needs
+
+\begin{multipleChoice}
+\choice{$9$ votes}
+\choice{$19$ votes}
+\choice{more votes than any other candidate}
+\choice[correct]{$10$ votes}
+\end{multipleChoice}
+
+\begin{feedback}
+There are $8+6+5=19$ voters, and a majority is more than half: $10$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{2.} Which candidate wins under the Plurality method?
+
+\begin{multipleChoice}
+\choice{A}
+\choice[correct]{B}
+\choice{C}
+\choice{D}
+\choice{There is a tie}
+\end{multipleChoice}
+
+\begin{feedback}
+First-place votes: B $8$, D $6$, C $5$, A $0$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{3.} Which candidate wins under Plurality-with-Elimination?
+
+\begin{multipleChoice}
+\choice{A}
+\choice{B}
+\choice{C}
+\choice[correct]{D}
+\choice{The method is not required / does not apply}
+\end{multipleChoice}
+
+\begin{feedback}
+Eliminate A ($0$), then C ($5$). C's voters rank D next (A is gone), giving D $11$ and
+B $8$. D wins.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{4.} In this election, a Condorcet candidate
+
+\begin{multipleChoice}
+\choice{is A}
+\choice{is B}
+\choice{is C}
+\choice[correct]{is D}
+\choice{does not exist}
+\end{multipleChoice}
+
+\begin{feedback}
+D beats A $14$--$5$, B $11$--$8$, and C $14$--$5$.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+\textbf{5.} True or false: for any election, the Condorcet criterion is never violated by
+the Pairwise Comparisons method.
+
+\begin{multipleChoice}
+\choice[correct]{True}
+\choice{False}
+\end{multipleChoice}
+
+\begin{feedback}
+True. A Condorcet candidate wins every comparison and so has the most points.
+\end{feedback}
+\end{problem}
+
+\begin{problem}
+Problems 6 and 7 refer to the following preference schedule.
+\begin{center}
+\begin{tabular}{c|cccc}
+Number of voters & 5 & 4 & 2 & 1\\\hline
+1st & C & A & B & D\\
+2nd & D & C & A & C\\
+3rd & A & B & D & B\\
+4th & B & D & C & A
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{6.} Use Pairwise Comparisons to find a complete ranking.
+
+A: $\answer{2}$ \quad B: $\answer{0.5}$ \quad C: $\answer{2.5}$ \quad D: $\answer{1}$
+points
+
+\smallskip
+1st $\answer{C}$, 2nd $\answer{A}$, 3rd $\answer{D}$, 4th $\answer{B}$
+
+\begin{feedback}
+\[
+\begin{array}{lll@{\qquad}lll}
+\text{A vs B} & 9\text{--}3 & \text{A} & \text{B vs C} & 2\text{--}10 & \text{C}\\
+\text{A vs C} & 6\text{--}6 & \text{tie} & \text{B vs D} & 6\text{--}6 & \text{tie}\\
+\text{A vs D} & 6\text{--}6 & \text{tie} & \text{C vs D} & 9\text{--}3 & \text{C}
+\end{array}
+\]
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{7.} Use the Borda count to find a complete ranking.
+
+A: $\answer{33}$ \quad B: $\answer{23}$ \quad C: $\answer{37}$ \quad D: $\answer{27}$
+
+\smallskip
+1st $\answer{C}$, 2nd $\answer{A}$, 3rd $\answer{D}$, 4th $\answer{B}$
+
+\begin{feedback}
+With $4,3,2,1$ points:
+\[
+\begin{aligned}
+\text{A:}&\ 5\cdot2+4\cdot4+2\cdot3+1\cdot1=33\\
+\text{B:}&\ 5\cdot1+4\cdot2+2\cdot4+1\cdot2=23\\
+\text{C:}&\ 5\cdot4+4\cdot3+2\cdot1+1\cdot3=37\\
+\text{D:}&\ 5\cdot3+4\cdot1+2\cdot2+1\cdot4=27
+\end{aligned}
+\]
+(Check: $12\cdot10=120$.)
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+An election with four candidates (A, B, C, D) and $60$ voters used a modified Borda
+count: $6$ points for first place, $4$ for second, $2$ for third, and $1$ for fourth. A
+had $140$ points, B had $200$, and C had $320$.
+
+\begin{prompt}
+\textbf{(a)} How many points did D have? $\answer{120}$
+
+\begin{feedback}
+Each ballot awards $6+4+2+1=13$ points, so the total is $60\cdot13=780$. D has
+$780-(140+200+320)=120$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Give the ranking of the candidates.
+
+1st $\answer{C}$, 2nd $\answer{B}$, 3rd $\answer{A}$, 4th $\answer{D}$
+
+\begin{feedback}
+C $320$, B $200$, A $140$, D $120$.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+An election with seven candidates (A--G) used the Pairwise Comparisons method. Candidate
+A lost $1$ comparison; B lost $2$ and tied $1$; C lost $2$ and tied $2$; D lost $3$ and
+tied $1$; F lost $5$; and G lost $6$.
+
+\begin{prompt}
+\textbf{(a)} How many points did E get? $\answer{6}$
+
+\begin{hint}
+Each comparison awards exactly $1$ point in total. How many comparisons are there?
+\end{hint}
+
+\begin{feedback}
+Each candidate is in $6$ comparisons, and a win is worth $1$, a tie $\frac12$:
+\[
+\text{A } 5,\quad \text{B } 3.5,\quad \text{C } 3,\quad \text{D } 2.5,\quad
+\text{F } 1,\quad \text{G } 0,
+\]
+which total $15$. There are $\frac{7\cdot6}{2}=21$ comparisons, so E has
+$21-15=6$ points: E won every comparison.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Give a complete ranking of the candidates.
+
+1st $\answer{E}$, 2nd $\answer{A}$, 3rd $\answer{B}$, 4th $\answer{C}$, 5th $\answer{D}$,
+6th $\answer{F}$, 7th $\answer{G}$
+
+\begin{feedback}
+E $6$, A $5$, B $3.5$, C $3$, D $2.5$, F $1$, G $0$.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\end{document}
