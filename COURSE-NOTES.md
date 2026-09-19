@@ -42,6 +42,8 @@ values. Where the two disagreed, the corrected value is used and listed below.
   true/false items, so they were merged. A fragment left after `\end{document}` in the
   2020 Exam 4 source (an unfinished older Exam 2) was ignored.
 - Print-only front matter: name lines, device policies, and point totals.
+- A decorative cartoon beside one homework problem. It carries no information needed to
+  solve anything, and the character is copyrighted.
 
 ## Errors in the source, and how they were resolved
 
@@ -103,7 +105,7 @@ Previous exams:
 
 ## Figures
 
-In `xmPictures/`: `LuckyLuke.jpg`, `sandwich.jpg`, `candies.jpg`, `markersArray.png`, and
+In `xmPictures/`: `sandwich.jpg`, `candies.jpg`, `markersArray.png`, and
 `cakeShares.png` (the cake-cutting solution sketch). Pizza, sub, and cake diagrams whose
 images were missing from the source are drawn in TikZ. Marker positions come from the
 images: `candies.jpg` has A at 4, 9, 17; B at 5, 11, 16; C at 6, 10, 15; D at 6, 12, 16.
