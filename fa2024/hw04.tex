@@ -1,0 +1,239 @@
+\documentclass[12pt]{ximera}
+\title{Homework 4: Weighted Voting Systems and Banzhaf Power}
+\begin{document}
+\begin{abstract}
+Sections 2.1--2.2: equivalent weighted voting systems and dummies, the Banzhaf power of a
+law firm's senior partner, and winning coalition types for a city council with a
+mayoral veto.
+\end{abstract}
+\maketitle
+
+\section*{Sections 2.1--2.2: Weighted Voting and Banzhaf Power}
+
+Recall the quota restrictions: in $[q: w_1, w_2, \ldots, w_n]$ the quota $q$ must be
+\emph{more than half} of the total weight and \emph{no more than} the total weight. A
+player whose weight alone meets the quota is a \emph{dictator}.
+
+\begin{problem}
+Two weighted voting systems are \emph{equivalent} if and only if they have the same
+number of players and the same winning coalitions.
+
+Consider the weighted voting system $[8:5,3,2,1]$, with players A, B, C, and D.
+
+\begin{prompt}
+\textbf{(a)} Is this weighted voting system equivalent to $[2:1,1,0,0]$?
+
+\begin{multipleChoice}
+\choice{Yes}
+\choice[correct]{No}
+\end{multipleChoice}
+
+\begin{hint}
+In $[2:1,1,0,0]$, a coalition wins exactly when it contains both A and B. Can you find
+a winning coalition in $[8:5,3,2,1]$ that does \emph{not} contain B?
+\end{hint}
+
+\begin{feedback}
+No. In $[2:1,1,0,0]$ only A and B have any weight, so a coalition wins precisely when
+it contains \emph{both} A and B.
+
+In $[8:5,3,2,1]$ the winning coalitions (those with weight at least $8$) are
+\[
+\set{A,B}=8,\quad \set{A,B,C}=10,\quad \set{A,B,D}=9,\quad \set{A,B,C,D}=11,\quad
+\set{A,C,D}=8.
+\]
+The last one is the counterexample: $\set{A,C,D}$ has weight $5+2+1=8$ and wins
+\emph{without} B. In $[2:1,1,0,0]$ that same coalition has weight $1$ and loses.
+
+The two systems have different winning coalitions, so they are not equivalent.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Are there any dummies in $[8:5,3,2,1]$?
+
+\begin{multipleChoice}
+\choice{Yes --- D is a dummy}
+\choice{Yes --- C and D are both dummies}
+\choice[correct]{No --- every player is critical in at least one winning coalition}
+\end{multipleChoice}
+
+\begin{feedback}
+No. A dummy is a player who is never critical in any winning coalition.
+
+The coalition $\set{A,C,D}$ settles it for both of the small players. Its weight is
+exactly $8$, so removing either C or D drops it to $6$ or $7$ and it loses. Both C and
+D are therefore critical in that coalition, and neither is a dummy.
+
+(A and B are clearly not dummies either --- both are critical in $\set{A,B}$.)
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+A law firm is run by four partners --- A, B, C, and D --- where A is the senior
+partner. Each partner has one vote. Decisions are typically made by majority rule, but they can
+also be made by the senior partner with any one other partner's support.
+
+\begin{prompt}
+\textbf{(a)} How many winning coalitions are there in this system?
+
+$\answer{8}$
+
+\begin{feedback}
+A majority of four votes is three, so the winning coalitions are every group of three or
+more, plus the senior partner with any one other:
+\[
+\set{A,B},\ \set{A,C},\ \set{A,D},\ \set{A,B,C},\ \set{A,B,D},\ \set{A,C,D},\
+\set{B,C,D},\ \set{A,B,C,D},
+\]
+which is $8$ coalitions. Marking the critical players in each --- those whose removal
+would make the coalition lose:
+\[
+\begin{array}{ll}
+\set{A,B}=3: & \text{both A and B critical}\\
+\set{A,C}=3: & \text{both A and C critical}\\
+\set{A,D}=3: & \text{both A and D critical}\\
+\set{A,B,C}=4: & \text{only A critical}\\
+\set{A,B,D}=4: & \text{only A critical}\\
+\set{A,C,D}=4: & \text{only A critical}\\
+\set{B,C,D}=3: & \text{all three of B, C, D critical}\\
+\set{A,B,C,D}=5: & \text{nobody critical}
+\end{array}
+\]
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Determine the Banzhaf Power Distribution of this law firm. Give each
+share as a percentage, rounded to one decimal place.
+
+A: $\answer[tolerance=0.05]{50}\%$ \qquad
+B: $\answer[tolerance=0.05]{16.7}\%$ \qquad
+C: $\answer[tolerance=0.05]{16.7}\%$ \qquad
+D: $\answer[tolerance=0.05]{16.7}\%$
+
+\begin{hint}
+Count how many times each player is critical across all winning coalitions, then
+divide by the grand total of critical counts.
+\end{hint}
+
+\begin{feedback}
+From the list in part (b), count each player's critical appearances:
+\[
+\text{A}: 6, \qquad \text{B}: 2, \qquad \text{C}: 2, \qquad \text{D}: 2,
+\]
+for a total critical count of $12$. The Banzhaf power distribution is therefore
+\[
+\text{A}: \frac{6}{12}=50\%, \qquad
+\text{B}=\text{C}=\text{D}: \frac{2}{12}=16.7\%.
+\]
+(These total $100\%$. \checkmark)
+
+The senior partner holds exactly half the power with only $40\%$ of the raw votes ---
+Banzhaf power is not proportional to weight.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+A city council has seven council members, $C_1,\ldots,C_7$, with one vote each, and a
+mayor ($M$) with no vote but a veto, which a two-thirds majority of the council can
+overrule. A simple majority of the council is needed to pass a motion. Use $C$ for any
+one council member, and include $M$ in a coalition when the mayor does not intend to
+veto.
+
+\begin{prompt}
+\textbf{(a)} How many council members does a coalition need to pass a motion
+\emph{with} mayoral support?
+
+$\answer{4}$
+
+\begin{feedback}
+A simple majority of $7$ council members means more than $3.5$, so at least $4$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} How many council members does a coalition need to pass a motion
+\emph{without} mayoral support?
+
+$\answer{5}$
+
+\begin{hint}
+Without mayoral support the motion is vetoed, so the council must override. Two-thirds
+of $7$ is not a whole number --- round up.
+\end{hint}
+
+\begin{feedback}
+Overriding the veto takes a two-thirds majority of the $7$ council members, and
+\[ \tfrac23 \cdot 7 = 4.67, \]
+so at least $5$ council members are required.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Below is every coalition type. Identify which are winning, and how many
+players are critical in each.
+
+For coalitions \emph{with} mayoral support:
+
+$\set{M, C, C, C, C}$ (4 council members, $35$ distinct coalitions) --- is it winning?
+\begin{multipleChoice}
+\choice[correct]{Yes}
+\choice{No}
+\end{multipleChoice}
+Number of critical players in each such coalition: $\answer{5}$
+
+\smallskip
+$\set{M, C, C, C, C, C}$ (5 council members, $21$ coalitions) --- number of critical
+players: $\answer{0}$
+
+\smallskip
+For coalitions \emph{without} mayoral support:
+
+$\set{C, C, C, C, C}$ (5 council members, $21$ coalitions) --- number of critical
+players: $\answer{5}$
+
+\smallskip
+$\set{C,C,C,C,C,C}$ (6 council members, $7$ coalitions) --- number of critical
+players: $\answer{0}$
+
+\begin{hint}
+A player is critical when removing them turns a winning coalition into a losing one.
+Careful with $\set{M,C,C,C,C,C}$: if the mayor walks away, the five remaining council
+members can still override his veto.
+\end{hint}
+
+\begin{feedback}
+The winning types are: with the mayor, $4$ or more council members; without the mayor,
+$5$ or more.
+
+\textbf{$\set{M,C,C,C,C}$ --- winning, $5$ critical players.} Remove $M$ and the four
+remaining council members fall short of the $5$ needed to override, so $M$ is
+critical. Remove any one $C$ and only $3$ council members remain with mayoral support,
+short of $4$ --- so all four council members are critical too. That is $1+4 = 5$
+critical players.
+
+\textbf{$\set{M,C,C,C,C,C}$ --- winning, but nobody is critical.} Remove $M$ and the
+$5$ council members override the veto and still win. Remove one $C$ and you are left
+with $\set{M,C,C,C,C}$, which also still wins. The same holds for every larger
+coalition with the mayor.
+
+\textbf{$\set{C,C,C,C,C}$ --- winning, all $5$ critical.} Removing any member leaves
+$4$, which cannot override the veto.
+
+\textbf{$\set{C,C,C,C,C,C}$ --- winning, nobody critical.} Removing one still leaves
+$5$, enough to override.
+
+Every other type is either losing (too few council members) or winning with no
+critical players.
+\end{feedback}
+\end{prompt}
+
+It turns out that both the mayor and each individual council member hold exactly
+$12.5\%$ of the Banzhaf power in this system --- the mayor's veto is worth exactly as much
+as a council vote.
+\end{problem}
+
+\end{document}

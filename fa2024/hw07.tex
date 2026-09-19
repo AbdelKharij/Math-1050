@@ -1,0 +1,448 @@
+\documentclass[12pt]{ximera}
+\title{Homework 7: Lone-Chooser, Sealed Bids, and Markers}
+\begin{document}
+\begin{abstract}
+Sections 3.4--3.6: designing a lone-chooser split to meet a scheduling constraint, the
+method of sealed bids for household goods and for chores, and the method of markers.
+\end{abstract}
+\maketitle
+
+\section*{Sections 3.4--3.6: Lone-Chooser, Sealed Bids, and Markers}
+
+\begin{problem}
+Three research groups (A, B, and C) share a lab and need to divide $24$ hours of lab time
+per day using the lone-chooser method. Group A doesn't care which hours it gets as long
+as it has at least $8$ (a fair share), so it agrees to be the first divider.
+
+Group A splits the day into $\set{\text{midnight--noon}}$ and
+$\set{\text{noon--midnight}}$, and group B, preferring afternoons and evenings, takes
+noon--midnight. For the next round, group A splits its half into midnight--4am, 4am--8am,
+and 8am--noon. Group B will split its half into three parts it considers equal (not
+necessarily consecutive hours), and then group C chooses one piece from A's split and one
+from B's.
+
+\begin{prompt}
+Group C wants lab access for at least one hour at a time, at precise $8$-hour intervals
+(such as 1--2am, 9--10am, and 5--6pm). Describe one way group B could split its portion
+so that the final division satisfies all three groups.
+
+\begin{freeResponse}
+\end{freeResponse}
+
+\begin{hint}
+C gets only one of A's $4$-hour blocks, and each of those contains at most one time from
+an $8$-hour pattern. So two of C's three slots must come from a \emph{single} piece of
+B's split. Which patterns put two slots between noon and midnight?
+\end{hint}
+
+\begin{feedback}
+C can take only one of A's blocks, so C's piece from B must contain \emph{two} of its
+three hourly slots --- $8$ hours apart, both between noon and midnight. The pattern
+5am, 1pm, 9pm works: 5--6am lies in A's 4am--8am block, and 1--2pm and 9--10pm both lie in
+B's half.
+
+So B could split its twelve hours into three $4$-hour parts, for example
+\begin{itemize}
+\item Part 1: 12--2pm and 9--11pm;
+\item Part 2: 2--6pm;
+\item Part 3: 6--9pm and 11pm--midnight.
+\end{itemize}
+C then takes Part 1 from B and 4am--8am from A, getting 5--6am, 1--2pm, and 9--10pm,
+exactly $8$ hours apart. A keeps midnight--4am and 8am--noon, $8$ hours, which is all it
+wanted. B keeps Parts 2 and 3, two of the three parts it considered equal, so at least
+$\frac23$ of the half it valued at a fair share or more. Everyone is satisfied.
+
+Many other splits work, as long as one of B's parts contains both 1--2pm and 9--10pm (or
+a similar pair $8$ hours apart) and C can pair it with a matching block of A's.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+You and a few roommates have shared an apartment for the last two years, but now it's
+time to move out, and you've agreed to divvy your shared belongings using the method of
+sealed bids. The values you each assign are:
+
+\begin{center}
+\begin{tabular}{|r|c|c|c|c|}\hline
+ & \textbf{You} & \textbf{Sam} & \textbf{Riley} & \textbf{Jordan} \\\hline
+Sofa & \$205 & \$260 & \$185 & \$215 \\
+Smart TV & \$210 & \$150 & \$180 & \$175 \\
+Microwave & \$55 & \$75 & \$65 & \$50 \\
+Coffee Maker & \$60 & \$25 & \$90 & \$75 \\
+Blender & \$60 & \$30 & \$75 & \$100 \\
+Vacuum Cleaner & \$120 & \$150 & \$130 & \$105 \\
+Dining Table & \$270 & \$230 & \$255 & \$300 \\\hline
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} Which roommate gets to keep each item? (Each item goes to the highest
+bidder.)
+
+Sofa: $\answer{Sam}$ \quad Smart TV: $\answer{You}$ \quad Microwave: $\answer{Sam}$
+
+\smallskip
+Coffee Maker: $\answer{Riley}$ \quad Blender: $\answer{Jordan}$ \quad
+Vacuum Cleaner: $\answer{Sam}$ \quad Dining Table: $\answer{Jordan}$
+
+\begin{feedback}
+Reading down each row for the largest bid:
+\[
+\begin{array}{lll}
+\text{Sofa} & \text{Sam} & \$260\\
+\text{Smart TV} & \text{You} & \$210\\
+\text{Microwave} & \text{Sam} & \$75\\
+\text{Coffee Maker} & \text{Riley} & \$90\\
+\text{Blender} & \text{Jordan} & \$100\\
+\text{Vacuum Cleaner} & \text{Sam} & \$150\\
+\text{Dining Table} & \text{Jordan} & \$300
+\end{array}
+\]
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} What is each roommate's ``fair share'' in this system?
+
+You: $\$\answer{245}$ \quad Sam: $\$\answer{230}$ \quad Riley: $\$\answer{245}$ \quad
+Jordan: $\$\answer{255}$
+
+\begin{feedback}
+Each roommate's total valuation, divided by four:
+\[
+\begin{array}{lll}
+\text{You}: & 980 & \to 980/4 = \$245\\
+\text{Sam}: & 920 & \to 920/4 = \$230\\
+\text{Riley}: & 980 & \to 980/4 = \$245\\
+\text{Jordan}: & 1020 & \to 1020/4 = \$255
+\end{array}
+\]
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Compare each roommate's fair share with their perceived value of the items
+they've won. What does each owe, or what are they owed, in the initial settlement?
+Enter a positive number for money received and a negative number for money paid in.
+
+You: $\answer{35}$ \quad Sam: $\answer{-255}$ \quad Riley: $\answer{155}$ \quad
+Jordan: $\answer{-145}$
+
+\begin{feedback}
+\[
+\begin{array}{lcccl}
+ & \text{items won} & \text{fair share} & \text{difference} & \\
+\text{You} & \$210 & \$245 & -\$35 & \text{receives } \$35\\
+\text{Sam} & \$485 & \$230 & +\$255 & \text{pays } \$255\\
+\text{Riley} & \$90 & \$245 & -\$155 & \text{receives } \$155\\
+\text{Jordan} & \$400 & \$255 & +\$145 & \text{pays } \$145
+\end{array}
+\]
+(Sam's $\$485$ is the Sofa, Microwave, and Vacuum: $260+75+150$. Jordan's $\$400$ is
+the Blender and Dining Table: $100+300$.)
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(d)} Once every roommate has items and/or compensation worth exactly their fair
+share, how much money is left in the system --- that is, what is the surplus?
+
+$\$\answer{210}$ \qquad and each roommate's quarter of it is $\$\answer{52.50}$
+
+\begin{feedback}
+Money in from Sam and Jordan is $255 + 145 = \$400$; money out to You and Riley is
+$35 + 155 = \$190$. The surplus is
+\[ \$400 - \$190 = \$210, \]
+which splits four ways as $\$210/4 = \$52.50$ each.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(e)} After splitting the surplus equally, what is each roommate's cash position
+in the final settlement? Enter a positive number for money received and a negative
+number for money paid.
+
+You: $\answer{87.50}$ \quad Sam: $\answer{-202.50}$ \quad Riley: $\answer{207.50}$ \quad
+Jordan: $\answer{-92.50}$
+
+\begin{feedback}
+Add each roommate's \$52.50 share of the surplus to their initial settlement:
+\[
+\begin{array}{ll}
+\text{You}: & +35 + 52.50 = \text{receives } \$87.50 \text{, plus the Smart TV}\\
+\text{Sam}: & -255 + 52.50 = \text{pays } \$202.50 \text{, keeps Sofa, Microwave, Vacuum}\\
+\text{Riley}: & +155 + 52.50 = \text{receives } \$207.50 \text{, plus the Coffee Maker}\\
+\text{Jordan}: & -145 + 52.50 = \text{pays } \$92.50 \text{, keeps Blender and Dining Table}
+\end{array}
+\]
+The cash balances: $-87.50 + 202.50 - 207.50 + 92.50 = 0$. \checkmark
+
+Every roommate ends up with more than their fair share --- each is ahead by exactly
+\$52.50 in their own valuation. That surplus exists because the roommates disagree
+about what things are worth.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Jake and their partner Jessie live together and are using the method of sealed bids to
+split responsibilities for chores. They assign \emph{negative} values to each chore,
+based on how much they would be willing to pay the other to do it instead. A
+less-negative value means the task is less repulsive to that person.
+
+\begin{center}
+\begin{tabular}{|r|c|c|}\hline
+ & \textbf{Jake} & \textbf{Jessie} \\\hline
+Run the dishwasher & $-\$2$ & $-\$3$ \\
+Do the laundry & $-\$3$ & $-\$5$ \\
+Plan meals for the week & $-\$4$ & $-\$9$ \\
+Shop for groceries & $-\$2$ & $-\$8$ \\
+Take out the trash & $-\$3$ & $-\$2$ \\
+Clean the kitchen & $-\$5$ & $-\$6$ \\
+Clean the bathroom & $-\$8$ & $-\$4$ \\
+Water the houseplants & $-\$7$ & $-\$1$ \\\hline
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} Based on the listed bids, who will be assigned each task?
+
+Dishwasher: $\answer{Jake}$ \quad Laundry: $\answer{Jake}$ \quad
+Meal planning: $\answer{Jake}$ \quad Groceries: $\answer{Jake}$
+
+\smallskip
+Trash: $\answer{Jessie}$ \quad Kitchen: $\answer{Jake}$ \quad
+Bathroom: $\answer{Jessie}$ \quad Houseplants: $\answer{Jessie}$
+
+\begin{hint}
+Each item still goes to the \emph{highest} bidder. With negative numbers, the highest
+bid is the least negative one --- the person who minds the chore least.
+\end{hint}
+
+\begin{feedback}
+Each chore goes to whoever values it highest, which with negative numbers means
+whoever minds it least:
+\[
+\begin{array}{lll}
+\text{Dishwasher} & -2 > -3 & \text{Jake}\\
+\text{Laundry} & -3 > -5 & \text{Jake}\\
+\text{Meal planning} & -4 > -9 & \text{Jake}\\
+\text{Groceries} & -2 > -8 & \text{Jake}\\
+\text{Trash} & -2 > -3 & \text{Jessie}\\
+\text{Kitchen} & -5 > -6 & \text{Jake}\\
+\text{Bathroom} & -4 > -8 & \text{Jessie}\\
+\text{Houseplants} & -1 > -7 & \text{Jessie}
+\end{array}
+\]
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} What are Jake's and Jessie's fair shares in this system? (These will be
+negative.)
+
+Jake: $\answer{-17}$ \qquad Jessie: $\answer{-19}$
+
+\begin{feedback}
+Jake's total valuation of all the chores is
+\[ -2-3-4-2-3-5-8-7 = -\$34, \]
+so his fair share is $-34/2 = -\$17$.
+
+Jessie's total is
+\[ -3-5-9-8-2-6-4-1 = -\$38, \]
+so her fair share is $-38/2 = -\$19$.
+
+A fair share here means each should end up doing chores they find no worse than that
+amount of unpleasantness.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Compare part (b) with each partner's perceived value of the tasks they've
+been assigned. What do they each owe, or what are they owed, in the initial settlement?
+
+Jake's allotment value: $\answer{-16}$ \qquad Jessie's allotment value: $\answer{-7}$
+
+\smallskip
+Initial settlement --- Jake pays $\$\answer{1}$ and Jessie pays $\$\answer{12}$.
+
+\begin{feedback}
+Jake takes the dishwasher, laundry, meal planning, groceries, and kitchen:
+\[ -2-3-4-2-5 = -\$16. \]
+Jessie takes the trash, bathroom, and houseplants:
+\[ -2-4-1 = -\$7. \]
+
+Compare each with the fair share:
+\begin{itemize}
+\item Jake: $-16$ versus a fair share of $-17$. His chore load is $\$1$ \emph{less}
+      unpleasant than fair, so he pays $\$1$ into the system.
+\item Jessie: $-7$ versus a fair share of $-19$. Her load is $\$12$ less unpleasant
+      than fair, so she pays $\$12$ in.
+\end{itemize}
+Both partners come out ahead of their fair share on chores alone, so both pay in ---
+which is what creates the surplus.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(d)} What is the surplus after the initial settlement?
+
+$\$\answer{13}$ \qquad and each partner's half is $\$\answer{6.50}$
+
+\begin{feedback}
+Jake pays \$1 and Jessie pays \$12, so the system holds
+\[ \$1 + \$12 = \$13, \]
+and nothing is paid out. Split evenly, that is $\$13/2 = \$6.50$ each.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(e)} After splitting the surplus equally, how much money is each partner making
+or paying? Enter a positive number for money received, negative for money paid.
+
+Jake: $\answer{5.50}$ \qquad Jessie: $\answer{-5.50}$
+
+\begin{feedback}
+Subtract each partner's \$6.50 share of the surplus from what they owed:
+\begin{itemize}
+\item Jake: paid \$1, receives \$6.50 back, so he nets $+\$5.50$ --- he \emph{receives}
+      \$5.50.
+\item Jessie: paid \$12, receives \$6.50 back, so she nets $-\$5.50$ --- she
+      \emph{pays} \$5.50.
+\end{itemize}
+
+So Jessie pays Jake \$5.50 a week. The final arrangement:
+\begin{itemize}
+\item \textbf{Jake} runs the dishwasher, does laundry, plans meals, shops for
+      groceries, and cleans the kitchen, and receives \$5.50.
+\item \textbf{Jessie} takes out the trash, cleans the bathroom, waters the houseplants,
+      and pays \$5.50.
+\end{itemize}
+Check: Jake's position is $-16 + 5.50 = -\$10.50$ against a fair share of $-\$17$, so he
+is \$6.50 ahead. Jessie's is $-7 - 5.50 = -\$12.50$ against $-\$19$, also \$6.50 ahead.
+\checkmark
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Six grandchildren are dividing up their grandma's Ty beanie baby collection using the
+method of markers. They lay the $60$ beanie babies out in a randomly ordered array,
+numbered $1$ through $60$, then each individually marks off six consecutive segments
+that are approximately equally valuable to them.
+
+\begin{center}
+\begin{tabular}{r|c|c|c|c|c|c}
+& 1st share & 2nd share & 3rd share & 4th share & 5th share & 6th share \\\hline
+Allan  & 1--7  & 8--14  & 15--29 & 30--36 & 37--52 & 53--60 \\
+Brenna & 1--10 & 11--20 & 21--36 & 37--43 & 44--48 & 49--60 \\
+Caleb  & 1--5  & 6--20  & 21--31 & 32--40 & 41--51 & 52--60 \\
+Devon  & 1--8  & 9--17  & 18--25 & 26--37 & 38--53 & 54--60 \\
+Emma   & 1--9  & 10--18 & 19--32 & 33--46 & 47--50 & 51--60 \\
+Frank  & 1--14 & 15--21 & 22--28 & 29--40 & 41--56 & 57--60
+\end{tabular}
+\end{center}
+
+Each grandchild's five markers sit at the end of their first five shares.
+
+\begin{prompt}
+\textbf{(a)} Which of their shares is each grandchild awarded via this method?
+
+Round 1 (first markers) --- awarded to $\answer{Caleb}$, who takes items 1--$\answer{5}$.
+
+\smallskip
+Round 2 (second markers) --- $\answer{Allan}$ takes items 6--$\answer{14}$.
+
+\smallskip
+Round 3 (third markers) --- $\answer{Devon}$ takes items 15--$\answer{25}$.
+
+\smallskip
+Round 4 (fourth markers) --- $\answer{Frank}$ takes items 26--$\answer{40}$.
+
+\smallskip
+Round 5 (fifth markers) --- $\answer{Brenna}$ takes items 41--$\answer{48}$.
+
+\smallskip
+The last remaining grandchild, $\answer{Emma}$, takes items $\answer{51}$--60.
+
+\begin{hint}
+In each round, look only at the relevant marker (first markers in round 1, second
+markers in round 2, and so on) among the players who have not yet been served, and
+find the leftmost one that lies past the items already handed out.
+\end{hint}
+
+\begin{feedback}
+The markers sit at the ends of the first five shares:
+\[
+\begin{array}{ll}
+\text{Allan}: & 7,\ 14,\ 29,\ 36,\ 52\\
+\text{Brenna}: & 10,\ 20,\ 36,\ 43,\ 48\\
+\text{Caleb}: & 5,\ 20,\ 31,\ 40,\ 51\\
+\text{Devon}: & 8,\ 17,\ 25,\ 37,\ 53\\
+\text{Emma}: & 9,\ 18,\ 32,\ 46,\ 50\\
+\text{Frank}: & 14,\ 21,\ 28,\ 40,\ 56
+\end{array}
+\]
+
+\textbf{Round 1:} first markers are $7, 10, 5, 8, 9, 14$. Caleb's is leftmost at $5$,
+so Caleb takes items $1$--$5$ and leaves.
+
+\textbf{Round 2:} among the rest, second markers are Allan $14$, Brenna $20$,
+Devon $17$, Emma $18$, Frank $21$. Allan's is leftmost, so Allan takes $6$--$14$.
+
+\textbf{Round 3:} third markers are Brenna $36$, Devon $25$, Emma $32$, Frank $28$.
+Devon takes $15$--$25$.
+
+\textbf{Round 4:} fourth markers are Brenna $43$, Emma $46$, Frank $40$. Frank takes
+$26$--$40$.
+
+\textbf{Round 5:} fifth markers are Brenna $48$ and Emma $50$. Brenna takes $41$--$48$.
+
+\textbf{Emma}, the last one left, takes everything past her final marker at $50$:
+items $51$--$60$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Which beanie babies remain after every grandchild has been awarded exactly
+their fair share?
+
+Items $\answer{49}$ and $\answer{50}$ are left over.
+
+\begin{feedback}
+The awarded segments are $1$--$5$, $6$--$14$, $15$--$25$, $26$--$40$, $41$--$48$, and
+$51$--$60$. The only numbers not covered are $49$ and $50$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Describe one way that the rest of the beanie babies can be fairly
+distributed.
+
+\begin{freeResponse}
+\end{freeResponse}
+
+\begin{feedback}
+Every grandchild already holds a share they consider fair, so anything done with the
+two leftovers only improves someone's position --- there is no way to make the division
+unfair at this stage. Reasonable options include:
+
+\begin{itemize}
+\item \textbf{Run the method again} on the leftover items. With only two items and six
+      players this is awkward, but it is the textbook answer when many items remain.
+\item \textbf{Draw lots}, giving each leftover to a randomly chosen grandchild, with no
+      one receiving two.
+\item \textbf{Auction them} among the six, splitting the proceeds equally --- effectively
+      the method of sealed bids applied to the remainder.
+\item \textbf{Let the grandchildren take turns choosing}, in an order decided randomly.
+\end{itemize}
+
+Any of these is acceptable. What matters is that the leftovers are distributed by some
+process the players agree to in advance, since the fairness guarantee of the method of
+markers has already been satisfied.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\end{document}

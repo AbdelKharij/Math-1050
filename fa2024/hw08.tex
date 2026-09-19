@@ -1,0 +1,309 @@
+\documentclass[12pt]{ximera}
+\title{Homework 8: Hamilton's and Jefferson's Methods}
+\begin{document}
+\begin{abstract}
+Sections 4.1--4.3: standard divisors and quotas, and Hamilton's and Jefferson's methods
+applied to hospital nurses and to seventeen residence halls --- where Jefferson's method
+breaks the quota rule.
+\end{abstract}
+\maketitle
+
+\section*{Sections 4.1--4.3: Hamilton's and Jefferson's Methods}
+
+\begin{problem}
+A hospital recently hired $25$ nurses and wants to assign them proportionally across
+four departments based on average monthly patient load:
+\begin{center}
+\begin{tabular}{rl}
+Pediatrics: & $328$ patients\\
+Surgery: & $177$ patients\\
+Maternity: & $132$ patients\\
+Emergency: & $108$ patients
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} Calculate the standard divisor.
+
+$\answer[tolerance=0.005]{29.8}$
+
+What does it represent here?
+\begin{multipleChoice}
+\choice[correct]{The number of patients per nurse}
+\choice{The number of nurses per department}
+\choice{The number of patients per department}
+\end{multipleChoice}
+
+\begin{feedback}
+The total load is $328+177+132+108=745$ patients, so
+$SD=\frac{745}{25}=29.8$ --- about $29.8$ patients per nurse.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Compute the standard quota for each department, to two decimal places.
+
+Pediatrics $\answer[tolerance=0.005]{11.01}$ \quad Surgery $\answer[tolerance=0.005]{5.94}$
+\quad Maternity $\answer[tolerance=0.005]{4.43}$ \quad Emergency $\answer[tolerance=0.005]{3.62}$
+
+\begin{feedback}
+Divide each load by $29.8$: $\frac{328}{29.8}=11.01$, $\frac{177}{29.8}=5.94$,
+$\frac{132}{29.8}=4.43$, $\frac{108}{29.8}=3.62$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} How many nurses does each department receive under Hamilton's method?
+
+Pediatrics $\answer{11}$ \quad Surgery $\answer{6}$ \quad Maternity $\answer{4}$ \quad
+Emergency $\answer{4}$
+
+\begin{feedback}
+The lower quotas $11, 5, 4, 3$ total $23$, leaving $2$ nurses. The largest fractional
+parts are Surgery ($.94$) and Emergency ($.62$), so each gets one more:
+$11, 6, 4, 4$.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Suppose someone on the hiring team argues that they should use Jefferson's method to
+apportion the nurses instead.
+
+\begin{prompt}
+\textbf{(a)} Which of these is an appropriate modified divisor?
+
+\begin{multipleChoice}
+\choice{$29.8$}
+\choice{$28.0$}
+\choice[correct]{$27.2$}
+\choice{$26.5$}
+\end{multipleChoice}
+
+\begin{hint}
+Rounding the standard quotas down gives only $23$ nurses, so the divisor has to shrink.
+\end{hint}
+
+\begin{feedback}
+Any divisor greater than $27$ and at most about $27.33$ works. At $28.0$ the rounded
+quotas total only $24$; at $26.5$ they total $26$. With $27.2$ they total exactly $25$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Using $d=27.2$, compute each modified quota, to two decimal places.
+
+Pediatrics $\answer[tolerance=0.005]{12.06}$ \quad Surgery $\answer[tolerance=0.005]{6.51}$
+\quad Maternity $\answer[tolerance=0.005]{4.85}$ \quad Emergency $\answer[tolerance=0.005]{3.97}$
+
+\begin{feedback}
+$\frac{328}{27.2}=12.06$, $\frac{177}{27.2}=6.51$, $\frac{132}{27.2}=4.85$,
+$\frac{108}{27.2}=3.97$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} How many nurses does each department receive under Jefferson's method?
+
+Pediatrics $\answer{12}$ \quad Surgery $\answer{6}$ \quad Maternity $\answer{4}$ \quad
+Emergency $\answer{3}$
+
+\begin{feedback}
+Rounding down: $12+6+4+3=25$. \checkmark Compared with Hamilton's method, one nurse
+moves from Emergency, the smallest department, to Pediatrics, the largest --- the usual
+tilt of Jefferson's method. (Pediatrics's upper quota is $12$, so no quota rule is
+broken here.)
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+The residence halls at a university have the following population capacities,
+totaling $6558$ students:
+
+\begin{center}
+\begin{tabular}{r|c|c|c|c|c|c}
+\textbf{Hall} & Aspen & Cedar & Pine & Birch & Willow & Larch \\\hline
+\textbf{Pop.} & 270 & 270 & 331 & 184 & 544 & 544 \\
+\end{tabular}
+
+\smallskip
+\begin{tabular}{r|c|c|c|c|c|c}
+\textbf{Hall} & Spruce & Poplar & Hickory & Maple & Linden & Elm \\\hline
+\textbf{Pop.} & 99 & 136 & 107 & 496 & 321 & 202 \\
+\end{tabular}
+
+\smallskip
+\begin{tabular}{r|c|c|c|c|c}
+\textbf{Hall} & Walnut & Oak & Alder & Chestnut & Sycamore \\\hline
+\textbf{Pop.} & 770 & 235 & 116 & 713 & 1220 \\
+\end{tabular}
+\end{center}
+
+The university has hired $220$ RAs altogether. Consider this situation using both
+Hamilton's and Jefferson's methods.
+
+\begin{prompt}
+\textbf{(a)} Compute the standard divisor, to two decimal places.
+
+$\answer[tolerance=0.005]{29.81}$
+
+\smallskip
+What does that value represent in this situation?
+\begin{multipleChoice}
+\choice[correct]{The number of students per RA}
+\choice{The number of RAs per residence hall}
+\choice{The number of residence halls per RA}
+\end{multipleChoice}
+
+\begin{feedback}
+The standard divisor is the total population divided by the number of seats:
+\[ SD = \frac{6558}{220} \approx 29.81. \]
+It represents the number of \emph{students per RA} --- roughly one RA for every $30$
+students.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Compute the standard quota of each of these residence halls, to two
+decimal places. (A hall's quota is its population divided by the standard divisor.)
+
+Sycamore: $\answer[tolerance=0.005]{40.93}$ \qquad
+Walnut: $\answer[tolerance=0.005]{25.83}$ \qquad
+Chestnut: $\answer[tolerance=0.005]{23.92}$
+
+\smallskip
+Willow: $\answer[tolerance=0.005]{18.25}$ \qquad
+Maple: $\answer[tolerance=0.005]{16.64}$ \qquad
+Spruce: $\answer[tolerance=0.005]{3.32}$
+
+\begin{feedback}
+Dividing each population by $29.81$:
+\[
+\begin{array}{llll}
+\text{Aspen } 9.06 & \text{Cedar } 9.06 & \text{Pine } 11.10 & \text{Birch } 6.17\\
+\text{Willow } 18.25 & \text{Larch } 18.25 & \text{Spruce } 3.32 & \text{Poplar } 4.56\\
+\text{Hickory } 3.59 & \text{Maple } 16.64 & \text{Linden } 10.77 & \text{Elm } 6.78\\
+\text{Walnut } 25.83 & \text{Oak } 7.88 & \text{Alder } 3.89 & \text{Chestnut } 23.92\\
+\text{Sycamore } 40.93 & & &
+\end{array}
+\]
+These sum to $220$, as the standard quotas always must.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} What is the total of the (standard) \emph{lower} quotas?
+
+$\answer{211}$
+
+\smallskip
+How many surplus RAs remain to be handed out? $\answer{9}$
+
+\begin{hint}
+Round every quota \emph{down} and add. The shortfall from $220$ is the surplus.
+\end{hint}
+
+\begin{feedback}
+Rounding every quota down and adding gives $211$. Since $220$ RAs must be placed, there
+is a surplus of
+\[ 220 - 211 = 9 \]
+RAs still to assign.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(d)} Under Hamilton's method, the surplus goes to the halls with the largest
+fractional parts. Which halls receive an extra RA?
+
+\begin{selectAll}
+\choice{Aspen}
+\choice{Cedar}
+\choice{Pine}
+\choice{Birch}
+\choice{Willow}
+\choice{Larch}
+\choice{Spruce}
+\choice{Poplar}
+\choice[correct]{Hickory}
+\choice[correct]{Maple}
+\choice[correct]{Linden}
+\choice[correct]{Elm}
+\choice[correct]{Walnut}
+\choice[correct]{Oak}
+\choice[correct]{Alder}
+\choice[correct]{Chestnut}
+\choice[correct]{Sycamore}
+\end{selectAll}
+
+\begin{feedback}
+Ranking the halls by fractional part, largest first:
+\[
+\begin{array}{lll}
+\text{Sycamore } .927 & \text{Chestnut } .919 & \text{Alder } .891\\
+\text{Oak } .884 & \text{Walnut } .831 & \text{Elm } .776\\
+\text{Linden } .769 & \text{Maple } .639 & \text{Hickory } .590\\
+\end{array}
+\]
+Those are the top nine, so each of them gets one extra RA. The next in line is Poplar
+at $.562$, which just misses.
+
+The final Hamilton apportionment is:
+\[
+\begin{array}{llll}
+\text{Aspen } 9 & \text{Cedar } 9 & \text{Pine } 11 & \text{Birch } 6\\
+\text{Willow } 18 & \text{Larch } 18 & \text{Spruce } 3 & \text{Poplar } 4\\
+\text{Hickory } 4 & \text{Maple } 17 & \text{Linden } 11 & \text{Elm } 7\\
+\text{Walnut } 26 & \text{Oak } 8 & \text{Alder } 4 & \text{Chestnut } 24\\
+\text{Sycamore } 41 & & &
+\end{array}
+\]
+which totals $220$. \checkmark
+
+Notice Hickory (population $107$) receives $4$ RAs while Poplar (population $136$)
+receives only $4$ as well --- and Alder, with just $116$ students, also gets $4$. Small
+halls can do disproportionately well or badly on the strength of a fractional part.
+\end{feedback}
+\end{prompt}
+\begin{prompt}
+\textbf{(e)} Now use Jefferson's method (round every modified quota \emph{down}). Which
+modified divisor works?
+
+\begin{multipleChoice}
+\choice{$29.81$ (the standard divisor)}
+\choice{$29.2$}
+\choice[correct]{$28.7$}
+\choice{$28.2$}
+\end{multipleChoice}
+
+\begin{hint}
+Rounding the standard quotas down gives only $211$ RAs, so the divisor must shrink until
+exactly $220$ survive the rounding. Try each option.
+\end{hint}
+
+\begin{feedback}
+Any divisor from about $28.64$ to $28.86$ works. With $d=28.7$, rounding each
+$\frac{\text{pop}}{28.7}$ down gives a total of exactly $220$. At $29.2$ the total is
+still short, and at $28.2$ it overshoots.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(f)} Under Jefferson's method, which two halls come out differently from
+Hamilton's method?
+
+Sycamore receives $\answer{42}$ RAs (Hamilton gave $41$), and Hickory receives
+$\answer{3}$ (Hamilton gave $4$). Every other hall is the same.
+
+\begin{feedback}
+With $d=28.7$: Sycamore gets $\lfloor 1220/28.7\rfloor=\lfloor 42.51\rfloor=42$, and
+Hickory gets $\lfloor 107/28.7\rfloor=\lfloor 3.73\rfloor=3$.
+
+Sycamore's standard quota was $40.93$, so its upper quota is $41$ --- and Jefferson's
+method gives it $42$. This is a \textbf{quota rule violation}, in the direction
+Jefferson's method always leans: toward the largest hall, at the expense of a small one.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\end{document}

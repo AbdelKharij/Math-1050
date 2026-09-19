@@ -1,0 +1,308 @@
+\documentclass[12pt]{ximera}
+\title{Exam 1 Review}
+\begin{document}
+\begin{abstract}
+Review for Exam 1, covering Chapter 1: full rankings by all four voting methods,
+Condorcet candidates and Condorcet losers, an Independence-of-Irrelevant-Alternatives
+violation under the Borda count, counting pairwise comparisons, and a modified Borda
+count and ``most last-place votes'' elimination.
+\end{abstract}
+\maketitle
+
+\section*{Exam 1 Review}
+
+Topics: voting systems, Plurality, Borda count, Plurality-with-Elimination, Pairwise
+Comparisons, and the fairness criteria with Arrow's Impossibility Theorem. Once you are
+comfortable with the material, try these with a stopwatch: you should be able to finish
+them in under $60$ minutes.
+
+\begin{problem}
+Use the following preference schedule to find the full ranking of candidates A, B, C,
+D, E by each method.
+\begin{center}
+\begin{tabular}{c|ccccc}
+Number of votes & 20 & 15 & 7 & 3 & 2\\\hline
+1st & A & C & E & B & D\\
+2nd & B & E & D & E & C\\
+3rd & C & B & B & A & B\\
+4th & D & D & C & C & A\\
+5th & E & A & A & D & E
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} Plurality: 1st $\answer{A}$, 2nd $\answer{C}$, 3rd $\answer{E}$,
+4th $\answer{B}$, 5th $\answer{D}$
+
+\begin{feedback}
+First-place votes: A $20$, C $15$, E $7$, B $3$, D $2$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Borda count: 1st $\answer{B}$, 2nd $\answer{C}$, 3rd $\answer{A}$,
+4th $\answer{E}$, 5th $\answer{D}$
+
+\begin{feedback}
+With $5,4,3,2,1$ points: B $167$, C $163$, A $135$, E $129$, D $111$. (Check: $47$
+ballots at $15$ points each is $705$, and $167+163+135+129+111=705$.)
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Plurality-with-Elimination: 1st $\answer{C}$, 2nd $\answer{A}$,
+3rd $\answer{E}$, 4th $\answer{B}$, 5th $\answer{D}$
+
+\begin{feedback}
+\begin{itemize}
+\item Round 1: A $20$, C $15$, E $7$, B $3$, D $2$. Eliminate D; its $2$ votes go to C.
+\item Round 2: A $20$, C $17$, E $7$, B $3$. Eliminate B; its $3$ votes go to E.
+\item Round 3: A $20$, C $17$, E $10$. Eliminate E; its $7$ original voters rank C
+      above A, and the $3$ former B voters rank A above C.
+\item Round 4: C $24$, A $23$. C wins.
+\end{itemize}
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(d)} Pairwise Comparisons: 1st $\answer{B}$, 2nd $\answer{C}$, 3rd $\answer{E}$,
+4th $\answer{D}$, 5th $\answer{A}$
+
+\begin{feedback}
+\[
+\begin{array}{lll@{\qquad}lll}
+\text{A vs B} & 20\text{--}27 & \text{B} & \text{B vs D} & 38\text{--}9 & \text{B}\\
+\text{A vs C} & 23\text{--}24 & \text{C} & \text{B vs E} & 25\text{--}22 & \text{B}\\
+\text{A vs D} & 23\text{--}24 & \text{D} & \text{C vs D} & 38\text{--}9 & \text{C}\\
+\text{A vs E} & 22\text{--}25 & \text{E} & \text{C vs E} & 37\text{--}10 & \text{C}\\
+\text{B vs C} & 30\text{--}17 & \text{B} & \text{D vs E} & 22\text{--}25 & \text{E}
+\end{array}
+\]
+Points: B $4$, C $3$, E $2$, D $1$, A $0$.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Is there a Condorcet candidate for the election in Problem 1?
+
+\begin{multipleChoice}
+\choice{Yes, A}
+\choice[correct]{Yes, B}
+\choice{Yes, C}
+\choice{Yes, E}
+\choice{No}
+\end{multipleChoice}
+
+\begin{feedback}
+Yes: B wins all four of its head-to-head comparisons. This is why B also wins the
+Pairwise Comparisons method.
+\end{feedback}
+\end{problem}
+
+\begin{problem}
+A candidate who loses in pairwise comparison against every other candidate is called a
+\emph{Condorcet loser}. Is there a Condorcet loser in the election in Problem 1?
+
+\begin{multipleChoice}
+\choice[correct]{Yes, A}
+\choice{Yes, D}
+\choice{Yes, E}
+\choice{No}
+\end{multipleChoice}
+
+\begin{feedback}
+Yes: A loses every comparison, some by as little as $23$--$24$. A is the Plurality
+winner and at the same time the Condorcet loser.
+\end{feedback}
+\end{problem}
+
+\begin{problem}
+Consider the following preference schedule.
+\begin{center}
+\begin{tabular}{c|ccc}
+Number of votes & 10 & 8 & 3\\\hline
+1st & B & C & A\\
+2nd & A & B & C\\
+3rd & C & A & B
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} Find the Borda points and the winner.
+
+A: $\answer{37}$ \quad B: $\answer{49}$ \quad C: $\answer{40}$ \qquad Winner:
+$\answer{B}$
+
+\begin{feedback}
+\[
+\begin{aligned}
+\text{A:}&\ 10\cdot2+8\cdot1+3\cdot3=37\\
+\text{B:}&\ 10\cdot3+8\cdot2+3\cdot1=49\\
+\text{C:}&\ 10\cdot1+8\cdot3+3\cdot2=40
+\end{aligned}
+\]
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} If A withdraws, who wins by the Borda count? $\answer{C}$
+
+\begin{feedback}
+With only B and C, the points are B: $10\cdot2+8\cdot1+3\cdot1=31$ and C:
+$10\cdot1+8\cdot2+3\cdot2=32$. C wins. A non-winner's withdrawal changed the winner, so
+the Independence-of-Irrelevant-Alternatives criterion is violated.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Which other fairness criteria are violated in this example?
+
+\begin{selectAll}
+\choice{Majority criterion}
+\choice{Condorcet criterion}
+\choice{Monotonicity criterion}
+\choice[correct]{None of these}
+\end{selectAll}
+
+\begin{feedback}
+None. No candidate has a majority ($11$ of $21$) of first-place votes. There is no
+Condorcet candidate: B beats A $18$--$3$, A beats C $13$--$8$, and C beats B $11$--$10$,
+which is a cycle. The Borda count never violates monotonicity.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+In an election with $200$ candidates using the Pairwise Comparisons system, how many
+pairwise comparisons must be evaluated? $\answer{19900}$
+
+\begin{feedback}
+With $N$ candidates there are $\frac{N(N-1)}{2}$ comparisons:
+$\frac{200\cdot199}{2}=19{,}900$.
+\end{feedback}
+\end{problem}
+
+\begin{problem}
+Below is the preference schedule for an election for Best Ice Cream Flavor. The candidates are
+Almonds \& Joy, Butterscotch, Candycorn, and Drizzle Deluxe (A, B, C, D).
+\begin{center}
+\begin{tabular}{c|ccccc}
+Number of votes & 10 & 7 & 6 & 5 & 2\\\hline
+1st & A & B & C & C & A\\
+2nd & B & D & B & D & C\\
+3rd & C & A & D & B & D\\
+4th & D & C & A & A & B
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} Find the points and the winner using a modified Borda count with $5$
+points for first place, $3$ for second, $1$ for third, and $0$ for fourth.
+
+A: $\answer{67}$ \quad B: $\answer{88}$ \quad C: $\answer{71}$ \quad D: $\answer{44}$
+\qquad Winner: $\answer{B}$
+
+\begin{feedback}
+\[
+\begin{aligned}
+\text{A:}&\ 10\cdot5+7\cdot1+2\cdot5=67\\
+\text{B:}&\ 10\cdot3+7\cdot5+6\cdot3+5\cdot1=88\\
+\text{C:}&\ 10\cdot1+6\cdot5+5\cdot5+2\cdot3=71\\
+\text{D:}&\ 7\cdot3+6\cdot1+5\cdot3+2\cdot1=44
+\end{aligned}
+\]
+(Check: $30$ ballots at $9$ points each is $270=67+88+71+44$.) Butterscotch wins.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Now use a modified Plurality-with-Elimination, where each round eliminates
+the candidate with the \emph{most last-place} votes. A ballot whose last-place candidate
+is eliminated counts toward its next-worst candidate. The last candidate standing wins,
+the next-to-last is second, and so on.
+
+Round 1 last-place votes: A $\answer{11}$, B $\answer{2}$, C $\answer{7}$,
+D $\answer{10}$
+
+\smallskip
+Ranking: 1st $\answer{B}$, 2nd $\answer{C}$, 3rd $\answer{D}$, 4th $\answer{A}$
+
+\begin{feedback}
+\begin{itemize}
+\item Round 1: A $11$, D $10$, C $7$, B $2$. Eliminate A.
+\item Round 2: the $6+5$ ballots with A last now count for D and B, so D $16$,
+      B $7$, C $7$. Eliminate D.
+\item Round 3: B $13$, C $17$. Eliminate C, leaving B.
+\end{itemize}
+The elimination order A, D, C reverses to the ranking B, C, D, A.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+An election with four candidates and $25$ voters uses the modified Borda count with
+$5,3,1,0$ points from the preceding problem. Candidates A, B, C have $62$, $33$, and
+$48$ points. How many points did D get? $\answer{82}$
+
+\begin{hint}
+Think about the total number of Borda points.
+\end{hint}
+
+\begin{feedback}
+Each ballot awards $5+3+1+0=9$ points, so the total is $9\cdot25=225$. D has
+$225-(62+33+48)=82$.
+\end{feedback}
+\end{problem}
+
+\begin{problem}
+Suppose the Ice Cream Flavor election had produced this schedule instead:
+\begin{center}
+\begin{tabular}{c|ccccc}
+Number of votes & 10 & 7 & 6 & 5 & 2\\\hline
+1st & A & B & C & C & A\\
+2nd & C & D & B & D & C\\
+3rd & B & A & D & B & D\\
+4th & D & C & A & A & B
+\end{tabular}
+\end{center}
+Then D withdraws before the winners are announced.
+
+\begin{prompt}
+\textbf{(a)} Using the ``most last-place votes'' elimination, who wins with D in the
+race? $\answer{C}$
+
+\begin{feedback}
+Round 1: A $11$, D $10$, C $7$, B $2$, so A is eliminated. Round 2: D $16$, B $7$,
+C $7$, so D is eliminated. Round 3: B $23$, C $7$, so B is eliminated. C wins.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Who wins after D withdraws? $\answer{A}$
+
+\begin{feedback}
+Without D, B moves to last place on the $10$ ballots in the first column. Round 1 then
+gives B $10+2=12$, A $11$, C $7$, so B is eliminated. Round 2 gives C $10+7+2=19$ and
+A $11$, so C is eliminated and A wins.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Which fairness criterion does this show the method violates?
+
+\begin{multipleChoice}
+\choice{Majority criterion}
+\choice{Condorcet criterion}
+\choice{Monotonicity criterion}
+\choice[correct]{Independence-of-Irrelevant-Alternatives criterion}
+\end{multipleChoice}
+
+\begin{feedback}
+The withdrawal of D, a non-winner, changed the winner from C to A, so the
+Independence-of-Irrelevant-Alternatives criterion is violated.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\end{document}

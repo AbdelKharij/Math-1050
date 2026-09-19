@@ -1,0 +1,367 @@
+\documentclass[12pt]{ximera}
+\title{Homework 6: Fair Division --- Divider-Chooser and Lone-Divider}
+\begin{document}
+\begin{abstract}
+Sections 3.1--3.3: continuous versus discrete fair division, computing a fair share
+from one player's value system, the lone-divider method with bids given directly (including a
+standoff that forces a re-cut), and divider-chooser applied to a half-veggie, half-meatball
+sandwich.
+\end{abstract}
+\maketitle
+
+\section*{Sections 3.1--3.3: Fair Division Games}
+
+\begin{problem}
+The four Dalton brothers want to divide the loot after robbing a bank vault. Their
+names are D1, D2, D3, and D4. For each of the following scenarios, state whether this is
+a continuous, discrete, or mixed division problem.
+
+\begin{prompt}
+\textbf{(a)} The vault contained a Grant Wood painting of a couple wielding a pitchfork
+and the map to Scarface's treasure chest.
+
+\begin{multipleChoice}
+\choice{Continuous}
+\choice[correct]{Discrete}
+\choice{A combination of both}
+\end{multipleChoice}
+
+\begin{feedback}
+Discrete. Both items are single, indivisible objects --- you cannot give one brother
+$40\%$ of a painting without destroying it.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} The vault contained an authentic sheriff's badge and $3$ barrels of
+gunpowder.
+
+\begin{multipleChoice}
+\choice{Continuous}
+\choice{Discrete}
+\choice[correct]{A combination of both}
+\end{multipleChoice}
+
+\begin{feedback}
+A combination. The badge is a single indivisible object (discrete), while gunpowder
+is a bulk substance that can be split into any quantity you like (continuous).
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} The vault contained \$205 in gold coins, a dozen pounds of chewing
+tobacco, and a barrel of Bourbon.
+
+\begin{multipleChoice}
+\choice{Continuous}
+\choice{Discrete}
+\choice[correct]{A combination of both}
+\end{multipleChoice}
+
+\begin{feedback}
+Mixed. The tobacco and the Bourbon are bulk goods that can be split into any amounts
+(continuous), but gold \emph{coins} are individual objects (discrete). With enough small
+coins the money can be split very finely, which is why money is often treated as
+continuous --- but strictly, the loot mixes both kinds.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Suppose the vault does contain \$205 in gold coins, a dozen pounds of chewing tobacco,
+and a barrel of Bourbon. If D1 values the tobacco at \$195 and the Bourbon at \$160,
+then what is the minimum value of a fair share for him?
+
+$\$\answer{140}$
+
+\begin{hint}
+First find what D1 thinks the \emph{whole} vault is worth, then remember there are
+four brothers splitting it.
+\end{hint}
+
+\begin{feedback}
+In D1's value system the vault is worth
+\[ \$205 + \$195 + \$160 = \$560. \]
+With four brothers dividing it, a fair share is at least one quarter of that:
+\[ \frac{\$560}{4} = \$140. \]
+
+Note that a fair share is defined \emph{relative to the player's own value system}.
+The other brothers will each compute a different dollar figure, and all of them are
+correct for that brother.
+\end{feedback}
+\end{problem}
+
+\begin{problem}
+Suppose Dora divides the picnic lunch she brought into four fair shares, $s_1$, $s_2$,
+$s_3$, and $s_4$, for herself, Boots, Tico, and Swiper (D, B, T, and S). They use the
+lone-divider method, so the next step is for Boots, Tico, and Swiper to submit bids
+naming the shares they consider fair.
+
+\begin{prompt}
+\textbf{(a)} Suppose the bids are Boots $\set{s_1,s_3}$, Tico $\set{s_2,s_3}$, and Swiper
+$\set{s_2,s_3}$. How many different fair distributions of all four shares are there?
+
+$\answer{2}$
+
+\begin{feedback}
+Tico and Swiper both bid only on $s_2$ and $s_3$, so they must take those two, in
+either order. That forces Boots to take $s_1$, and Dora, the divider, takes the
+leftover $s_4$. The two fair distributions are
+\begin{itemize}
+\item Boots $s_1$, Tico $s_2$, Swiper $s_3$, Dora $s_4$;
+\item Boots $s_1$, Tico $s_3$, Swiper $s_2$, Dora $s_4$.
+\end{itemize}
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Suppose instead the bids are Boots $\set{s_1,s_2}$, Tico $\set{s_1,s_4}$, and
+Swiper $\set{s_1,s_4}$. Which share does Dora end up with in any fair division?
+
+$s_{\answer{3}}$
+
+\begin{feedback}
+Tico and Swiper must split $s_1$ and $s_4$ between them, so Boots takes $s_2$ and Dora
+takes $s_3$. Two fair divisions:
+\begin{itemize}
+\item Boots $s_2$, Tico $s_1$, Swiper $s_4$, Dora $s_3$;
+\item Boots $s_2$, Tico $s_4$, Swiper $s_1$, Dora $s_3$.
+\end{itemize}
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Suppose the bids are Boots $\set{s_4}$, Tico $\set{s_1,s_4}$, and Swiper
+$\set{s_1,s_4}$. Can all four shares be distributed fairly using these bids?
+
+\begin{multipleChoice}
+\choice{Yes}
+\choice[correct]{No}
+\end{multipleChoice}
+
+\begin{feedback}
+No. Boots, Tico, and Swiper all bid only within $\set{s_1,s_4}$ --- three players, two
+shares. Someone would be left with a share they consider unfair.
+
+The standard resolution: Dora, who values every share equally, takes one of the
+unwanted shares ($s_2$ or $s_3$). The three remaining shares are recombined and Boots,
+Tico, and Swiper divide that lot among themselves with the lone-divider method again.
+Each of them values the recombined lot at more than $\frac34$ of the whole, since they
+consider at least one piece of it to be worth more than a fair share, so each can still
+end with at least $\frac14$ overall.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Adam and Joel are sharing the following sandwich.
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{sandwich.jpg}
+\end{center}
+
+This sandwich is half vegetarian (call it V) and half meatball (call it M). Adam likes
+the veggie part only half as much as the meatball part, but Joel likes both equally.
+They've agreed that Adam will make \emph{a single cut} to produce two fair shares in
+his opinion, then Joel will choose.
+
+\begin{prompt}
+\textbf{(a)} What vertical cut can Adam choose to produce fair shares for himself?
+
+Adam should cut through the meatball half, leaving one share consisting of all of V
+together with $\answer{1/4}$ of M, and the other share consisting of the remaining
+$\answer{3/4}$ of M.
+
+\begin{hint}
+Assign values: say the whole M half is worth $2$ units to Adam and the whole V half is
+worth $1$ unit. What is his total, and what does each fair share have to be worth?
+Then check whether a cut inside the V half could ever work.
+\end{hint}
+
+\begin{feedback}
+Set up Adam's value system. Let the M half be worth $2$ units and the V half $1$ unit,
+since he likes veggie half as much. His total is $3$ units, so each share must be
+worth $1.5$ units.
+
+First check whether the cut could be inside the V half. That would give one share
+consisting of part of V only --- worth at most $1$ unit --- which is less than $1.5$.
+So the cut must fall inside the M half.
+
+Let the first share be all of V plus a fraction $y$ of M. Adam values it at $1 + 2y$,
+and the leftover at $2(1-y)$. Setting them equal:
+\[ 1+2y = 2-2y \quad\Longrightarrow\quad 4y = 1 \quad\Longrightarrow\quad y = \tfrac14. \]
+
+So Adam cuts one quarter of the way into the meatball half:
+\begin{itemize}
+\item Share 1 $=$ all of V $+$ $\frac14$ of M, worth $1 + 0.5 = 1.5$ units;
+\item Share 2 $=$ $\frac34$ of M, worth $1.5$ units.
+\end{itemize}
+Equal in Adam's eyes. \checkmark
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} If the sandwich costs \$12 total, how much is each of the shares Adam has
+produced worth to Joel?
+
+Share 1 (all of V $+\frac14$ of M): $\$\answer[tolerance=0.005]{7.50}$ \qquad
+Share 2 ($\frac34$ of M): $\$\answer[tolerance=0.005]{4.50}$
+
+\begin{hint}
+Joel likes both halves equally, so for him value is just proportional to how much
+sandwich a share contains.
+\end{hint}
+
+\begin{feedback}
+Joel values the sandwich purely by size. Measuring shares as fractions of the whole
+sandwich (each half being $\frac12$):
+\[
+\text{Share 1} = \tfrac12 + \tfrac14\cdot\tfrac12 = \tfrac12+\tfrac18 = \tfrac58,
+\qquad
+\text{Share 2} = \tfrac34\cdot\tfrac12 = \tfrac38.
+\]
+At \$12 for the whole sandwich,
+\[
+\tfrac58 \cdot 12 = \$7.50, \qquad \tfrac38\cdot 12 = \$4.50.
+\]
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Which share will Joel choose?
+
+\begin{multipleChoice}
+\choice[correct]{Share 1 --- all of V plus a quarter of M, worth \$7.50 to him}
+\choice{Share 2 --- three quarters of M, worth \$4.50 to him}
+\end{multipleChoice}
+
+\begin{feedback}
+Joel takes Share 1, worth \$7.50 to him --- well above the \$6.00 he would consider a
+fair half.
+
+This is the divider-chooser method working as intended. Adam is satisfied because both
+shares are worth exactly half to him, and Joel does \emph{better} than a fair share
+because his values differ from Adam's. The chooser's advantage grows the more the two
+players disagree about what things are worth.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Suppose Adam and Joel \emph{and} their friend Jake hope to share the same sandwich.
+Jake only likes the veggie part, so doesn't value the meatball part at all. They've
+agreed that Joel will make \emph{exactly two cuts} to produce what he sees as three
+fair shares, then Adam and Jake will bid on the shares.
+
+\begin{prompt}
+\textbf{(a)} If Joel doesn't know either of the others' preferences, what are the three
+shares he creates?
+
+Joel values the sandwich by size alone, so he cuts it into three equal thirds:
+\begin{itemize}
+\item $s_1 = \answer{2/3}$ of V
+\item $s_2 = \frac13$ of V $+$ $\frac13$ of M
+\item $s_3 = \answer{2/3}$ of M
+\end{itemize}
+
+\begin{hint}
+Each third of the sandwich is $\frac13$ of the whole, while each of V and M is
+$\frac12$ of the whole. What fraction of the V half does the first third take up?
+\end{hint}
+
+\begin{feedback}
+Joel values both halves equally, so three fair shares for him are simply three equal
+thirds by size.
+
+The V half occupies the first $\frac12$ of the sandwich. The first third ends at
+$\frac13$, which is inside V, and $\frac13 \div \frac12 = \frac23$ --- so
+$s_1$ is $\frac23$ of V.
+
+The second third runs from $\frac13$ to $\frac23$, crossing the midpoint: it takes the
+remaining $\frac13$ of V and the first $\frac13$ of M.
+
+The last third is the remaining $\frac23$ of M.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} What is the value of each share from each friend's perspective? Give each
+as a percentage of that person's total, rounded to one decimal place.
+
+Adam: $s_1 = \answer[tolerance=0.05]{22.2}\%$, \quad
+$s_2 = \answer[tolerance=0.05]{33.3}\%$, \quad
+$s_3 = \answer[tolerance=0.05]{44.4}\%$
+
+\smallskip
+Jake: $s_1 = \answer[tolerance=0.05]{66.7}\%$, \quad
+$s_2 = \answer[tolerance=0.05]{33.3}\%$, \quad
+$s_3 = \answer[tolerance=0.05]{0}\%$
+
+\smallskip
+Joel: $s_1 = \answer[tolerance=0.05]{33.3}\%$, \quad
+$s_2 = \answer[tolerance=0.05]{33.3}\%$, \quad
+$s_3 = \answer[tolerance=0.05]{33.3}\%$
+
+\begin{feedback}
+\textbf{Adam} values V at $\frac13$ of his total and M at $\frac23$ (the $1:2$ ratio
+from Problem 4). So
+\[
+s_1 = \tfrac23\cdot\tfrac13 = \tfrac29 \approx 22.2\%,
+\]
+\[
+s_2 = \tfrac13\cdot\tfrac13 + \tfrac13\cdot\tfrac23 = \tfrac19+\tfrac29 = \tfrac13 \approx 33.3\%,
+\]
+\[
+s_3 = \tfrac23\cdot\tfrac23 = \tfrac49 \approx 44.4\%.
+\]
+
+\textbf{Jake} values only V, so the V half is $100\%$ of his total:
+\[ s_1 = \tfrac23 \approx 66.7\%, \qquad s_2 = \tfrac13 \approx 33.3\%, \qquad s_3 = 0\%. \]
+
+\textbf{Joel} values by size, so each third is $33.3\%$.
+
+Each row totals $100\%$. \checkmark
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Determine \emph{three} fair divisions of this sandwich among the three
+friends, without any further cutting.
+
+\begin{freeResponse}
+\end{freeResponse}
+
+\begin{hint}
+A fair share means at least $\frac13 \approx 33.3\%$ in that person's own values.
+Write down each person's bid list first --- which shares clear that bar for them?
+\end{hint}
+
+\begin{feedback}
+Each player needs a share worth at least $33.3\%$ to them, giving the bid lists
+\[
+\text{Adam}: \set{s_2, s_3}, \qquad \text{Jake}: \set{s_1, s_2}, \qquad
+\text{Joel}: \set{s_1, s_2, s_3}.
+\]
+($s_1$ is only $22.2\%$ to Adam, and $s_3$ is worthless to Jake.)
+
+There are exactly three assignments giving everyone a share from their own list:
+\begin{enumerate}
+\item Adam $s_3$ ($44.4\%$), Jake $s_1$ ($66.7\%$), Joel $s_2$ ($33.3\%$);
+\item Adam $s_2$ ($33.3\%$), Jake $s_1$ ($66.7\%$), Joel $s_3$ ($33.3\%$);
+\item Adam $s_3$ ($44.4\%$), Jake $s_2$ ($33.3\%$), Joel $s_1$ ($33.3\%$).
+\end{enumerate}
+
+\textbf{Which is most equitable?} Division 3 gives perceived values of $44.4\%$,
+$33.3\%$, and $33.3\%$ --- the most nearly equal spread, so it is the most equitable in
+the sense of treating the players alike.
+
+Division 1 is the most \emph{efficient}: its perceived values total
+$44.4+66.7+33.3 = 144.4\%$, the largest of the three, because it hands each share to
+the person who wants it most. It is arguably the better outcome overall, even though
+Jake ends up far happier than the others --- which is a reasonable point to argue
+either way.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\end{document}

@@ -1,0 +1,218 @@
+\documentclass[12pt]{ximera}
+\title{Practice Exam 1}
+\begin{document}
+\begin{abstract}
+Practice for Exam 1, covering Chapter 1: Condorcet candidates and the Pairwise
+Comparisons method, a preference schedule with no Condorcet candidate, bookkeeping for
+Borda points, and Plurality-with-Elimination.
+\end{abstract}
+\maketitle
+
+\section*{Practice Exam 1}
+
+\begin{problem}
+Assess whether each of the following claims is true or false.
+
+\begin{prompt}
+\textbf{(a)} Claim: it is possible for a Condorcet candidate to lose an election using
+the Pairwise Comparisons method.
+
+\begin{multipleChoice}
+\choice{True}
+\choice[correct]{False}
+\end{multipleChoice}
+
+\begin{feedback}
+False. A Condorcet candidate wins every head-to-head comparison, so earns the maximum
+possible points --- more than anyone else can.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Claim: it is possible to win an election using the Pairwise Comparisons
+method without being a Condorcet candidate.
+
+\begin{multipleChoice}
+\choice[correct]{True}
+\choice{False}
+\end{multipleChoice}
+
+\begin{feedback}
+True. The winner only needs the most points, not a clean sweep. When no Condorcet
+candidate exists --- as in Problem 2 --- someone still wins, despite losing at least one
+matchup.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Consider the following preference schedule for an election with four candidates.
+
+\begin{center}
+\begin{tabular}{c|ccc}
+Number of votes & 8 & 6 & 4 \\\hline
+1st & B & A & D \\
+2nd & C & D & B \\
+3rd & A & C & C \\
+4th & D & B & A
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} Give the complete ranking by the Plurality method.
+
+1st: $\answer{B}$ with $\answer{8}$ \quad 2nd: $\answer{A}$ with $\answer{6}$ \quad
+3rd: $\answer{D}$ with $\answer{4}$ \quad 4th: $\answer{C}$ with $\answer{0}$
+
+\begin{feedback}
+First-place votes: B $8$, A $6$, D $4$, C $0$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Is there a Condorcet candidate in this election?
+
+\begin{multipleChoice}
+\choice{Yes, A}
+\choice{Yes, B}
+\choice{Yes, C}
+\choice{Yes, D}
+\choice[correct]{No}
+\end{multipleChoice}
+
+\begin{feedback}
+No. The head-to-head results are
+\[
+\begin{array}{lll}
+\text{A vs B} & 6\text{--}12 & \text{B}\\
+\text{A vs C} & 6\text{--}12 & \text{C}\\
+\text{A vs D} & 14\text{--}4 & \text{A}\\
+\text{B vs C} & 12\text{--}6 & \text{B}\\
+\text{B vs D} & 8\text{--}10 & \text{D}\\
+\text{C vs D} & 8\text{--}10 & \text{D}
+\end{array}
+\]
+B loses to D, D loses to A, and A loses to B --- everyone loses at least once, so no one
+beats every rival.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Suppose an election with five candidates (A, B, C, D, E) and $100$ voters is run using
+the standard Borda Count method.
+
+\begin{prompt}
+\textbf{(a)} How many Borda points is each ballot worth?
+
+$\answer{15}$
+
+\begin{feedback}
+A ballot awards $5+4+3+2+1=15$ points.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} How many total Borda points are awarded?
+
+$\answer{1500}$
+
+\begin{feedback}
+$100$ ballots at $15$ points each: $1500$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Candidate A earns $300$ Borda points, B earns $250$, C earns $350$, and D
+earns $200$. How many did E earn?
+
+$\answer{400}$
+
+\begin{feedback}
+$1500-(300+250+350+200)=1500-1100=400$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(d)} Give the complete ranking by Borda count.
+
+1st $\answer{E}$ \quad 2nd $\answer{C}$ \quad 3rd $\answer{A}$ \quad 4th $\answer{B}$
+\quad 5th $\answer{D}$
+
+\begin{feedback}
+E $400$, C $350$, A $300$, B $250$, D $200$.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Consider the following preference schedule for an election with five candidates.
+
+\begin{center}
+\begin{tabular}{c|ccccc}
+Number of votes & 10 & 8 & 6 & 4 & 2\\\hline
+1st & D & B & A & E & C \\
+2nd & B & A & B & D & D \\
+3rd & E & C & D & B & A \\
+4th & A & D & E & C & E \\
+5th & C & E & C & A & B
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} How many voters participated? $\answer{30}$
+
+\begin{feedback}
+$10+8+6+4+2=30$, so a majority is $16$ votes.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Using Plurality-with-Elimination, which candidate is eliminated in Round 1?
+
+$\answer{C}$
+
+\begin{feedback}
+First-place votes: D $10$, B $8$, A $6$, E $4$, C $2$. C has the fewest.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Which candidate is eliminated in Round 2?
+
+$\answer{E}$
+
+\begin{feedback}
+C's $2$ voters ranked D next, so D rises to $12$: D $12$, B $8$, A $6$, E $4$. E is
+eliminated.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(d)} Does the election require further elimination to determine the winner?
+
+\begin{multipleChoice}
+\choice{Yes --- no candidate has a majority yet}
+\choice[correct]{No --- D now has a majority}
+\end{multipleChoice}
+
+\begin{feedback}
+No. E's $4$ voters ranked D next, so D rises to $16$ of the $30$ votes --- a majority.
+D is the winner, and further rounds are needed only to rank the others.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(e)} Give the complete ranking.
+
+1st $\answer{D}$ \quad 2nd $\answer{B}$ \quad 3rd $\answer{A}$ \quad 4th $\answer{E}$
+\quad 5th $\answer{C}$
+
+\begin{feedback}
+Continuing to rank the rest: A ($6$) is eliminated next, and A's voters go to B, giving
+D $16$, B $14$. Reversing the elimination order: D, B, A, E, C.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\end{document}

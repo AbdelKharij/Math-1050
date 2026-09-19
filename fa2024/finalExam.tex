@@ -1,0 +1,436 @@
+\documentclass[12pt]{ximera}
+\title{Final Exam}
+\begin{document}
+\begin{abstract}
+Final exam, covering apportionment and game theory: how quotas respond to a changing
+divisor, which paradoxes each method can suffer, a strictly determined game, a
+four-neighborhood apportionment by Jefferson, Adams, and Huntington-Hill, and a
+two-finger game at equilibrium --- plus bonus review from earlier chapters.
+\end{abstract}
+\maketitle
+
+\section*{Final Exam}
+
+Round all decimals to two places unless otherwise stated. Useful formulas:
+\[
+SD=\frac{P}{M}, \qquad q_i=\frac{P_i}{SD}, \qquad \text{geometric mean of } a,b=\sqrt{ab},
+\]
+\[
+E(A_1)=P(B_1)\cdot(\text{value of }A_1B_1)+P(B_2)\cdot(\text{value of }A_1B_2).
+\]
+
+\begin{problem}
+Assess whether each of the following claims is true or false.
+
+\begin{prompt}
+\textbf{(a)} Claim: the quotas of states with the largest populations change the fastest
+when the standard divisor of an apportionment problem is decreased.
+
+\begin{multipleChoice}
+\choice[correct]{True}
+\choice{False}
+\end{multipleChoice}
+
+\begin{feedback}
+True. A quota is $P_i/d$, so changing the divisor scales every quota by the same factor.
+The same percentage change is a larger absolute change for a larger quota --- which
+belongs to a larger state.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Claim: the quotas of states with the smallest populations change the fastest
+when the standard divisor of an apportionment problem is increased.
+
+\begin{multipleChoice}
+\choice{True}
+\choice[correct]{False}
+\end{multipleChoice}
+
+\begin{feedback}
+False. Whether the divisor goes up or down, every quota is scaled by the same factor, so
+the largest states' quotas always move the most.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Claim: every game that can be represented with a $2\times 2$ payoff matrix
+must have a saddle point, an outcome where the players' dominant strategies intersect.
+
+\begin{multipleChoice}
+\choice{True}
+\choice[correct]{False}
+\end{multipleChoice}
+
+\begin{feedback}
+False. Only strictly determined games have a saddle point. The finger game in
+Problem 5 has none, so both players must mix their strategies.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(d)} Claim: every game that can be represented with a $2\times 2$ payoff matrix
+must have an equilibrium point, where neither player has reason to divert from their
+chosen strategy.
+
+\begin{multipleChoice}
+\choice[correct]{True}
+\choice{False}
+\end{multipleChoice}
+
+\begin{feedback}
+True. If there is no saddle point, the players' optimal \emph{mixed} strategies form an
+equilibrium: neither can do better by changing their proportions alone.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Determine all applicable answers to the following.
+
+\begin{prompt}
+\textbf{(a)} Which of the following is possible in an apportionment using Jefferson's
+method?
+
+\begin{selectAll}
+\choice[correct]{Upper quota violation}
+\choice{Lower quota violation}
+\choice{Population paradox}
+\choice{New States paradox}
+\end{selectAll}
+
+\begin{feedback}
+Jefferson's method rounds modified quotas down with a divisor \emph{smaller} than the
+standard one, which can push a large state above its upper quota --- but never below its
+lower quota. Like every divisor method, it is free of the Alabama, Population, and New
+States paradoxes.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Which of the following is possible in an apportionment using Hamilton's
+method?
+
+\begin{selectAll}
+\choice{Upper quota violation}
+\choice{Lower quota violation}
+\choice[correct]{Alabama paradox}
+\choice[correct]{New States paradox}
+\end{selectAll}
+
+\begin{feedback}
+Hamilton's method always satisfies the quota rule, since each state gets its lower quota
+plus at most one extra seat. The price is that it can suffer all three paradoxes,
+including the Alabama and New States paradoxes.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Consider the game associated with the following payoff matrix.
+\[
+\begin{bmatrix} 2 & -7\\ 5 & 3 \end{bmatrix}
+\]
+
+\begin{prompt}
+\textbf{(a)} Claim: this is a strictly determined game.
+
+\begin{multipleChoice}
+\choice[correct]{True}
+\choice{False}
+\end{multipleChoice}
+
+\begin{feedback}
+True. The row minimums are $-7$ and $3$, with maximum $3$; the column maximums are $5$
+and $3$, with minimum $3$. These agree, so the entry $3$ (row 2, column 2) is a saddle
+point.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} What is the value of this game?
+
+\begin{multipleChoice}
+\choice{$5$}
+\choice[correct]{$3$}
+\choice{$2$}
+\choice{$-7$}
+\choice{None of these}
+\end{multipleChoice}
+
+\begin{feedback}
+The value of a strictly determined game is its saddle point entry: $3$.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+A class of $110$ architecture students is studying a small city with four main
+neighborhoods. Each student will be assigned to one neighborhood to construct part of a
+scale model of the entire city.
+
+\begin{center}
+\begin{tabular}{|r|c|c|c|c|c|}\hline
+\textbf{Neighborhood} & A & B & C & D & \textbf{Total}\\\hline
+\textbf{Population} & 9,455 & 752 & 245 & 548 & 11,000\\\hline
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} Compute the standard divisor and standard quotas.
+
+Standard divisor: $\answer{100}$
+
+\smallskip
+$q_A=\answer[tolerance=0.005]{94.55}$ \quad $q_B=\answer[tolerance=0.005]{7.52}$ \quad
+$q_C=\answer[tolerance=0.005]{2.45}$ \quad $q_D=\answer[tolerance=0.005]{5.48}$
+
+\begin{feedback}
+\[ SD=\frac{11{,}000}{110}=100, \]
+so each quota is the population divided by $100$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Round the standard quotas as if doing just the first step of each method.
+
+Jefferson (down): $A: \answer{94}$, $B: \answer{7}$, $C: \answer{2}$, $D: \answer{5}$,
+total $\answer{108}$
+
+\smallskip
+Adams (up): $A: \answer{95}$, $B: \answer{8}$, $C: \answer{3}$, $D: \answer{6}$,
+total $\answer{112}$
+
+\smallskip
+Huntington-Hill: $A: \answer{95}$, $B: \answer{8}$, $C: \answer{3}$, $D: \answer{6}$,
+total $\answer{112}$
+
+\begin{feedback}
+Jefferson is $2$ students short, and Adams is $2$ over.
+
+For Huntington-Hill, compare each quota with the geometric mean of its neighbors:
+\[
+\sqrt{94\cdot95}\approx 94.4987,\quad \sqrt{7\cdot8}\approx 7.4833,\quad
+\sqrt{2\cdot3}\approx 2.4495,\quad \sqrt{5\cdot6}\approx 5.4772.
+\]
+All four quotas lie just above their cutoffs ($94.55$, $7.52$, $2.45$, $5.48$), so all
+round up --- $2$ students over.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Complete the apportionment by each method, choosing the appropriate modified
+divisor from $98$, $100.053$, and $102$.
+
+\textbf{Jefferson} --- divisor $\answer{98}$, giving $A: \answer{96}$, $B: \answer{7}$,
+$C: \answer{2}$, $D: \answer{5}$
+
+\smallskip
+\textbf{Adams} --- divisor $\answer{102}$, giving $A: \answer{93}$, $B: \answer{8}$,
+$C: \answer{3}$, $D: \answer{6}$
+
+\smallskip
+\textbf{Huntington-Hill} --- divisor $\answer[tolerance=0.0005]{100.053}$, giving
+$A: \answer{95}$, $B: \answer{8}$, $C: \answer{2}$, $D: \answer{5}$
+
+\begin{hint}
+Jefferson is short and needs a smaller divisor; Adams and Huntington-Hill are over and
+need larger ones.
+\end{hint}
+
+\begin{feedback}
+\textbf{Jefferson}, $d=98$: modified quotas $96.48$, $7.67$, $2.50$, $5.59$; rounding
+down gives $96+7+2+5=110$. \checkmark
+
+\textbf{Adams}, $d=102$: modified quotas $92.70$, $7.37$, $2.40$, $5.37$; rounding up
+gives $93+8+3+6=110$. \checkmark
+
+\textbf{Huntington-Hill}, $d=100.053$ (four decimals):
+\[
+\begin{array}{lcccc}
+ & A & B & C & D\\
+mq & 94.4999 & 7.5160 & 2.4487 & 5.4771\\
+\text{cutoff} & 94.4987 & 7.4833 & 2.4495 & 5.4772\\
+\text{rounded} & 95 & 8 & 2 & 5
+\end{array}
+\]
+for a total of $110$. \checkmark\ Neighborhoods C and D fall just below their cutoffs,
+by less than $0.001$.
+
+Notice that Jefferson gives the large neighborhood A $96$ students, above its upper
+quota of $95$ --- an upper quota violation, as in Problem 2(a).
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Ahmad and Bojan are playing a game where on the count of three they each hold up one or
+two fingers. If the sum is even, Ahmad wins points equal to the total; if the sum is
+odd, Bojan wins points equal to the total. The payoff matrix (to Ahmad) is
+\[
+\begin{array}{r|rr}
+ & \text{B: one} & \text{B: two}\\\hline
+\text{A: one} & 2 & -3\\
+\text{A: two} & -3 & 4
+\end{array}
+\]
+
+\begin{prompt}
+\textbf{(a)} What proportion of the time will Ahmad show one finger at the equilibrium
+point? $\answer{7/12}$
+
+\begin{hint}
+Choose Ahmad's proportion $p$ of ``one'' so that Bojan's two options give Ahmad the same
+expected payoff.
+\end{hint}
+
+\begin{feedback}
+Against Bojan's ``one'': $2p-3(1-p)=5p-3$. Against Bojan's ``two'':
+$-3p+4(1-p)=4-7p$. Setting these equal, $12p=7$, so $p=\frac7{12}$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} What proportion of the time will Ahmad show two fingers?
+$\answer{5/12}$
+
+\begin{feedback}
+$1-\frac7{12}=\frac5{12}$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} What proportion of the time will Bojan show one finger at the equilibrium
+point? (The symmetry of the matrix should save you some work.) $\answer{7/12}$
+
+\begin{feedback}
+The matrix is symmetric, so Bojan's equation is the same as Ahmad's: with proportion $q$
+of ``one'', $2q-3(1-q)=-3q+4(1-q)$ gives $q=\frac7{12}$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(d)} What proportion of the time will Bojan show two fingers?
+$\answer{5/12}$
+
+\begin{feedback}
+$1-\frac7{12}=\frac5{12}$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(e)} If both players play optimally, what is the expected value of this game?
+$\answer{-1/12}$
+
+\begin{feedback}
+Using Ahmad's strategy against either of Bojan's options:
+\[
+5\cdot\tfrac7{12}-3=\tfrac{35-36}{12}=-\tfrac1{12}.
+\]
+The game slightly favors Bojan: about $0.08$ points per round.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+The following are bonus questions from earlier chapters.
+
+\begin{prompt}
+\textbf{(a)} Identify the Condorcet candidate in the following election.
+\begin{center}
+\begin{tabular}{c|ccc}
+Number of votes & 8 & 6 & 4\\\hline
+1st & B & A & C\\
+2nd & C & D & B\\
+3rd & A & C & D\\
+4th & D & B & A
+\end{tabular}
+\end{center}
+
+\begin{multipleChoice}
+\choice{A}
+\choice{B}
+\choice[correct]{C}
+\choice{D}
+\choice{There is none}
+\end{multipleChoice}
+
+\begin{feedback}
+C beats B $10$--$8$, A $12$--$6$, and D $12$--$6$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} In a weighted voting system with $11$ players, how many coalitions include
+$P_1$, $P_2$, and $P_3$ but exclude $P_{10}$ and $P_{11}$? $\answer{64}$
+
+\begin{feedback}
+Five players are settled, leaving $6$ free: $2^6=64$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Consider the weighted voting system $[10:7,5,3,1]$ with players A, B, C, and
+D. Which are the winning coalitions?
+
+\begin{selectAll}
+\choice[correct]{$\set{A,B}$}
+\choice[correct]{$\set{A,C}$}
+\choice{$\set{A,D}$}
+\choice{$\set{B,C,D}$}
+\choice[correct]{$\set{A,B,C}$}
+\choice[correct]{$\set{A,B,D}$}
+\choice[correct]{$\set{A,C,D}$}
+\choice[correct]{$\set{A,B,C,D}$}
+\end{selectAll}
+
+\begin{feedback}
+The weights are $\set{A,B}=12$, $\set{A,C}=10$, $\set{A,B,C}=15$, $\set{A,B,D}=13$,
+$\set{A,C,D}=11$, $\set{A,B,C,D}=16$. $\set{A,D}=8$ and $\set{B,C,D}=9$ fall short.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(d)} Bandit, Chili, Bingo, and Bluey are having a picnic. Chili splits the food
+into four shares she views as equal, and the others view only the following shares as
+fair:
+\begin{center}
+\begin{tabular}{c|ccc}
+Name & Bandit & Bingo & Bluey\\\hline
+Bids & $\set{s_1,s_2,s_3}$ & $\set{s_2,s_3}$ & $\set{s_1,s_3}$
+\end{tabular}
+\end{center}
+List three different ways of achieving a fair division.
+
+\begin{freeResponse}
+\end{freeResponse}
+
+\begin{feedback}
+Nobody bids on $s_4$, so Chili, the divider, takes it. Then:
+\begin{itemize}
+\item Bingo $s_2$, Bluey $s_1$, Bandit $s_3$;
+\item Bingo $s_2$, Bluey $s_3$, Bandit $s_1$;
+\item Bingo $s_3$, Bluey $s_1$, Bandit $s_2$.
+\end{itemize}
+These are the only three.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(e)} Give a two-sentence summary of Hamilton's method of apportionment,
+including what specifically distinguishes it from the other methods studied.
+
+\begin{freeResponse}
+\end{freeResponse}
+
+\begin{feedback}
+For example: Hamilton's method gives each state its lower quota, then hands the
+leftover seats one at a time to the states with the largest fractional parts. Unlike
+the divisor methods (Jefferson, Adams, Webster, Huntington-Hill), it never changes the
+divisor, so it always satisfies the quota rule --- but it is vulnerable to the Alabama,
+Population, and New States paradoxes.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\end{document}
