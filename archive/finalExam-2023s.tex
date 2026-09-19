@@ -1,0 +1,336 @@
+\documentclass[12pt]{ximera}
+\title{Final Exam (Spring 2023)}
+\begin{document}
+\begin{abstract}
+An archived cumulative final: true/false across all chapters, Borda count and Plurality-with-Elimination, Banzhaf and Shapley-Shubik power, lone-divider and sealed bids, and Hamilton, Huntington-Hill, and Webster apportionment.
+\end{abstract}
+\maketitle
+
+\section*{Final Exam (Spring 2023)}
+
+\begin{problem}
+True or false?
+
+\begin{prompt}
+\textbf{1.} A candidate who wins a majority of first-place votes also has a plurality.
+\begin{multipleChoice}
+\choice[correct]{True}
+\choice{False}
+\end{multipleChoice}
+\begin{feedback}
+A majority is more than everyone else combined, so certainly the most.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{2.} A Condorcet candidate wins all head-to-head matchups against the other candidates.
+\begin{multipleChoice}
+\choice[correct]{True}
+\choice{False}
+\end{multipleChoice}
+\begin{feedback}
+That is the definition.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{3.} It is possible to invent a voting method that satisfies all the fairness criteria.
+\begin{multipleChoice}
+\choice{True}
+\choice[correct]{False}
+\end{multipleChoice}
+\begin{feedback}
+Arrow's Impossibility Theorem says no method can satisfy all of them in every election.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{4.} A dictator has enough weight to pass any motion in a weighted voting system.
+\begin{multipleChoice}
+\choice[correct]{True}
+\choice{False}
+\end{multipleChoice}
+\begin{feedback}
+A dictator's weight alone meets the quota.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{5.} In a sequential coalition, the order in which players join does not matter.
+\begin{multipleChoice}
+\choice{True}
+\choice[correct]{False}
+\end{multipleChoice}
+\begin{feedback}
+Order is the whole point: it determines the pivotal player.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{6.} A fair share depends on the number of players in a sharing problem.
+\begin{multipleChoice}
+\choice[correct]{True}
+\choice{False}
+\end{multipleChoice}
+\begin{feedback}
+With $N$ players, a fair share is worth at least $\frac1N$ of the total.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{7.} In the lone-divider method, it is impossible for all choosers to bid for the same share.
+\begin{multipleChoice}
+\choice{True}
+\choice[correct]{False}
+\end{multipleChoice}
+\begin{feedback}
+All choosers may find only one and the same share acceptable. That is a standoff, which the method resolves.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{8.} The geometric mean of two numbers $a$ and $b$ is $\sqrt{a+b}$.
+\begin{multipleChoice}
+\choice{True}
+\choice[correct]{False}
+\end{multipleChoice}
+\begin{feedback}
+It is $\sqrt{ab}$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{9.} Some apportionment methods violate the quota rule.
+\begin{multipleChoice}
+\choice[correct]{True}
+\choice{False}
+\end{multipleChoice}
+\begin{feedback}
+Jefferson's, Adams', Webster's, and Huntington-Hill's methods all can.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{10.} With Hamilton's method, adding one seat to the total can leave some state with fewer seats than before.
+\begin{multipleChoice}
+\choice[correct]{True}
+\choice{False}
+\end{multipleChoice}
+\begin{feedback}
+That is the Alabama paradox.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+A quiz bowl team heading home from a tournament ranks three fast-food stops: Arby's (A),
+Burger King (B), and Culver's (C).
+\begin{center}
+\begin{tabular}{c|cccc}
+Number of voters & 12 & 8 & 5 & 2\\\hline
+1st & A & C & B & B\\
+2nd & B & B & A & C\\
+3rd & C & A & C & A
+\end{tabular}
+\end{center}
+Use the Borda count. A $\answer{56}$ \quad B $\answer{61}$ \quad C $\answer{45}$ \qquad
+Winner: $\answer{B}$
+
+\begin{feedback}
+A: $12\cdot3+8\cdot1+5\cdot2+2\cdot1=56$; B: $12\cdot2+8\cdot2+5\cdot3+2\cdot3=61$;
+C: $12\cdot1+8\cdot3+5\cdot1+2\cdot2=45$.
+\end{feedback}
+\end{problem}
+
+\begin{problem}
+Aberforth (A), Bellatrix (B), Cedric (C), and Diagon (D) are running for Minister of
+Magic.
+\begin{center}
+\begin{tabular}{c|ccccc}
+Number of voters & 20 & 15 & 8 & 5 & 2\\\hline
+1st & A & B & D & C & C\\
+2nd & B & D & C & B & A\\
+3rd & C & A & B & A & D\\
+4th & D & C & A & D & B
+\end{tabular}
+\end{center}
+Use Plurality-with-Elimination. Eliminated first: $\answer{C}$ \quad second:
+$\answer{D}$ \qquad Winner: $\answer{B}$
+
+\begin{feedback}
+Round 1: A $20$, B $15$, D $8$, C $7$. C's $5$ votes go to B and $2$ go to A. Round 2:
+A $22$, B $20$, D $8$. D's $8$ votes go to B (C is gone). Round 3: B $28$, A $22$.
+\end{feedback}
+\end{problem}
+
+\begin{problem}
+Consider the weighted voting system $[18:10,8,5,2]$.
+
+\begin{prompt}
+\textbf{(a)} How many winning coalitions are there? $\answer{4}$
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Banzhaf power distribution: $\beta_1=\answer{1/2}$, $\beta_2=\answer{1/2}$,
+$\beta_3=\answer{0}$, $\beta_4=\answer{0}$
+\begin{feedback}
+Winning: $\set{P_1,P_2}$, $\set{P_1,P_2,P_3}$, $\set{P_1,P_2,P_4}$, and the grand
+coalition. Only $P_1$ and $P_2$ are ever critical ($4$ times each); $P_3$ and $P_4$ are
+dummies.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Consider the weighted voting system $[15:10,8,5]$. Find the Shapley-Shubik power
+distribution.
+
+$\sigma_1=\answer{2/3}$ \quad $\sigma_2=\answer{1/6}$ \quad $\sigma_3=\answer{1/6}$
+
+\begin{feedback}
+$\seq{P_1,\underline{P_2},P_3}$, $\seq{P_1,\underline{P_3},P_2}$,
+$\seq{P_2,\underline{P_1},P_3}$, $\seq{P_2,P_3,\underline{P_1}}$,
+$\seq{P_3,\underline{P_1},P_2}$, $\seq{P_3,P_2,\underline{P_1}}$.
+\end{feedback}
+\end{problem}
+
+\begin{problem}
+Four friends divide a cake by the lone-divider method. Don is the divider.
+\begin{center}
+\begin{tabular}{r|cccc}
+ & $s_1$ & $s_2$ & $s_3$ & $s_4$\\\hline
+Don & 25\% & 25\% & 25\% & 25\%\\
+Connie & 80\% & 0\% & 10\% & 10\%\\
+Cecelia & 5\% & 5\% & 40\% & 50\%\\
+Caleb & 30\% & 10\% & 30\% & 30\%
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} Which shares does Caleb bid for?
+\begin{selectAll}
+\choice[correct]{$s_1$}
+\choice{$s_2$}
+\choice[correct]{$s_3$}
+\choice[correct]{$s_4$}
+\end{selectAll}
+\begin{feedback}
+Bids (at least $25\%$): Connie $\set{s_1}$, Cecelia $\set{s_3,s_4}$, Caleb
+$\set{s_1,s_3,s_4}$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} How many fair distributions are there? $\answer{2}$ \qquad Don always gets
+share number $\answer{2}$.
+\begin{feedback}
+Connie must take $s_1$, so Cecelia and Caleb split $s_3$ and $s_4$ in either order, and
+Don gets $s_2$.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Three fans sneak backstage after a concert and find an earring and a used napkin that
+they believe belonged to the famous singer. They divide them by sealed bids.
+\begin{center}
+\begin{tabular}{r|rrr}
+ & Alex & Bill & Christie\\\hline
+Earring & \$500 & \$400 & \$300\\
+Napkin & \$100 & \$200 & \$150
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} Fair shares: Alex $\$\answer{200}$, Bill $\$\answer{200}$, Christie
+$\$\answer{150}$
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Initial settlement (positive = pays): Alex $\answer{300}$, Bill $\answer{0}$,
+Christie $\answer{-150}$
+\begin{feedback}
+Alex gets the earring ($500$, which is $300$ over), Bill the napkin (exactly his fair
+share), and Christie nothing.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Final settlement (positive = pays): Alex $\answer{250}$, Bill $\answer{-50}$,
+Christie $\answer{-200}$
+\begin{feedback}
+The surplus is $300-150=150$, or $\$50$ each.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+The Lylat system apportions $435$ senate seats among four planets by Hamilton's method.
+\begin{center}
+\begin{tabular}{r|cccc}
+Planet & Fortuna & Katina & Corneria & Sauria\\\hline
+Population & 104,240 & 100,960 & 200,450 & 29,350
+\end{tabular}
+\end{center}
+Apportionment: Fortuna $\answer{104}$, Katina $\answer{101}$, Corneria $\answer{201}$,
+Sauria $\answer{29}$
+
+\begin{feedback}
+$SD=435{,}000/435=1000$, so the quotas are $104.24$, $100.96$, $200.45$, $29.35$. The
+lower quotas total $433$; the extra $2$ go to Katina ($0.96$) and Corneria ($0.45$).
+\end{feedback}
+\end{problem}
+
+\begin{problem}
+Five colleges at a university form a council of $60$ seats: Agriculture (A), Business
+(B), Design (D), Engineering (E), and Graduate (G).
+\begin{center}
+\begin{tabular}{r|ccccc}
+College & A & B & D & E & G\\\hline
+Population & 971 & 1,363 & 148 & 3,171 & 347
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} Standard divisor: $\answer{100}$
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Huntington-Hill (modified quotas to $3$ decimals): which divisor from this
+list works?
+\begin{multipleChoice}
+\choice{$100$}
+\choice[correct]{$101$}
+\choice{$99$}
+\end{multipleChoice}
+
+\smallskip
+Apportionment: A $\answer{10}$, B $\answer{14}$, D $\answer{2}$, E $\answer{31}$,
+G $\answer{3}$
+\begin{feedback}
+At $SD=100$ the quotas $9.71$, $13.63$, $1.48$, $31.71$, $3.47$ all exceed their cutoffs
+($\sqrt{90}\approx9.487$, $\sqrt{182}\approx13.491$, $\sqrt2\approx1.414$,
+$\sqrt{992}\approx31.496$, $\sqrt{12}\approx3.464$), giving $62$. At $d=101$ the quotas
+are $9.614$, $13.495$, $1.465$, $31.396$, $3.436$; E and G drop below their cutoffs,
+for a total of $60$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Webster at the standard divisor: A $\answer{10}$, B $\answer{14}$,
+D $\answer{1}$, E $\answer{32}$, G $\answer{3}$
+
+\smallskip
+Is it the same as Huntington-Hill?
+\begin{multipleChoice}
+\choice{Yes}
+\choice[correct]{No}
+\end{multipleChoice}
+\begin{feedback}
+Conventional rounding already totals $60$. Huntington-Hill moves a seat from the largest
+college, Engineering, to the smallest, Design.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\end{document}

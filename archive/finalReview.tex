@@ -1,0 +1,382 @@
+\documentclass[12pt]{ximera}
+\title{Final Exam Review}
+\begin{document}
+\begin{abstract}
+Review for a final on apportionment and game theory: Jefferson, Hamilton, Webster, and Huntington-Hill, the quota rule and all three paradoxes, dominance and saddle points, and mixed strategies.
+\end{abstract}
+\maketitle
+
+\section*{Final Exam Review}
+
+This review covers apportionment (Hamilton, Jefferson, Adams, Webster, Huntington-Hill,
+and the paradoxes) and game theory. For the earlier chapters, see the Exam 1 and Exam 3
+reviews.
+
+\begin{problem}
+Five states use Jefferson's method to apportion $50$ seats.
+\begin{center}
+\begin{tabular}{r|rrrrrr}
+ & A & B & C & D & E & Total\\\hline
+Population & 44 & 159 & 75 & 88 & 34 & 400\\
+Standard quota & 5.5 & 19.875 & 9.375 & 11 & 4.25 & 50
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} Standard divisor: $\answer{8}$
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Which of these modified divisors works for Jefferson's method?
+\begin{multipleChoice}
+\choice{$8.2$}
+\choice{$7.8$}
+\choice[correct]{$7.55$}
+\choice{$7.3$}
+\end{multipleChoice}
+\begin{feedback}
+Rounding down at $SD=8$ gives only $48$, so the divisor must shrink. Any divisor from
+$7.5$ up to about $7.57$ works. At $7.55$ the quotas are $5.83$, $21.06$, $9.93$, $11.66$,
+$4.50$, which round down to $5+21+9+11+4=50$. At $7.8$ the total is still only $49$, and at $7.3$ it jumps to $53$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Jefferson apportionment: A $\answer{5}$, B $\answer{21}$, C $\answer{9}$,
+D $\answer{11}$, E $\answer{4}$
+\end{prompt}
+
+\begin{prompt}
+\textbf{(d)} Which rule or paradox does this illustrate?
+\begin{multipleChoice}
+\choice[correct]{A quota-rule violation}
+\choice{The Alabama paradox}
+\choice{The population paradox}
+\choice{The new-states paradox}
+\end{multipleChoice}
+\begin{feedback}
+B's standard quota is $19.875$, so its upper quota is $20$, yet it gets $21$ seats: an
+upper-quota violation, typical of Jefferson's bias toward large states.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(e)} Now use Huntington-Hill with the standard divisor. Does it work, and what is
+the apportionment?
+
+A $\answer{6}$, B $\answer{20}$, C $\answer{9}$, D $\answer{11}$, E $\answer{4}$
+\begin{feedback}
+Cutoffs: $\sqrt{30}\approx5.477$ (A rounds up), $\sqrt{380}\approx19.49$ (B up),
+$\sqrt{90}\approx9.487$ (C down), D is exactly $11$, and $\sqrt{20}\approx4.47$ (E down).
+That totals $50$, so the standard divisor works. The result matches Hamilton's method.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+An ambulance company serves five boroughs with $39$ ambulances, allocated by population
+with Hamilton's method.
+\begin{center}
+\begin{tabular}{r|rrrrrr}
+ & A & B & C & D & E & Total\\\hline
+Population & 146 & 258 & 130 & 136 & 213 & 883\\
+Standard quota & 6.45 & 11.40 & 5.74 & 6.01 & 9.41 & 39
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} Hamilton allocation of $39$: A $\answer{7}$, B $\answer{11}$, C $\answer{6}$,
+D $\answer{6}$, E $\answer{9}$
+\begin{feedback}
+Lower quotas total $37$; the $2$ extras go to C ($0.74$) and A ($0.45$).
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} The company buys a $40$th ambulance, and populations are unchanged. Hamilton
+allocation of $40$: A $\answer{6}$, B $\answer{12}$, C $\answer{6}$, D $\answer{6}$,
+E $\answer{10}$
+\begin{feedback}
+$SD=\frac{883}{40}=22.075$; quotas $6.61$, $11.69$, $5.89$, $6.16$, $9.65$. The lower
+quotas total $37$; the $3$ extras go to C ($0.89$), B ($0.69$), and E ($0.65$).
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} What happened?
+\begin{multipleChoice}
+\choice[correct]{The Alabama paradox: A lost an ambulance when the fleet grew}
+\choice{The population paradox}
+\choice{The new-states paradox}
+\choice{A quota-rule violation}
+\end{multipleChoice}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+The Fairy Kingdom, the Troll Territory, and the Elf Empire apportion $40$ seats by
+Hamilton's method.
+\begin{center}
+\begin{tabular}{r|rrrr}
+ & F & T & E & Total\\\hline
+Population & 38 & 205 & 99 & 342
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} Standard divisor: $\answer{8.55}$ \qquad Apportionment: F $\answer{4}$,
+T $\answer{24}$, E $\answer{12}$
+\begin{feedback}
+Quotas $4.44$, $23.98$, $11.58$; the lower quotas total $38$, and the $2$ extras go to T
+and E.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} The Trolls grow to $212$ and the Elves to $99.01$ (in thousands); the Fairies
+stay at $38$. The new standard quotas are $4.355$, $24.297$, $11.348$. New apportionment:
+F $\answer{5}$, T $\answer{24}$, E $\answer{11}$
+\begin{feedback}
+The lower quotas total $39$, and the single extra seat goes to the largest residue: F
+($0.355$), just ahead of E ($0.348$).
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} What happened?
+\begin{multipleChoice}
+\choice{The Alabama paradox}
+\choice[correct]{The population paradox: the Elves grew but lost a seat to the Fairies, who did not grow}
+\choice{The new-states paradox}
+\choice{A quota-rule violation}
+\end{multipleChoice}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(d)} With the original populations, does Webster's method at the standard divisor
+agree with Hamilton's? 
+\begin{multipleChoice}
+\choice[correct]{Yes}
+\choice{No}
+\end{multipleChoice}
+\begin{feedback}
+Rounding $4.44$, $23.98$, $11.58$ conventionally gives $4+24+12=40$.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Five states with the populations below (in thousands) use Hamilton's method to apportion
+$38$ seats.
+\begin{center}
+\begin{tabular}{r|rrrrrr}
+ & A & B & C & D & E & Total\\\hline
+Population & 73.3 & 130 & 64 & 67 & 65 & 399.3\\
+Standard quota & 6.98 & 12.37 & 6.09 & 6.38 & 6.19 & 38
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} Standard divisor (two decimals): $\answer[tolerance=0.005]{10.51}$ \qquad
+Apportionment: A $\answer{7}$, B $\answer{12}$, C $\answer{6}$, D $\answer{7}$,
+E $\answer{6}$
+\begin{feedback}
+The lower quotas total $36$; the $2$ extras go to A ($0.98$) and D ($0.38$), just ahead of
+B ($0.37$).
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} A new state F with population $20$ joins. How many seats is a fair addition
+for it? $\answer{2}$
+\begin{feedback}
+$20/10.51\approx1.9$, so $2$ seats, for a total of $40$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} With $40$ seats, the standard quotas are $6.99$, $12.40$, $6.11$, $6.39$,
+$6.20$, $1.91$. New apportionment: A $\answer{7}$, B $\answer{13}$, C $\answer{6}$,
+D $\answer{6}$, E $\answer{6}$, F $\answer{2}$
+\begin{feedback}
+The lower quotas total $37$; the $3$ extras go to A ($0.99$), F ($0.91$), and B ($0.40$),
+now just ahead of D ($0.39$).
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(d)} What happened?
+\begin{multipleChoice}
+\choice{The Alabama paradox}
+\choice{The population paradox}
+\choice[correct]{The new-states paradox: adding F and its fair share of seats moved a seat from D to B}
+\choice{A quota-rule violation}
+\end{multipleChoice}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Player A chooses a row and player B a column; entries are payments from B to A.
+\[
+\begin{bmatrix} 3 & 5 & 6 & -8\\ 2 & 4 & 7 & 6\\ 5 & 6 & 8 & 5 \end{bmatrix}
+\]
+
+\begin{prompt}
+\textbf{(a)} Which strategy for A dominates A's first strategy? Row $\answer{3}$
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} After deleting A's first strategy, which strategy for B dominates all of B's
+others? Column $\answer{1}$
+\begin{feedback}
+In the remaining rows, column 1 ($2,5$) is no larger than any other column: $(4,6)$,
+$(7,8)$, $(6,5)$. (In the full matrix column 4 is not dominated, because of its $-8$.)
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} The saddle point is in row $\answer{3}$, column $\answer{1}$, with value
+$\answer{5}$.
+\begin{feedback}
+The row minimums $-8,2,5$ have maximum $5$; the column maximums $5,6,8,6$ have minimum
+$5$.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+You are designing an extension for a botanical garden and must choose mostly
+drought-resistant (D), shade-tolerant (S), or pest-resistant (P) trees. The table gives
+the percent chance that the trees survive at least $10$ years under each summer weather
+pattern.
+\begin{center}
+\begin{tabular}{l|rrrr}
+ & Hot/Humid & Hot/Dry & Cool/Humid & Cool/Dry\\\hline
+D & 60 & 90 & 70 & 85\\
+S & 70 & 65 & 70 & 80\\
+P & 85 & 80 & 75 & 80
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} Planning for Cool/Dry weather, the best choice is:
+\begin{multipleChoice}
+\choice[correct]{D}
+\choice{S}
+\choice{P}
+\end{multipleChoice}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} With pest-resistant trees, the ideal weather is:
+\begin{multipleChoice}
+\choice[correct]{Hot/Humid}
+\choice{Hot/Dry}
+\choice{Cool/Humid}
+\choice{Cool/Dry}
+\end{multipleChoice}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Which weather column is dominated (worse for ``Weather'' in every row) by
+Cool/Humid?
+\begin{multipleChoice}
+\choice{Hot/Humid}
+\choice{Hot/Dry}
+\choice[correct]{Cool/Dry}
+\end{multipleChoice}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(d)} Find the saddle point: plant $\answer{P}$, with guaranteed survival chance
+$\answer{75}$ percent.
+\begin{feedback}
+The row minimums are $60$, $65$, $75$, with maximum $75$ (P). The column maximums are $85$,
+$90$, $75$, $85$, with minimum $75$ (Cool/Humid). They meet at P, Cool/Humid.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Aiden and Bailey each have a red and a blue ball and reveal one on the count of three. If
+both show blue, Aiden wins $3$ points; if both show red, nobody scores; if Aiden shows red
+and Bailey blue, Bailey wins $2$; if Aiden shows blue and Bailey red, Bailey wins $1$.
+
+\begin{prompt}
+\textbf{(a)} With rows and columns ordered red, blue, give Aiden's payoff matrix.
+
+$\begin{bmatrix} \answer{0} & \answer{-2}\\ \answer{-1} & \answer{3} \end{bmatrix}$
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Is the game strictly determined?
+\begin{multipleChoice}
+\choice{Yes}
+\choice[correct]{No}
+\end{multipleChoice}
+\begin{feedback}
+The row minimums $-2,-1$ have maximum $-1$; the column maximums $0,3$ have minimum $0$. No
+saddle point.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} At equilibrium, Aiden shows red with probability $\answer{2/3}$, and Bailey
+shows red with probability $\answer{5/6}$.
+\begin{feedback}
+Aiden: $0p-1(1-p)=-2p+3(1-p)$ gives $6p=4$. Bailey: $0q-2(1-q)=-q+3(1-q)$ gives $6q=5$.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(d)} Value of the game: $\answer{-1/3}$
+\begin{feedback}
+$p-1=\frac23-1=-\frac13$: the game favors Bailey slightly.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+You must decide what to wear on a December day: a full bundle (coat, hat, scarf, mittens),
+just a jacket, or no outerwear. Your payoffs depend on the weather:
+\[
+\begin{array}{r|rrrr}
+ & \text{sun} & \text{snow} & \text{rain} & \text{wind}\\\hline
+\text{Full bundle} & -1 & 2 & 3 & 2\\
+\text{Just a jacket} & 1 & 1 & 1 & 1\\
+\text{No outerwear} & 0 & -1 & -3 & -2
+\end{array}
+\]
+
+\begin{prompt}
+\textbf{(a)} Which strategy is dominated?
+\begin{multipleChoice}
+\choice{Full bundle}
+\choice{Just a jacket}
+\choice[correct]{No outerwear}
+\end{multipleChoice}
+\begin{feedback}
+Just a jacket beats no outerwear under every kind of weather.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} The forecast is a $50\%$ chance of sun and $50\%$ chance of wind, and you
+flip a coin between the full bundle and the jacket. What is your expected payoff?
+$\answer{0.75}$
+\begin{feedback}
+The game reduces to
+\[
+\begin{array}{r|rr}
+ & \text{sun} & \text{wind}\\\hline
+\text{Bundle} & -1 & 2\\
+\text{Jacket} & 1 & 1
+\end{array}
+\]
+Bundle: $0.5(-1)+0.5(2)=0.5$. Jacket: $1$. Flipping a coin: $0.5(0.5)+0.5(1)=0.75$. (Just
+wearing the jacket would do better.)
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\end{document}

@@ -1,0 +1,264 @@
+\documentclass[12pt]{ximera}
+\title{Exam 4 (2020)}
+\begin{document}
+\begin{abstract}
+An archived non-cumulative exam: how the divisor methods round and adjust, Huntington-Hill cutoffs, reading and reducing a payoff matrix, Hamilton and Huntington-Hill apportionments, and rock-paper-scissors.
+\end{abstract}
+\maketitle
+
+\section*{Exam 4 (2020)}
+
+\begin{problem}
+Select all that apply.
+
+\begin{prompt}
+\textbf{1.} Jefferson's method uses:
+\begin{selectAll}
+\choice[correct]{Sometimes the standard divisor $SD$}
+\choice[correct]{Sometimes a modified divisor $d<SD$}
+\choice{Sometimes a modified divisor $d>SD$}
+\end{selectAll}
+\begin{feedback}
+Rounding down never hands out too many seats. So Jefferson either works with $SD$
+itself (rarely) or needs a smaller divisor to make the quotas grow.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{2.} Adams' method uses:
+\begin{selectAll}
+\choice[correct]{Sometimes the standard divisor $SD$}
+\choice{Sometimes a modified divisor $d<SD$}
+\choice[correct]{Sometimes a modified divisor $d>SD$}
+\end{selectAll}
+\begin{feedback}
+Rounding up never hands out too few seats, so Adams needs either $SD$ or a larger
+divisor.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{3.} Jefferson's method gives each state:
+\begin{selectAll}
+\choice{its standard upper quota}
+\choice[correct]{its standard lower quota}
+\choice{a modified upper quota}
+\choice[correct]{a modified lower quota}
+\choice{a quota rounded to the nearest whole number}
+\end{selectAll}
+\begin{feedback}
+A modified lower quota, which is the standard lower quota in the rare case that $SD$
+itself works.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{4.} Adams' method gives each state:
+\begin{selectAll}
+\choice[correct]{its standard upper quota}
+\choice{its standard lower quota}
+\choice[correct]{a modified upper quota}
+\choice{a modified lower quota}
+\choice{a quota rounded to the nearest whole number}
+\end{selectAll}
+\end{prompt}
+
+\begin{prompt}
+\textbf{5.} Webster's method gives each state:
+\begin{selectAll}
+\choice{its standard upper quota}
+\choice{its standard lower quota}
+\choice{a modified upper quota}
+\choice{a modified lower quota}
+\choice[correct]{a quota rounded to the nearest whole number}
+\end{selectAll}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+\begin{prompt}
+\textbf{6.} While applying the Huntington-Hill method, the divisor $d=2300$ gives rounded
+quotas whose total $T$ is less than the number of seats $M$. What is a possible divisor to
+try next?
+\begin{multipleChoice}
+\choice{The standard divisor}
+\choice{$d=2310$}
+\choice[correct]{$d=2290$}
+\choice{It can't be determined}
+\end{multipleChoice}
+\begin{feedback}
+Too few seats means the quotas must grow, which requires a smaller divisor.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{7.} A state's quota is $q=4.473$. How many seats does the Huntington-Hill
+rounding rule give it?
+\begin{multipleChoice}
+\choice{$4.5$ seats}
+\choice{$4$ seats}
+\choice[correct]{$5$ seats}
+\choice{It can't be determined}
+\end{multipleChoice}
+\begin{feedback}
+The cutoff is $\sqrt{4\cdot5}=\sqrt{20}\approx4.4721$, and $4.473$ is just above it, so the
+quota rounds up. (Conventional rounding would give $4$.)
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+Questions 8--10 refer to the following payoff matrix, with rows $A_1,\dots,A_4$ and columns
+$B_1,B_2,B_3$:
+\[
+\begin{bmatrix} 4 & 6 & 2\\ -2 & 8 & -14\\ 10 & 4 & 0\\ 16 & -8 & -2 \end{bmatrix}
+\]
+
+\begin{prompt}
+\textbf{8.} What is the payoff when the strategies are $(A_2,B_3)$?
+\begin{multipleChoice}
+\choice[correct]{A pays $14$ to B}
+\choice{B pays $14$ to A}
+\choice{A pays $4$ to B}
+\choice{B pays $4$ to A}
+\end{multipleChoice}
+\begin{feedback}
+The entry is $-14$: a loss of $14$ for A.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{9.} Which column dominance holds?
+\begin{multipleChoice}
+\choice{Column 1 dominates column 3}
+\choice[correct]{Column 3 dominates column 1}
+\choice{Column 2 dominates column 1}
+\choice{Column 3 dominates column 2}
+\choice{There are no dominated columns}
+\end{multipleChoice}
+\begin{feedback}
+B wants small payoffs. Every entry of column 3 ($2,-14,0,-2$) is smaller than the
+corresponding entry of column 1 ($4,-2,10,16$), so B never plays column 1.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{10.} What is the value of the game? $\answer{2}$
+\begin{feedback}
+The row minimums are $2,-14,0,-8$, with maximum $2$. The column maximums are $16,8,2$, with
+minimum $2$. They agree, so $(A_1,B_3)$ is a saddle point and the value is $2$.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+The Kingdom of Arendelle has six provinces. Their populations, as percentages of the
+total, are below. Use Hamilton's method to apportion $125$ seats.
+\begin{center}
+\begin{tabular}{l|ccccccc}
+Province & A & B & C & D & E & F & Total\\\hline
+Population (\%) & 14.47 & 7.05 & 37.53 & 13.89 & 11.52 & 15.54 & 100
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} Standard divisor, as a percent of the population: $\answer{0.8}$
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Standard quotas (four decimals):
+A $\answer[tolerance=0.00005]{18.0875}$, B $\answer[tolerance=0.00005]{8.8125}$,
+C $\answer[tolerance=0.00005]{46.9125}$, D $\answer[tolerance=0.00005]{17.3625}$,
+E $\answer[tolerance=0.00005]{14.4}$, F $\answer[tolerance=0.00005]{19.425}$
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Hamilton apportionment: A $\answer{18}$, B $\answer{9}$, C $\answer{47}$,
+D $\answer{17}$, E $\answer{14}$, F $\answer{20}$
+\begin{feedback}
+The lower quotas total $122$, so $3$ seats remain. The largest residues are C
+($0.9125$), B ($0.8125$), and F ($0.425$).
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+A small country with five states apportions $24$ seats by the Huntington-Hill method.
+\begin{center}
+\begin{tabular}{l|cccccc}
+State & A & B & C & D & E & Total\\\hline
+Population & 2,602 & 7,118 & 1,840 & 5,610 & 830 & 18,000
+\end{tabular}
+\end{center}
+
+\begin{prompt}
+\textbf{(a)} Standard divisor: $\answer{750}$
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Round the standard quotas by the Huntington-Hill rule. How many seats does
+that hand out? $\answer{25}$
+\begin{feedback}
+\[
+\begin{array}{lccccc}
+ & A & B & C & D & E\\
+q & 3.4693 & 9.4907 & 2.4533 & 7.4800 & 1.1067\\
+\text{cutoff} & 3.4641 & 9.4868 & 2.4495 & 7.4833 & 1.4142\\
+\text{rounded} & 4 & 10 & 3 & 7 & 1
+\end{array}
+\]
+That is one seat too many, so the divisor must increase.
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(c)} Increasing the divisor one unit at a time, which divisor first works?
+$\answer{751}$
+
+\smallskip
+Huntington-Hill apportionment: A $\answer{4}$, B $\answer{9}$, C $\answer{3}$,
+D $\answer{7}$, E $\answer{1}$
+\begin{feedback}
+With $d=751$ the quotas are $3.4647$, $9.4780$, $2.4501$, $7.4700$, $1.1052$. B falls below
+its cutoff $9.4868$ and rounds down to $9$, while A and C stay just above theirs. Total
+$24$. \checkmark
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\begin{problem}
+In rock-paper-scissors, two players simultaneously show rock, paper, or scissors. The same
+choice is a tie; otherwise rock beats scissors, scissors beats paper, and paper beats rock.
+The winner gains a point, and the loser loses it.
+
+\begin{prompt}
+\textbf{(a)} Write the payoff matrix for the row player, with strategies in the order
+rock, paper, scissors. Enter the first row.
+
+$\answer{0}$, $\answer{-1}$, $\answer{1}$
+\begin{feedback}
+\[
+\begin{array}{r|rrr}
+ & \text{R} & \text{P} & \text{S}\\\hline
+\text{R} & 0 & -1 & 1\\
+\text{P} & 1 & 0 & -1\\
+\text{S} & -1 & 1 & 0
+\end{array}
+\]
+\end{feedback}
+\end{prompt}
+
+\begin{prompt}
+\textbf{(b)} Is this a strictly determined game?
+\begin{multipleChoice}
+\choice{Yes}
+\choice[correct]{No}
+\end{multipleChoice}
+\begin{feedback}
+Every row minimum is $-1$ and every column maximum is $1$, so there is no saddle point.
+The optimal strategy is to play each option $\frac13$ of the time, and the value is $0$.
+\end{feedback}
+\end{prompt}
+\end{problem}
+
+\end{document}
